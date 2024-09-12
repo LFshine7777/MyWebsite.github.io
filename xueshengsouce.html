@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>某高校-信息公开</title>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            min-width: 1200px;
+            font-family: '微软雅黑';
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background-color: rgb(26, 69, 147);
+            background-image: url("信息公开/a.jpg");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            width: 550px;
+            height: 140px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        nav {
+            display: block;
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu>li {
+            flex: 1;
+            position: relative;
+        }
+
+        .menu>li>a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.2s;
+            /* 设置二级菜单的最小宽度为与一级菜单一样 */
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu>li>a:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            /* 使二级菜单与一级菜单一样宽 */
+            padding: 0;
+            margin: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgb(59, 178, 233);
+            transition: height 0.2s ease, opacity 0.2s ease, visibility 0.2s;
+            z-index: 10;
+            list-style: none;
+        }
+
+        .sub-menu li {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            /* 文字居中对齐 */
+        }
+
+        .sub-menu li:hover {
+            background-color: #ddd;
+            /* 鼠标悬停时的背景颜色 */
+        }
+
+        .sub-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 鼠标悬停时激活子菜单 */
+        .menu>li:hover>.sub-menu {
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu>li:nth-child(2):hover>.sub-menu {
+            width: 100%;
+        }
+
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            background-color: #fff;
+            background-image: url("信息公开/b.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tabs {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            height: 60px;
+            width: 80%;
+            left: 10%;
+            margin-top: -3%;
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        .tab-buttonimg {
+            cursor: pointer;
+            width: 6%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            position: absolute;
+            background-color: rgb(26, 69, 147);
+            text-align: center;
+            line-height: 45px;
+            background-image: url("信息公开/c.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tab-buttonimg img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tab-button1 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 6%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button2 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 18%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button3 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 30%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button4 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 42%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button5 {
+            cursor: pointer;
+            width: 22%;
+            height: 100%;
+            top: 0%;
+            left: 55%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button6 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 77%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button7 {
+            cursor: pointer;
+            width: 10%;
+            height: 100%;
+            top: 0%;
+            left: 90%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(26, 68, 147, 0.296);
+        }
+
+        .tab-content {
+            position: absolute;
+            height: 1200px;
+            width: 90%;
+            top: 20px;
+            left: 5%;
+            position: relative;
+            background-color: '';
+        }
+
+        .nx-x11 {
+            position: absolute;
+            width: 15%;
+            height: 4.5%;
+            left: 2%;
+            top: 3%;
+            background-color: '';
+            overflow: hidden;
+        }
+
+        .nx-x22-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 8%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .nx-x {
+            position: absolute;
+            width: 100%;
+            height: 3%;
+            top: 14%;
+            background-color: skyblue;
+            cursor: pointer;
+            /* 添加鼠标指针样式，表明可点击 */
+        }
+
+        .nx-n {
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            top: 17%;
+            background-color: rgb(63, 63, 63);
+            overflow: hidden;
+        }
+
+        .pdf-content {
+            position: absolute;
+            top: 0;
+            width: 80%;
+            left: 10%;
+            height: 100%;
+            background-color: skyblue;
+        }
+
+        .nested-html {
+            position: absolute;
+            width: 100%;
+            height: 1000px;
+            background-color: lightgray;
+        }
+
+
+        /*footer*/
+        .footer {
+            position: relative;
+            top: 100px;
+            width: 100%;
+            min-width: 1200px;
+            height: 170px;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+        }
+
+        .footer-tp {
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            height: 65px;
+            background-color: '';
+        }
+        
+        .footer-di {
+            position: absolute;
+            width: 98%;
+            min-width: 1200px;
+            bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1%;
+            justify-content: space-around;
+            background-color: '';
+        }
+
+        .footer-di-box {
+            font-family: '微软雅黑';
+            width: fit-content;
+            height: fit-content;
+            box-sizing: border-box;
+            background-color: '';
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+
+        .style {
+            line-height: 40px;
+            font-style: 20px;
+            color: #fff;
+        }
+
+        p1 {
+            color: rgb(26, 69, 147);
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="信息公开/logo.png" width="100%" height="100%">
+        </div>
+    </div>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">首页</a>
+            </li>
+            <li><a href="#">部门概况</a>
+                <ul class="sub-menu">
+                    <li><a href="#">本院简介</a></li>
+                    <li><a href="#">机构设置</a></li>
+                    <li><a href="#">学校校历</a></li>
+                    <li><a href="#">党建工作</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </li>
+            <li><a href="#">教务工作</a>
+                <ul class="sub-menu">
+                    <li><a href="#">部门介绍</a></li>
+                    <li><a href="#">招生动态</a></li>
+                    <li><a href="#">走进学校</a></li>
+                    <li><a href="#">报考学校</a></li>
+                </ul>
+            </li>
+            <li><a href="#">教学工作</a>
+                <ul class="sub-menu">
+                    <li><a href="#">办事指南</a></li>
+                    <li><a href="#">课程建设</a></li>
+                    <li><a href="#">国际交流</a></li>
+                    <li><a href="#">实践教学</a></li>
+                    <li><a href="#">工作动态</a></li>
+                </ul>
+            </li>
+            <li><a href="#">教研工作</a>
+                <ul class="sub-menu">
+                    <li><a href="#">专业设置</a></li>
+                    <li><a href="#">培养特区</a></li>
+                    <li><a href="#">教师教学</a></li>
+                </ul>
+            </li>
+            <li><a href="#">教材建设</a>
+                <ul class="sub-menu">
+                </ul>
+            </li>
+            <li><a href="#">导师工作</a>
+                <ul class="sub-menu">
+                    <li><a href="#">学科专业</a></li>
+                    <li><a href="#">教学成果</a></li>
+                    <li><a href="#">精品课程</a></li>
+                    <li><a href="#">教学名师</a></li>
+                    <li><a href="#">优秀教材</a></li>
+                </ul>
+            </li>
+            <li><a href="#">国际交流</a>
+                <ul class="sub-menu">
+                    <li><a href="#">国际交流</a></li>
+                    <li><a href="#">国家公派</a></li>
+                    <li><a href="#">短期访学</a></li>
+                    <li><a href="#">国际会议</a></li>
+                    <li><a href="#">联合培养</a></li>
+                    <li><a href="#">学术论坛</a></li>
+                    <li><a href="#">其他项目</a></li>
+                </ul>
+            </li>
+            <li><a href="#">奖助管理</a>
+                <ul class="sub-menu">
+                    <li><a href="#">国家奖学金</a></li>
+                    <li><a href="#">学校奖学金</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tp"></div>
+
+    <div class="tabs">
+        <div class="tab-buttonimg"></div>
+        <div class="tab-button1">
+            <a href="wenjianguali.html" target="_blank">文件管理</a>
+        </div>
+        <div class="tab-button2">
+            <a href="peiyangfangan.html" target="_blank">培养方案</a>
+        </div>
+        <div class="tab-button3">
+            <a href="xuanjiangcailiao.html" target="_blank">宣讲材料</a>
+        </div>
+        <div class="tab-button4">
+            <a href="zhidaoxingwenjian.html" target="_blank">指导性文件</a>
+        </div>
+        <div class="tab-button5">
+            <a href="sixiangtaolun.html" target="_blank">某高校教育思想讨论</a>
+        </div>
+        <div class="tab-button6">
+            <a href="xueshengsouce.html" target="_blank">学生手册</a>
+        </div>
+        <div class="tab-button7">
+            <a href="FQA.html" target="_blank">FAQ</a>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="nx-x11">
+            <p1>学生手册</p1>
+        </div>
+        <div class="nx-x22-hengxian"></div>
+        <div class="nx-x">
+            <img src="信息公开/x.png" width="100%" height="100%">
+        </div>
+        <div class="nx-n">
+            <div class="pdf-content">
+                <iframe src="信息公开/pdf.pdf" class="nested-html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-tp">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <div class="footer-di">
+            <div class="footer-di-box">
+                <span>版权所有©某高校大学</span>
+            </div>
+            <div class="footer-di-box">
+                <span>邮编：XXXXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>地址：某某省某某市民安路XX号</span>
+            </div>
+            <div class="footer-di-box">
+                <span>意见反馈：zg@mgx.edu.cn</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中ICP备XXXX-XXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中公网安备XXXXXXX号</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

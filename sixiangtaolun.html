@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>信息公开-教育思想讨论</title>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        body {
+            min-width: 1200px;
+            font-family: '微软雅黑';
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background-color: rgb(26, 69, 147);
+            background-image: url("信息公开/a.jpg");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            width: 550px;
+            height: 140px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bounceOut {
+            animation: bounceOut 1s forwards;
+        }
+
+        .bounceIn {
+            animation: bounceIn 1s forwards;
+        }
+
+        @keyframes bounceOut {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+
+            100% {
+                top: -90px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                top: -90px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        nav {
+            position: relative;
+            z-index: 999;
+            display: block;
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu>li {
+            flex: 1;
+            position: relative;
+        }
+
+        .menu>li>a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.2s;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu>li>a:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgb(59, 178, 233);
+            transition: height 0.2s ease, opacity 0.2s ease, visibility 0.2s;
+            list-style: none;
+            z-index: 99999;
+        }
+
+        .sub-menu li {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sub-menu li:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 鼠标悬停时激活子菜单 */
+        .menu>li:hover>.sub-menu {
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu>li:nth-child(2):hover>.sub-menu {
+            width: 100%;
+        }
+
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            background-color: #fff;
+            background-image: url("信息公开/b.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tabs {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            height: 60px;
+            width: 80%;
+            left: 10%;
+            margin-top: -3%;
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        .tab-buttonimg {
+            cursor: pointer;
+            width: 6%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            position: absolute;
+            background-color: rgb(26, 69, 147);
+            text-align: center;
+            line-height: 45px;
+            background-image: url("信息公开/c.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tab-buttonimg img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tab-button1 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 6%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button2 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 18%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button3 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 30%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button4 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 42%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button5 {
+            cursor: pointer;
+            width: 22%;
+            height: 100%;
+            top: 0%;
+            left: 55%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button6 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 77%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button7 {
+            cursor: pointer;
+            width: 10%;
+            height: 100%;
+            top: 0%;
+            left: 90%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(26, 68, 147, 0.296);
+        }
+
+
+
+        .tab-content {
+            position: absolute;
+            height: 1000px;
+            width: 90%;
+            top: 20px;
+            left: 5%;
+            position: relative;
+            background-color: '';
+        }
+
+        .ak-l11 {
+            position: absolute;
+            width: 270px;
+            height: 4.5%;
+            left: 2%;
+            top: 3%;
+            background-color: '';
+            overflow: hidden;
+        }
+
+        .ak-l22-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 8%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .ak-l33-eleft,
+        .ak-l44-eleft44,
+        .ak-l55-eleft55,
+        .ak-l66-eleft66,
+        .ak-l77-eleft77,
+        .ak-l88-eleft88,
+        .ak-l99-eleft99,
+        .ak-l1010-eleft1010,
+        .ak-l1111-eleft1111,
+        .ak-l1212-eleft1212,
+        .ak-l1313-eleft1313,
+        .ak-l1414-eleft1414,
+        .ak-l1515-eleft1515,
+        .ak-l1616-eleft1616,
+        .ak-l1717-eleft1717,
+        .ak-l1818-eleft1818,
+        .ak-l1919-eleft1919 {
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            background-color: transparent;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .ak-l33-eright,
+        .ak-l44-eright44,
+        .ak-l55-eright55,
+        .ak-l66-eright66,
+        .ak-l77-eright77,
+        .ak-l88-eright88,
+        .ak-l99-eright99,
+        .ak-l1010-eright1010,
+        .ak-l1111-eright1111,
+        .ak-l1212-eright1212,
+        .ak-l1313-eright1313,
+        .ak-l1414-eright1414,
+        .ak-l1515-eright1515,
+        .ak-l1616-eright1616,
+        .ak-l1717-eright1717,
+        .ak-l1818-eright1818,
+        .ak-l1919-eright1919 {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            width: 100px;
+            height: 100%;
+            background-color: transparent;
+        }
+
+        .ak-l33 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 13.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l33:hover .ak-l33-eleft,
+        .ak-l33:hover .ak-l33-eright {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l33-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 17%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l44 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 18.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l44:hover .ak-l44-eleft44,
+        .ak-l44:hover .ak-l44-eright44 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l44-hengxian44 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 22%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l55 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 23.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l55:hover .ak-l55-eleft55,
+        .ak-l55:hover .ak-l55-eright55 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l55-hengxian55 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 27%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l66 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 28.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l66:hover .ak-l66-eleft66,
+        .ak-l66:hover .ak-l66-eright66 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l66-hengxian66 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 32%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l77 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 33.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l77:hover .ak-l77-eleft77,
+        .ak-l77:hover .ak-l77-eright77 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l77-hengxian77 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 37%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l88 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 38.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l88:hover .ak-l88-eleft88,
+        .ak-l88:hover .ak-l88-eright88 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l88-hengxian88 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 42%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l99 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 43.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l99:hover .ak-l99-eleft99,
+        .ak-l99:hover .ak-l99-eright99 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l99-hengxian99 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 47%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1010 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 48.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1010:hover .ak-l1010-eleft1010,
+        .ak-l1010:hover .ak-l1010-eright1010 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1010-hengxian1010 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 52%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1111 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 53.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1111:hover .ak-l1111-eleft1111,
+        .ak-l1111:hover .ak-l1111-eright1111 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1111-hengxian1111 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 57%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1212 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 58.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1212:hover .ak-l1212-eleft1212,
+        .ak-l1212:hover .ak-l1212-eright1212 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1212-hengxian1212 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 62%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1313 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 63.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1313:hover .ak-l1313-eleft1313,
+        .ak-l1313:hover .ak-l1313-eright1313 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1313-hengxian1313 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 67%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1414 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 68.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1414:hover .ak-l1414-eleft1414,
+        .ak-l1414:hover .ak-l1414-eright1414 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1414-hengxian1414 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 72%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1515 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 73.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1515:hover .ak-l1515-eleft1515,
+        .ak-l1515:hover .ak-l1515-eright1515 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1515-hengxian1515 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 77%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1616 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 78.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1616:hover .ak-l1616-eleft1616,
+        .ak-l1616:hover .ak-l1616-eright1616 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1616-hengxian1616 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 82%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1717 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 83.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1717:hover .ak-l1717-eleft1717,
+        .ak-l1717:hover .ak-l1717-eright1717 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1717-hengxian1717 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 87%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1818 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 88.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1818:hover .ak-l1818-eleft1818,
+        .ak-l1818:hover .ak-l1818-eright1818 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1818-hengxian1818 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 92%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .ak-l1919 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 93.5%;
+            left: 0;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .ak-l1919:hover .ak-l1919-eleft1919,
+        .ak-l1919:hover .ak-l1919-eright1919 {
+            color: rgb(26, 69, 147);
+        }
+
+        .ak-l1919-hengxian1919 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 97%;
+            background-color: rgb(230, 230, 230);
+        }
+
+
+
+        /*footer*/
+        .footer {
+            position: relative;
+            top: 100px;
+            width: 100%;
+            min-width: 1200px;
+            height: 170px;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+        }
+
+        .footer-tp {
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            height: 65px;
+            background-color: '';
+        }
+        
+        .footer-di {
+            position: absolute;
+            width: 98%;
+            min-width: 1200px;
+            bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1%;
+            justify-content: space-around;
+            background-color: '';
+        }
+
+        .footer-di-box {
+            font-family: '微软雅黑';
+            width: fit-content;
+            height: fit-content;
+            box-sizing: border-box;
+            background-color: '';
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }        
+
+        .style {
+            line-height: 40px;
+            font-style: 20px;
+            color: #fff;
+        }
+
+        p1 {
+            color: rgb(26, 69, 147);
+            font-size: 30px;
+        }
+
+        p5 {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="信息公开/logo.png" width="100%" height="100%">
+        </div>
+    </div>
+
+    <nav id="nav">
+        <ul class="menu">
+            <li><a href="index.html">首页</a>
+            </li>
+            <li><a href="#">部门概况</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教务工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教学工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教研工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教材建设</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">导师工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">国际交流</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">奖助管理</a>
+                <ul class="sub-menu"></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tp"></div>
+
+    <div class="tabs">
+        <div class="tab-buttonimg"></div>
+        <div class="tab-button1">
+            <a href="wenjianguali.html" target="_blank">文件管理</a>
+        </div>
+        <div class="tab-button2">
+            <a href="peiyangfangan.html" target="_blank">培养方案</a>
+        </div>
+        <div class="tab-button3">
+            <a href="xuanjiangcailiao.html" target="_blank">宣讲材料</a>
+        </div>
+        <div class="tab-button4">
+            <a href="zhidaoxingwenjian.html" target="_blank">指导性文件</a>
+        </div>
+        <div class="tab-button5">
+            <a href="sixiangtaolun.html" target="_blank">某高校教育思想讨论</a>
+        </div>
+        <div class="tab-button6">
+            <a href="xueshengsouce.html" target="_blank">学生手册</a>
+        </div>
+        <div class="tab-button7">
+            <a href="FQA.html" target="_blank">FAQ</a>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="ak-l11">
+            <p1>某高校教育思想讨论</p1>
+        </div>
+        <div class="ak-l22-hengxian"></div>
+        <div class="ak-l33">
+            <div class="ak-l33-eleft">
+                <p5>新型研究型大学应该“新”在何处？</p5>
+            </div>
+            <div class="ak-l33-eright">
+                <p5>2023-10-03</p5>
+            </div>
+        </div>
+        <div class="ak-l33-hengxian"></div>
+        <div class="ak-l44">
+            <div class="ak-l44-eleft44">
+                <p5>提升教师综合素养不可或缺的一个议题</p5>
+            </div>
+            <div class="ak-l44-eright44">
+                <p5>2023-09-27</p5>
+            </div>
+        </div>
+        <div class="ak-l44-hengxian44"></div>
+        <div class="ak-l55">
+            <div class="ak-l55-eleft55">
+                <p5>以课程改革实现思政教育入脑入心</p5>
+            </div>
+            <div class="ak-l55-eright55">
+                <p5>2023-09-17</p5>
+            </div>
+        </div>
+        <div class="ak-l55-hengxian55"></div>
+        <div class="ak-l66">
+            <div class="ak-l66-eleft66">
+                <p5>拓展社区育人维度 助力一流人才培养</p5>
+            </div>
+            <div class="ak-l66-eright66">
+                <p5>2023-09-02</p5>
+            </div>
+        </div>
+        <div class="ak-l66-hengxian66"></div>
+        <div class="ak-l77">
+            <div class="ak-l77-eleft77">
+                <p5>浅论如何构建“同舟共济”的研究型大学</p5>
+            </div>
+            <div class="ak-l77-eright77">
+                <p5>2023-08-19</p5>
+            </div>
+        </div>
+        <div class="ak-l77-hengxian77"></div>
+        <div class="ak-l88">
+            <div class="ak-l88-eleft88">
+                <p5>学校人才培养模式的几个关键问题</p5>
+            </div>
+            <div class="ak-l88-eright88">
+                <p5>2023-08-07</p5>
+            </div>
+        </div>
+        <div class="ak-l88-hengxian88"></div>
+        <div class="ak-l99">
+            <div class="ak-l99-eleft99">
+                <p5>坚定守护和弘扬同济人严谨求实的治学精神</p5>
+            </div>
+            <div class="ak-l99-eright99">
+                <p5>2023-07-29</p5>
+            </div>
+        </div>
+        <div class="ak-l99-hengxian99"></div>
+        <div class="ak-l1010">
+            <div class="ak-l1010-eleft1010">
+                <p5>学史力行开新局，在大讨论中凝聚共识、汇聚力量</p5>
+            </div>
+            <div class="ak-l1010-eright1010">
+                <p5>2023-07-14</p5>
+            </div>
+        </div>
+        <div class="ak-l1010-hengxian1010"></div>
+        <div class="ak-l1111">
+            <div class="ak-l1111-eleft1111">
+                <p5>2021教育思想大讨论深入推进，人才培养主题讨论成果交流会召开</p5>
+            </div>
+            <div class="ak-l1111-eright1111">
+                <p5>2023-07-03</p5>
+            </div>
+        </div>
+        <div class="ak-l1111-hengxian1111"></div>
+        <div class="ak-l1212">
+            <div class="ak-l1212-eleft1212">
+                <p5>学校召开教育思想大讨论——师德师风建设专题座谈会</p5>
+            </div>
+            <div class="ak-l1212-eright1212">
+                <p5>2023-06-26</p5>
+            </div>
+        </div>
+        <div class="ak-l1212-hengxian1212"></div>
+        <div class="ak-l1313">
+            <div class="ak-l1313-eleft1313">
+                <p5>2021年某高校大学研究生导师培训交流会举行</p5>
+            </div>
+            <div class="ak-l1313-eright1313">
+                <p5>2023-06-12</p5>
+            </div>
+        </div>
+        <div class="ak-l1313-hengxian1313"></div>
+        <div class="ak-l1414">
+            <div class="ak-l1414-eleft1414">
+                <p5>学校召开党外代表人士座谈会，开展教育思想大讨论</p5>
+            </div>
+            <div class="ak-l1414-eright1414">
+                <p5>2023-05-25</p5>
+            </div>
+        </div>
+        <div class="ak-l1414-hengxian1414"></div>
+        <div class="ak-l1515">
+            <div class="ak-l1515-eleft1515">
+                <p5>人才培养模式改革中的大问题和小问题</p5>
+            </div>
+            <div class="ak-l1515-eright1515">
+                <p5>2023-05-04</p5>
+            </div>
+        </div>
+        <div class="ak-l1515-hengxian1515"></div>
+        <div class="ak-l1616">
+            <div class="ak-l1616-eleft1616">
+                <p5>某高校大学产业系统组织召开产教融合专题研讨会</p5>
+            </div>
+            <div class="ak-l1616-eright1616">
+                <p5>2023-04-23</p5>
+            </div>
+        </div>
+        <div class="ak-l1616-hengxian1616"></div>
+        <div class="ak-l1717">
+            <div class="ak-l1717-eleft1717">
+                <p5>凸显中国特色 对标世界一流 培育栋梁人才</p5>
+            </div>
+            <div class="ak-l1717-eright1717">
+                <p5>2023-04-13</p5>
+            </div>
+        </div>
+        <div class="ak-l1717-hengxian1717"></div>
+        <div class="ak-l1818">
+            <div class="ak-l1818-eleft1818">
+                <p5>治国理政之学，善政良治之用——夏书章教授学术访谈</p5>
+            </div>
+            <div class="ak-l1818-eright1818">
+                <p5>2023-04-09</p5>
+            </div>
+        </div>
+        <div class="ak-l1818-hengxian1818"></div>
+        <div class="ak-l1919">
+            <div class="ak-l1919-eleft1919">
+                <p5>某高校大学关于学籍变动本科生培养的补充规定（试行）</p5>
+            </div>
+            <div class="ak-l1919-eright1919">
+                <p5>2023-03-13</p5>
+            </div>
+        </div>
+        <div class="ak-l1919-hengxian1919"></div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-tp">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <div class="footer-di">
+            <div class="footer-di-box">
+                <span>版权所有©某高校大学</span>
+            </div>
+            <div class="footer-di-box">
+                <span>邮编：XXXXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>地址：某某省某某市民安路XX号</span>
+            </div>
+            <div class="footer-di-box">
+                <span>意见反馈：zg@mgx.edu.cn</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中ICP备XXXX-XXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中公网安备XXXXXXX号</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

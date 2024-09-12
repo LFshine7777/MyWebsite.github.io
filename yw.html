@@ -1,0 +1,2912 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Mougaoxiao University</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+        a:hover {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        body,
+        html {
+            overscroll-behavior-x: none;
+            overscroll-behavior-y: none;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .ding {
+            position: relative;
+            width: 94%;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+            background-color: rgb(26, 69, 147);
+            float: left;
+        }
+
+        @media (min-width: 0px) and (max-width: 1000px) {
+            .ding {
+                display: none;
+            }
+        }
+
+        .d-left {
+            position: relative;
+            width: 460px;
+            margin-left: 1%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: '';
+        }
+
+        .d-right {
+            position: relative;
+            width: 280px;
+            margin-right: 1%;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .dlr {
+            position: relative;
+            width: auto;
+            height: 70%;
+            background-color: '';
+        }
+
+        .dd-s {
+            position: relative;
+            line-height: 20px;
+            width: 100%;
+            font-size: 16px;
+            color: #fff;
+            font-family: '微软雅黑';
+            top: 10%;
+            height: 70%;
+            background-color: '';
+        }
+
+        .dd-x {
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            bottom: 0px;
+            display: none;
+            background-color: '';
+        }
+
+        .dlr:hover .dd-x {
+            display: block;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .yuan-di {
+            position: relative;
+            width: 6%;
+            height: 40px;
+            background-color: rgb(26, 69, 147);
+            float: right;
+            right: 0px;
+            z-index: 99999999;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .yuan {
+            position: relative;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            background-color: '';
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1000px) {
+            .yuan-di {
+                position: fixed;
+                width: 40px;
+                top: 5px;
+                right: 60px;
+                z-index: 9999;
+            }
+            .yuan {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .yuan img {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+        }
+         /* 显示搜索框 */
+        .email input,
+        .yuan {
+            display: block;
+        }
+
+       .tanchuang-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 9999999;
+        }
+
+
+        /*弹窗样式*/
+        .popup {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .close-btn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50px;
+            right: 50px;
+            cursor: pointer;
+            background-image: url("close.png");
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            z-index: 999;
+        }
+
+        .close-btn:hover {
+            background-image: url("b-close.png");
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .show {
+            display: flex;
+        }
+ 
+        .ei-di {
+            position: relative;
+            width: 600px;
+            height: 60px;
+            background-color: '';
+            border-radius: 6px;
+            margin-top: -24vh;
+            transition: width ease 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 920px) {
+            .ei-di {
+                width: 96%;
+                margin-left: 2%;
+                margin-right: 2%;
+            }
+        }
+
+        /*输入框*/
+        .email-input {
+            position: relative;
+            width: 80%;
+            height: 98%;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: bolder;
+            font-family: '微软雅黑';
+            padding-left: 12px;
+        }
+
+        .ssk {
+            position: relative;
+            width: 20%;
+            height: 99%;
+            background-color: rgb(26, 47, 169);
+            color: #fff;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "微软雅黑";
+            cursor: pointer;
+            z-index: 999999999;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+
+        .head {
+            position: sticky;
+            top: 0px;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to bottom, rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0));
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .head.scroll {
+            background: rgb(26, 69, 147);
+        }
+
+        @media (min-width: 0px) and (max-width: 1000px) {
+            .head {
+                height: 50px;
+                background: rgb(26, 69, 147);
+            }
+        }
+
+        .logo {
+            position: relative;
+            width: 160px;
+            height: 50px;
+            left: 2%;
+        }
+
+        @media (min-width: 0px) and (max-width: 1000px) {
+            .logo {
+                height: 35px;
+                width: 100px;
+                left: 1.5%;
+            }
+        }
+
+        nav {
+            position: relative;
+            width: 700px;
+            height: 40px;
+            background-color: '';
+            right: 2%;
+            font-family: "微软雅黑";
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu {
+            position: relative;
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .menu-item {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            font-size: 20px;
+            line-height: 20px;
+            background-color: '';
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            color: black;
+        }
+
+        .menu-item:hover::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+        }
+
+        .submenu {
+            /*二级菜单*/
+            width: 800px;
+            list-style-type: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 64px;
+            display: none;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(250, 250, 250);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+        }
+
+        .submenu li {
+            width: 100%;
+        }
+
+        .submenu li a {
+            padding: 10px;
+            display: block;
+            color: black;
+            text-align: center;
+            font-weight: normal;
+            font-size: 14px;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        .submenu li a:hover {
+            cursor: pointer;
+            color: rgb(26, 69, 147);
+            background-color: unset;
+        }
+
+        @media (max-width: 1000px) {
+            nav {
+                display: none;
+            }
+        }
+
+        /* 汉堡菜单样式 */
+        .hamburger-icon {
+            display: none;
+            right: 20px;
+            cursor: pointer;
+            background-color: '';
+            cursor: pointer;
+            z-index: 9999999;
+        }
+
+        .hamburger-icon .bar {
+            /*三条线*/
+            width: 26px;
+            height: 2px;
+            margin: 6px;
+            background-color: #fff;
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            background-color: '';
+            z-index: 10000;
+            height: 100%;
+            width: 100%;
+            top: 50px;
+        }
+
+        .mo-di {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.8);
+        }
+
+        /* 显示菜单 */
+        .menu-overlay.show,
+        .menu-list.show {
+            display: block;
+        }
+
+        @media (max-width: 1000px) {
+            .hamburger-icon .bar {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .menu-overlay {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .hamburger-icon {
+                display: block;
+                position: absolute;
+            }
+        }
+
+        .mo {
+            position: relative;
+            width: 100%;
+            height: 37.5px;
+            font-size: 16px;
+            font-family: '微软雅黑';
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            padding-left: 2%;
+            border-bottom: 1px solid rgb(200, 200, 200);
+        }
+
+        .sdu {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            aspect-ratio: 1/1;
+            background-color: '';
+            font-size: 16px;
+            font-family: '微软雅黑';
+            color: #fff;
+            right: 116px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1001px) {
+
+            .shou-ssk,
+            .sdu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1000px) {
+
+            .shou-ssk,
+            .su {
+                display: block;
+            }
+        }
+
+        /*轮播图样式开始*/
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 55px;
+            height: 55px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #myCarousel {
+            top: 0;
+            position: fixed;
+        }
+
+        #myCarousel:hover .carousel-control-prev,
+        #myCarousel:hover .carousel-control-next {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("index/sp.png");
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("index/sn.png");
+        }
+
+        @media (min-width: 1001px) {
+            #myCarousel {
+                height: 100vh;
+            }
+
+            #myCarousel .carousel-inner {
+                height: 100%;
+            }
+
+            #myCarousel .carousel-item {
+                height: 100%;
+            }
+
+            #myCarousel .carousel-item img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+        .lo {
+            position: relative;
+            top: 100vh;
+            width: 100%;
+            background-color: skyblue;
+        }
+
+        @media (min-width: 0px) and (max-width: 1000px) {
+            .lo {
+                top: unset;
+            }
+        }
+
+        /*新闻*/
+        /*新闻*/
+        /*新闻*/
+        /*新闻*/
+        /*新闻*/
+        /*新闻*/
+        /*新闻*/
+        .xiaoxi {
+            position: relative;
+            width: 100%;
+            height: 610px;
+            background: linear-gradient(to right, #fff 50%, rgb(240, 240, 240) 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xiaoxi-di {
+            width: 94%;
+            max-width: 1500px;
+            height: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #fff;
+        }
+
+        .xx-box {
+            box-sizing: border-box;
+        }
+
+        .xx-box:nth-child(1) {
+            width: 66.6666%;
+            height: 20%;
+            background-color: '';
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .xx-box:nth-child(2) {
+            width: 33.3333%;
+            height: 20%;
+            background-color: rgb(26, 69, 147);
+            font-size: 20px;
+            color: #fff;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .xx-box:nth-child(3) {
+            width: 66.6666%;
+            height: 45%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .xx-box:nth-child(3) img:hover {
+            transform: scale(1.05);
+        }
+
+        .xx-box:nth-child(4) {
+            width: 33.3333%;
+            height: 45%;
+            background-color: rgb(100, 103, 118);
+            font-size: 18px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            font-family: '微软雅黑';
+        }
+
+        .xx-box:nth-child(5) {
+            width: 33.3333%;
+            height: 35%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background-color: '';
+            border-bottom: 1px solid rgb(200, 200, 200);
+            border-left: 1px solid rgb(200, 200, 200);
+            border-right: 0.5px solid rgb(200, 200, 200);
+        }
+
+        .xx-box:nth-child(6) {
+            width: 33.3333%;
+            height: 35%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background-color: '';
+            border-bottom: 1px solid rgb(200, 200, 200);
+            border-left: 0.5px solid rgb(200, 200, 200);
+            border-right: 0.5px solid rgb(200, 200, 200);
+        }
+
+        .xx-box:nth-child(7) {
+            width: 33.3333%;
+            height: 35%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background-color: '';
+            border-bottom: 1px solid rgb(200, 200, 200);
+            border-left: 0.5px solid rgb(200, 200, 200);
+            border-right: 1px solid rgb(200, 200, 200);
+        }
+
+        .xx-box:nth-child(5)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+            z-index: 1;
+            opacity: 0;
+            transition: width 0.5s, opacity 0.5s;
+        }
+
+        .xx-box:nth-child(5):hover::after {
+            width: 100%;
+            opacity: 1;
+        }
+
+        .xx-box:nth-child(5):hover .xx-box567-d1,
+        .xx-box:nth-child(5):hover #pl1 {
+            color: #fff;
+        }
+
+        .xx-box:nth-child(6)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+            z-index: 1;
+            opacity: 0;
+            transition: width 0.5s, opacity 0.5s;
+        }
+
+        .xx-box:nth-child(6):hover::after {
+            width: 100%;
+            opacity: 1;
+        }
+
+        .xx-box:nth-child(6):hover .xx-box567-d1,
+        .xx-box:nth-child(6):hover #pl1 {
+            color: #fff;
+        }
+
+        .xx-box:nth-child(7)::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+            z-index: 1;
+            opacity: 0;
+            transition: width 0.5s, opacity 0.5s;
+        }
+
+        .xx-box:nth-child(7):hover::after {
+            width: 100%;
+            opacity: 1;
+        }
+
+        .xx-box:nth-child(7):hover .xx-box567-d1,
+        .xx-box:nth-child(7):hover #pl1 {
+            color: #fff;
+        }
+
+        @media (max-width: 920px) {
+            .xiaoxi {
+                height: 1100px;
+            }
+
+            .xiaoxi-di {
+                height: 94%;
+            }
+
+            .xx-box:nth-child(1) {
+                width: 100%;
+                height: 10%;
+            }
+
+            .xx-box:nth-child(2) {
+                width: 100%;
+                height: 10%;
+                order: 999;
+                background-color: #fff;
+            }
+
+            .xx-box:nth-child(3) {
+                width: 100%;
+                height: 30%;
+            }
+
+            .xx-box:nth-child(4) {
+                width: 100%;
+                height: 17%;
+            }
+
+            .xx-box:nth-child(5),
+            .xx-box:nth-child(6),
+            .xx-box:nth-child(7) {
+                width: 100%;
+                height: 11%;
+            }
+        }
+
+        .xx-box2 {
+            width: 140px;
+            height: 40px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(26, 69, 147);
+            opacity: 1;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .xx-box2-x {
+            width: 140px;
+            display: block;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: rgb(26, 69, 147);
+            opacity: 1;
+            transform: translateY(86px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .xx-box:nth-child(2):hover .xx-box2 {
+            opacity: 1;
+            transform: translateY(-76px);
+        }
+
+        .xx-box:nth-child(2):hover .xx-box2-x {
+            display: block;
+            opacity: 1;
+            transform: translateY(-35px);
+        }
+
+        .xx-box3-o1 {
+            position: relative;
+            width: 80%;
+            height: auto;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .xx-box3-o1-x {
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            bottom: -10px;
+            background-color: rgb(26, 69, 147);
+            z-index: 2;
+        }
+
+        .xx-box3-t2 {
+            position: relative;
+            margin-top: 16px;
+            width: 80%;
+            height: auto;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .xx-box3-y4 {
+            position: relative;
+            width: 80%;
+            margin-top: 26px;
+            height: auto;
+            font-size: 14px;
+            color: rgb(200, 200, 200);
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .xx-box567-d1 {
+            position: relative;
+            width: 80%;
+            height: auto;
+            font-family: '微软雅黑';
+            font-size: 16px;
+            background-color: '';
+            z-index: 7;
+        }
+
+        #pl1 {
+            margin-top: 20px;
+            font-size: 20px;
+            color: rgb(26, 69, 147);
+        }
+
+        @media (max-width: 920px) {
+
+            .xx-box3-o1,
+            .xx-box3-t2,
+            .xx-box3-y4 {
+                width: 90%;
+            }
+
+            .xx-box3-t2 {
+                height: auto;
+            }
+
+            .xx-box3-y4 {
+                margin-top: 20px;
+            }
+
+            .xx-box567-d1 {
+                width: 90%;
+            }
+
+            #pl1 {
+                margin-top: unset;
+            }
+        }
+
+        .wenzi-tp {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url("yw/y2.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wenzi-tp span {
+            width: 73%;
+            font-size: 36px;
+            color: #fff;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 920px) {
+            .wenzi-tp span {
+                width: 70%;
+                text-align: center;
+            }
+        }
+
+        /*学习*/
+        /*学习*/
+        /*学习*/
+        /*学习*/
+        /*学习*/
+        /*学习*/
+        /*学习*/
+        .xuexi {
+            position: relative;
+            width: 100%;
+            height: 1510px;
+            background: linear-gradient(to right, #fff 50%, rgb(240, 240, 240) 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xuexi-di {
+            width: 94%;
+            height: 96%;
+            max-width: 1500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: '';
+        }
+
+        .xd-box {
+            box-sizing: border-box;
+        }
+
+        .xd-box:nth-child(1) {
+            width: 100%;
+            height: 7%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: '微软雅黑';
+        }
+
+        .xd-box:nth-child(2) {
+            width: 100%;
+            height: 23%;
+            background-color: #fff;
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .xd-box:nth-child(3) {
+            width: 100%;
+            height: 35%;
+            background-color: rgb(103, 107, 113);
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .xd-box:nth-child(4) {
+            width: 100%;
+            height: 31%;
+            background-color: '';
+            align-items: center;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 920px) {
+            .xuexi {
+                height: 2700px;
+            }
+
+            .xuexi-di {
+                height: 98%;
+            }
+
+            .xd-box:nth-child(1) {
+                height: 3%;
+            }
+
+            .xd-box:nth-child(2) {
+                height: 30%;
+            }
+
+            .xd-box:nth-child(3) {
+                height: 34%;
+            }
+
+            .xd-box:nth-child(4) {
+                height: 31%;
+            }
+        }
+
+        .xb2-left {
+            width: 62%;
+            height: 100%;
+            background-color: '';
+        }
+
+        .xb2-right {
+            width: 38%;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .xb2-right-center {
+            position: relative;
+            width: 80%;
+            height: auto;
+            background-color: '';
+            font-family: '微软雅黑';
+        }
+
+        .xrc {
+            margin-top: 30px;
+            width: 130px;
+            height: 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: '';
+        }
+
+        .xrc-l {
+            width: 40%;
+            height: 100%;
+            background-color: '';
+        }
+
+        @media (max-width: 920px) {
+            .xd-box:nth-child(2) {
+                flex-direction: column;
+            }
+
+            .xb2-left {
+                width: 100%;
+                height: 70%;
+            }
+
+            .xb2-right {
+                width: 100%;
+                height: 30%;
+            }
+
+            .xb2-right-center {
+                left: -5%;
+            }
+        }
+
+        .xb3-left {
+            width: 38%;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .xl-c {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            background-color: '';
+        }
+
+        .xlc-u1 {
+            position: relative;
+            width: 100%;
+            height: 15%;
+            background-color: '';
+            font-family: '微软雅黑';
+            display: flex;
+            align-items: center;
+        }
+
+        .xlc-i2 {
+            position: relative;
+            width: 100%;
+            height: 15%;
+            background-color: '';
+            font-family: '微软雅黑';
+            display: flex;
+            align-items: center;
+        }
+
+        .xlc-d3 {
+            position: relative;
+            width: 100%;
+            height: 35%;
+            background-color: '';
+            display: flex;
+            align-items: center;
+        }
+
+        .xlc-k4 {
+            position: relative;
+            width: 100%;
+            height: 35%;
+            background-color: '';
+        }
+
+        .shuxian {
+            position: absolute;
+            width: 1px;
+            height: 70%;
+            top: 24%;
+            left: 20px;
+            background-color: #fff;
+            z-index: 99;
+        }
+
+        .circle {
+            position: absolute;
+            aspect-ratio: 1/1;
+            height: 22px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            left: 2%;
+            z-index: 99;
+        }
+
+        #cir-o1 {
+            top: 20px;
+            left: 9.5px;
+        }
+
+        #cir-t2 {
+            top: 10px;
+            left: 9.5px;
+        }
+
+        #cir-h3 {
+            top: 10px;
+            left: 9.5px;
+        }
+
+        .circle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            border-radius: 50%;
+        }
+
+        .fac {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background-color: '';
+            left: 60px;
+            color: #fff;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cur-c1 {
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            background-color: '';
+            left: 60px;
+            top: 4px;
+            color: #fff;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cur {
+            position: absolute;
+            width: 220px;
+            height: 90px;
+            background-color: '';
+            top: 40px;
+            left: 60px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cg {
+            flex-grow: 1;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .c-yuan-o1 {
+            margin-top: -6px;
+            width: 6px;
+            height: 6px;
+            background-color: rgb(200, 200, 200);
+            border-radius: 50%;
+        }
+
+        .c-yuan-y2 {
+            margin-top: -6px;
+            width: 6px;
+            height: 6px;
+            background-color: rgb(200, 200, 200);
+            border-radius: 50%;
+        }
+
+        .c-yuan-t3 {
+            margin-top: -6px;
+            width: 6px;
+            height: 6px;
+            background-color: rgb(200, 200, 200);
+            border-radius: 50%;
+        }
+
+        .c-wenzi-o1 {
+            width: 200px;
+            height: 100%;
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .c-wenzi-y2 {
+            width: 200px;
+            height: 100%;
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .c-wenzi-t3 {
+            width: 200px;
+            height: 100%;
+            font-family: '微软雅黑';
+            background-color: '';
+        }
+
+        .cg:hover .c-yuan-o1 {
+            background-color: rgb(26, 69, 147);
+        }
+
+        .cg:hover .c-wenzi-o1 {
+            color: rgb(26, 69, 147);
+        }
+
+        .cg:hover .c-yuan-y2 {
+            background-color: rgb(26, 69, 147);
+        }
+
+        .cg:hover .c-wenzi-y2 {
+            color: rgb(26, 69, 147);
+        }
+
+        .cg:hover .c-yuan-t3 {
+            background-color: rgb(26, 69, 147);
+        }
+
+        .cg:hover .c-wenzi-t3 {
+            color: rgb(26, 69, 147);
+        }
+
+        .xb3-right {
+            width: 62%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        @media (max-width: 920px) {
+            .xd-box:nth-child(3) {
+                flex-direction: column-reverse;
+            }
+
+            .xb3-left {
+                width: 100%;
+                height: 50%;
+            }
+
+            .xb3-right {
+                width: 100%;
+                height: 50%;
+            }
+        }
+
+        .xb4-left {
+            width: 62%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .xb4-right {
+            width: 38%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .xr-di {
+            width: 90%;
+            height: 90%;
+            background-color: #fff;
+        }
+
+        @media (max-width: 920px) {
+            .xd-box:nth-child(4) {
+                flex-direction: column;
+            }
+
+            .xb4-left {
+                width: 100%;
+                height: 65%;
+            }
+
+            .xb4-right {
+                width: 100%;
+                height: 35%;
+            }
+        }
+
+        .xrd-shang {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: #fff;
+            font-family: '微软雅黑';
+            font-size: 26px;
+        }
+
+        .xrd-xia {
+            position: relative;
+            top: 5%;
+            width: 100%;
+            height: 80%;
+            background-color: #fff;
+        }
+
+
+        .xrdx-o1 {
+            position: relative;
+            width: 100%;
+            height: 8%;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 920px) {
+            .xrdx-o1 {
+                height: 11%;
+            }
+        }
+
+        .xo1 {
+            top: 10px;
+            width: 26px;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .xo1-yuan {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            background-color: rgb(200, 200, 200);
+            top: 4px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .xo1-yuan-n {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .xy2 {
+            width: calc(100% - 26px);
+            margin-left: 2%;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .xrdx-o1:hover .xo1-yuan {
+            background-color: rgb(26, 69, 147);
+        }
+
+        .xrdx-o1:hover .xo1-yuan-n {
+            display: none;
+        }
+
+        .xrdx-o1:hover .xy2 {
+            color: rgb(26, 69, 147);
+        }
+
+        .shuhengxian {
+            position: absolute;
+            width: 1px;
+            height: 66%;
+            background-color: #b7b7b7;
+            z-index: 99;
+            left: 9px;
+            top: 10px;
+        }
+
+        @media (max-width: 920px) {
+            .shuhengxian {
+                height: 80%;
+            }
+        }
+
+        .xdr-kb {
+            position: relative;
+            width: 100%;
+            height: 5%;
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 1100px) {
+            .xy2 {
+                font-size: 16px;
+            }
+        }
+
+        .xia-wenzi-tp {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url("yw/y5.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .xia-wenzi-tp-span {
+            position: absolute;
+            width: 73%;
+            top: 22%;
+            background-color: '';
+            font-size: 30px;
+            color: #fff;
+            font-family: '微软雅黑';
+            text-align: center;
+        }
+
+        @media (max-width: 920px) {
+            .xia-wenzi-tp-span {
+                width: 70%;
+                text-align: center;
+            }
+        }
+
+        .xwt-di {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            background-color: rgb(26, 69, 147);
+            bottom: 20%;
+            overflow: hidden;
+        }
+
+        .xwt {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            font-family: '微软雅黑';
+            display: grid;
+            place-items: center;
+            background-color: rgb(26, 69, 147);
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .xwt-x {
+            position: absolute;
+            bottom: -100%;
+            width: 200px;
+            height: 40px;
+            font-size: 20px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(26, 69, 147);
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .xwt-di:hover .xwt {
+            transform: translateY(-40px);
+        }
+
+        .xwt-di:hover .xwt-x {
+            transform: translateY(-40px);
+        }
+
+
+        /*研究*/
+        /*研究*/
+        /*研究*/
+        /*研究*/
+        /*研究*/
+        /*研究*/
+        /*研究*/
+        .yanjiu {
+            position: relative;
+            width: 100%;
+            height: 760px;
+            background: linear-gradient(to right, #fff 50%, rgb(240, 240, 240) 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yanjiu-di {
+            width: 100%;
+            height: 100%;
+            max-width: 1500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: '';
+        }
+
+        .yj-box {
+            box-sizing: border-box;
+        }
+
+        .yj-box:nth-child(1) {
+            width: 40%;
+            height: 35%;
+            background-color: #fff;
+            font-family: '微软雅黑';
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .yj-box:nth-child(2) {
+            width: 60%;
+            height: 35%;
+            background-color: rgb(104, 104, 104);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+        }
+
+        .yj-box:nth-child(3) {
+            width: 40%;
+            height: 65%;
+            background-color: rgb(26, 69, 147);
+
+        }
+
+        .yj-box:nth-child(4) {
+            width: 60%;
+            height: 65%;
+            background-color: rgb(55, 54, 54);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        @media screen and (max-width: 880px) {
+            .yanjiu {
+                position: relative;
+                height: 1560px;
+            }
+
+            .yj-box:nth-child(1) {
+                width: 100%;
+                height: 10%;
+                padding: 10px;
+            }
+
+            .yj-box:nth-child(2) {
+                width: 100%;
+                height: 12%;
+                padding: 10px;
+            }
+
+            .yj-box:nth-child(3) {
+                width: 100%;
+                height: 40%;
+            }
+
+            .yj-box:nth-child(4) {
+                width: 100%;
+                height: 38%;
+            }
+        }
+
+        .yb2 {
+            width: 100%;
+            background-color: '';
+            height: 40px;
+            font-family: '微软雅黑';
+            font-size: 30px;
+            color: #fff;
+        }
+
+        .yb-o1 {
+            position: relative;
+            width: 80%;
+            height: 45%;
+            margin-top: 40px;
+            background-color:  '';
+        }
+
+        .yb-y2 {
+            position: absolute;
+            width: 160px;
+            height: 40px;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            background-color:  '';
+        }
+
+        .life {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            font-size: 22px;
+            font-family: '微软雅黑';
+            background-color:  '';
+        }
+
+        .more {
+            position: absolute;
+            width: 120px;
+            float: right;
+            margin-top: 50px;
+            height: 30px;
+            font-size: 24px;
+            color: rgb(26, 69, 147);
+            background-color: '';
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .more::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 70px;
+            width: 50px;
+            height: 1px;
+            background-color: black;
+        }
+
+        .black {
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            bottom: 0px;
+            background-color: black;
+        }
+
+        @media (min-width: 0px) and (max-width: 880px) {
+            .yb-o1 {
+                margin-top: unset;
+                height: 90%;
+                top: 10%;
+                width: 100%;
+            }
+
+            .yb-y2 {
+                height: 30px;
+                font-size: 30px;
+            }
+
+            .life {
+                font-size: 18px;
+                top: 46px;
+                height: 20px;
+            }
+
+            .more {
+                width: 110px;
+                font-size: 16px;
+                top: 30px;
+                float: unset;
+            }
+
+            .more::before {
+                width: 40px;
+            }
+
+            .black {
+                display: none;
+            }
+        }
+
+        @media (min-width: 881px) and (max-width: 1100px) {
+            .yb-o1 {
+                height: 60%;
+            }
+
+            .life {
+                bottom: 50px;
+            }
+
+            .more {
+                top: 80px;
+                float: unset;
+            }
+
+            .black {
+                height: 14%;
+            }
+        }
+        @media (min-width: 1101px) {
+            .more {
+                top: -40px;
+                right: 0px;
+            }
+        }
+
+        .yb-t3 {
+            position: relative;
+            width: 100%;
+            height: 90%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("yw/y6.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .yb-t3-img {
+            margin-top: -110px;
+            width: 60px;
+            height: 60px;
+            background-color: '';
+        }
+
+        .yb-h4 {
+            position: relative;
+            width: 100%;
+            height: 10%;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+            font-size: 26px;
+            color: #fff;
+            font-family: '微软雅黑';
+        }
+
+        .grid-item-1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+            font-size: 30px;
+            color: #fff;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-item-2 {
+            width: 100%;
+            height: 100%;
+            background-color: '';
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item-2:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 0px) and (max-width: 880px) {
+            .grid-item-1 {
+                width: 100%;
+                height: 250px;
+            }
+
+            .grid-item-2 {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+
+        .footer {
+            position: relative;
+            width: 100%;
+            height: 290px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(48, 42, 41);
+        }
+
+        .footer-di {
+            width: 100%;
+            height: 100%;
+            max-width: 1500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: '';
+        }
+
+        .fd-box {
+            box-sizing: border-box;
+        }
+
+        .fd-box {
+            width: 33.3333%;
+            height: 100%;
+            background-color: rgb(58, 47, 44);
+        }
+
+        .fd-box:nth-child(1) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            border-bottom: 1px solid rgb(60, 60, 60);
+        }
+
+        .fd-box:nth-child(2) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            border-left: 1px solid rgb(60, 60, 60);
+            border-right: 1px solid rgb(60, 60, 60);
+            border-bottom: 1px solid rgb(60, 60, 60);
+        }
+
+        .fd-box:nth-child(3) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px;
+            border-bottom: 1px solid rgb(60, 60, 60);
+        }
+
+        @media (max-width: 870px) {
+            .footer {
+                height: 320px;
+            }
+
+            .fd-box:nth-child(1) {
+                width: 100%;
+                height: 27%;
+                padding: 10px;
+            }
+
+            .fd-box:nth-child(2) {
+                width: 100%;
+                height: 40%;
+                padding: 10px;
+            }
+
+            .fd-box:nth-child(3) {
+                width: 100%;
+                height: 33%;
+                padding: 10px;
+            }
+        }
+
+        .fd-tw-shang {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            font-family: '微软雅黑';
+            color: rgb(200, 200, 200);
+            font-size: 22px;
+            background-color: '';
+        }
+
+        .fd-tw-di {
+            margin-top: 5%;
+            width: 100%;
+            height: auto;
+            background-color: '';
+            flex-wrap: wrap;
+            gap: 30px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .fd-tw {
+            box-sizing: border-box;
+            height: 20px;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 870px) {
+            .fd-tw-shang {
+                height: 40%;
+            }
+
+            .fd-tw-di {
+               margin-top: unset;
+               gap: 10px;
+            }
+
+            .fd-tw {
+                margin-top: 0px;
+            }
+
+        }
+
+        .fd-tw-d {
+            box-sizing: border-box;
+            height: 20px;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fd-t {
+            width: 15px;
+            height: 40%;
+            background-image: url("yw/y12.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-color: '';
+        }
+
+        .fd-t img {
+            position: relative;
+            top: -6px;
+        }
+
+        .fd-w {
+            width: auto;
+            margin-left: 6px;
+            height: 100%;
+            font-size: 14px;
+            font-family: '微软雅黑';
+            color: rgb(200, 200, 200);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: '';
+        }
+
+        @media (max-width: 870px) {
+            #one {
+                margin-top: 14px;
+            }
+            #two {
+                margin-top: 7px;
+            }
+            .fd-tw-d {
+                margin-top: 0px;
+            }
+        }
+
+        @media (min-width: 871px) and (max-width: 1148px) {
+            .fd-tw-d {
+                height: 40px;
+            }
+        }
+
+        @media (min-width: 1360px) {
+            .fd-w {
+                font-size: 16px;
+            }
+        }
+
+        .it {
+            width: 50px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255, 0.3);
+        }
+
+        .it img {
+            position: relative;
+            width: 60%;
+            height: 60%;
+            left: 20%;
+            top: 20%;
+        }
+        @media (max-width: 870px) {
+            #three {
+                margin-top: 10px;
+            }
+            .it {
+                width: 30px;
+            }
+            .it img {
+                top:7%;
+            }
+        }
+
+
+        .yedi {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(48, 42, 41);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yd {
+            width: 70%;
+            background-color: rgb(48, 42, 41);
+            height: auto;
+            color: #fff;
+            font-size: 16px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ding">
+        <div class="d-left">
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Students</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Faculty & Staff</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Alumni</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Visitors</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Media</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+        </div>
+        <div class="d-right">
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>ITS</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>Library</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                    <p>MGXHSC</p>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+            <div class="dlr">
+                <div class="dd-s">
+                   <a href="index.html" target="_blank">
+                        <p>中文</p>
+                   </a>
+                </div>
+                <div class="dd-x"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--搜索框-->
+    <div class="yuan-di">
+        <div class="yuan" onclick="toggleSearchPopup()" id="ssContainer">
+            <img id="ssImage" src="sousuo-c.png">
+        </div>
+        <div class="tanchuang-overlay" onclick="closePopup()">
+            <div class="popup" onclick="event.stopPropagation()">
+                <div class="ei-di">
+                    <input type="text" id="emailInput" placeholder="Search......." class="email-input">
+                    <div class="ssk">搜索</div>
+                </div>
+            </div>
+            <span class="close-btn" onclick="event.stopPropagation(); closeSearchPopup()"></span>
+        </div>
+    </div>
+
+
+    <div class="head">
+        <div class="logo">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">About</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">Study</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">News</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">Research </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">Collaboration</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" style="color: #fff;" target="_blank">Campus</a>
+                </li>
+            </ul>
+        </nav>
+        <!--汉堡菜单三条杠-->
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <!--汉堡菜单内部菜单-->
+        <div class="menu-overlay">
+            <div class="mo-di">
+                <div class="mo">About</div>
+                <div class="mo">Study</div>
+                <div class="mo">News</div>
+                <div class="mo">Research</div>
+                <div class="mo">Collaboration</div>
+                <div class="mo">Campus</div>
+                <div class="mo" style="background-color: rgb(26, 69, 147); color: #fff;">Students &nbsp; Faculty & Staff
+                    &nbsp; Alumni &nbsp; Visitors &nbsp; Media</div>
+                <div class="mo" style="background-color: rgb(26, 69, 147); color: #fff; border-bottom: unset;">ITS
+                    &nbsp; Library &nbsp; | &nbsp; PKUHSC</div>
+            </div>
+        </div>
+        <div class="shou-ssk"></div>
+        <div class="sdu">
+            <a href="index.html" target="_blank">
+                <span>中文</span>
+            </a>
+        </div>
+    </div>
+
+    <!--轮播图-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="yw/l1.jpg" alt="Image 1" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="yw/l2.jpg" alt="Image 2" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="yw/l3.jpg" alt="Image 3" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="yw/l4.jpg" alt="Image 4" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="yw/l5.jpg" alt="Image 5" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="yw/l6.jpg" alt="Image 6" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <!--内容-->
+    <div class="lo" id="lo">
+        <div class="xiaoxi">
+            <div class="xiaoxi-di">
+                <div class="xx-box">
+                    <h1 style="font-size: 26px;">NEWS</h1>
+                    <h2 style="font-size: 19px;">Staying up-to-date with what's happening at MGX</h2>
+                </div>
+                <div class="xx-box">
+                    <div class="xx-box2">
+                        <span style="font-style: italic;">Read More</span>
+                    </div>
+                    <div class="xx-box2-x">
+                        <span style="font-style: italic;">Read More</span>
+                    </div>
+                </div>
+                <div class="xx-box">
+                    <img src="yw/y1.jpg" width="100%" height="100%" style="object-fit: cover;">
+                </div>
+                <div class="xx-box">
+                    <div class="xx-box3-o1">
+                        <span>December 28, 2023</span>
+                        <div class="xx-box3-o1-x"></div>
+                    </div>
+                    <div class="xx-box3-t2">
+                        <span>MGX News Yearender | Unforgettable moments from 2023, in pic...</span>
+                    </div>
+                    <div class="xx-box3-y4">
+                        <span>Goodbye, 2023</span>
+                    </div>
+                </div>
+                <div class="xx-box">
+                    <div class="xx-box567-d1">
+                        School leaders extend Spring
+                        Festival greetings to students,
+                        faculty, and staff members<br>
+                        <p id="pl1">February 09, 2024</p>
+                    </div>
+                </div>
+                <div class="xx-box">
+                    <div class="xx-box567-d1">
+                        School leaders extend Spring
+                        Festival greetings to students,
+                        faculty, and staff members<br>
+                        <p id="pl1">February 09, 2024</p>
+                    </div>
+                </div>
+                <div class="xx-box">
+                    <div class="xx-box567-d1">
+                        School leaders extend Spring
+                        Festival greetings to students,
+                        faculty, and staff members<br>
+                        <p id="pl1">February 09, 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wenzi-tp">
+            <span>A historic university shaping the future</span>
+        </div>
+
+        <div class="xuexi">
+            <div class="xuexi-di">
+                <div class="xd-box">
+                    <h1>STUDY</h1>
+                    <h2 style="font-size: 18px;">Educating bright minds with world-class academics</h2>
+                </div>
+                <div class="xd-box">
+                    <div class="xb2-left">
+                        <img src="yw/y3.jpg" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="xb2-right">
+                        <div class="xb2-right-center">
+                            <h2>Admissions</h2>
+                            <h3 style="margin-top: 20px; color: rgb(26, 69, 147);">
+                                Apply Now
+                            </h3>
+                            <div class="xrc">
+                                <div class="xrc-l">
+                                    <img src="yw/prev1.png" width="90%" height="100%">
+                                </div>
+                                <div class="xrc-l">
+                                    <img src="yw/next1.png" width="90%" height="100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xd-box">
+                    <div class="xb3-left">
+                        <div class="xl-c">
+                            <div class="shuxian"></div>
+                            <div class="xlc-u1">
+                                <span style="font-size: 26px; color: #fff;">Teaching & Learning</span>
+                            </div>
+                            <div class="xlc-i2">
+                                <div class="circle" id="cir-o1"></div>
+                                <div class="fac">Faculties</div>
+                            </div>
+                            <div class="xlc-d3">
+                                <div class="circle" id="cir-t2"></div>
+                                <div class="cur-c1">Courses</div>
+                                <div class="cur">
+                                    <div class="cg">
+                                        <div class="c-yuan-o1"></div>
+                                        <div class="c-wenzi-o1">All Courses</div>
+                                    </div>
+                                    <div class="cg">
+                                        <div class="c-yuan-y2"></div>
+                                        <div class="c-wenzi-y2">English-taught Courses</div>
+                                    </div>
+                                    <div class="cg">
+                                        <div class="c-yuan-t3"></div>
+                                        <div class="c-wenzi-t3">Online Courses</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="xlc-k4">
+                                <div class="circle" id="cir-h3"></div>
+                                <div class="cur-c1">Education</div>
+                                <div class="cur">
+                                    <div class="cg">
+                                        <div class="c-yuan-o1"></div>
+                                        <div class="c-wenzi-o1">Undergraduate Education</div>
+                                    </div>
+                                    <div class="cg">
+                                        <div class="c-yuan-y2"></div>
+                                        <div class="c-wenzi-y2">Graduate Education</div>
+                                    </div>
+                                    <div class="cg">
+                                        <div class="c-yuan-t3"></div>
+                                        <div class="c-wenzi-t3">International Students</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xb3-right">
+                        <img src="yw/y4.png" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="xd-box">
+                    <div class="xb4-left">
+                        <img src="yw/y11.jpeg" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="xb4-right">
+                        <div class="xr-di">
+                            <div class="xrd-shang">International Flagship Programs</div>
+                            <div class="xrd-xia">
+                                <div class="shuhengxian"></div>
+                                <div class="xrdx-o1">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">HSBC Business School (PHBS)</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                                <div class="xrdx-o1">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">Mougaoxiao Academy</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                                <div class="xrdx-o1">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">Belt & Road Institute</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                                <div class="xrdx-o1">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">School of Transnational Law</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                                <div class="xrdx-o1">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">MGX International Summer Institute</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                                <div class="xrdx-o1" style="height: auto;">
+                                    <div class="xo1">
+                                        <div class="xo1-yuan">
+                                            <div class="xo1-yuan-n"></div>
+                                        </div>
+                                    </div>
+                                    <div class="xy2">Institute of South-South Cooperation and Development</div>
+                                </div>
+                                <div class="xdr-kb"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xia-wenzi-tp">
+            <div class="overlay">
+                <div class="xia-wenzi-tp-span">
+                    RESEARCH<br>
+                    <p style="font-size: 20px;">Transforming academic innovation into real-world solutions</p>
+                </div>
+                <div class="xwt-di" onmouseover="moveElements()" onmouseout="resetElements()">
+                    <div class="xwt">
+                        <span style="font-style: italic;">Read More</span>
+                    </div>
+                    <div class="xwt-x">
+                        <span style="font-style: italic;">Read More</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yanjiu">
+            <div class="yanjiu-di">
+                <div class="yj-box">
+                    <div class="yb-o1">
+                        <div class="yb-y2">
+                            <span>CAMPUS</span>
+                        </div>
+                        <div class="more">
+                            <p>More</p>
+                        </div>
+                        <div class="life">
+                            <p>Getting a glimpse of campus life at MGX</p>
+                        </div>
+                    </div>
+                    <div class="black"></div>
+                </div>
+                <div class="yj-box">
+                    <div class="yb2">MGX Retail and Service Guide<br></div>
+                    <p style="font-family: '微软雅黑'; font-size: 16px; color: #fff; margin-top: 16px;">Being part of
+                        Mougaoxiao
+                        University means having access to a wide range of retail stores and services on campus.
+                        Here you can find information on campus services you may need, including bookstores, banking,
+                        mail
+                        delivery services, to name but a few.
+                    </p>
+                </div>
+                <div class="yj-box">
+                    <div class="yb-t3">
+                        <div class="yb-t3-img">
+                            <img src="yw/y10.png" width="100%" height="100%" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="yb-h4">
+                        <span>View More</span>
+                    </div>
+                </div>
+                <div class="yj-box">
+                    <div class="grid-item-1">
+                        Photos
+                    </div>
+                    <div class="grid-item-2">
+                        <img src="yw/y7.jpg" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="grid-item-2">
+                        <img src="yw/y8.jpg" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                    <div class="grid-item-2">
+                        <img src="yw/y9.jpg" width="100%" height="100%" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-di">
+                <div class="fd-box">
+                    <div class="fd-tw-shang">Quick Links</div>
+                    <div class="fd-tw-di" id="one">
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                About MGX
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Library
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Faculties
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Map
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Admissions
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                International Students Division
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fd-box">
+                    <div class="fd-tw-shang">Contact us</div>
+                    <div class="fd-tw-di" id="two">
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Office of the President
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Office of International Relations
+                            </div>
+                        </div>
+                        <div class="fd-tw-d">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Office of Hong Kong, Macao & Taiwan Affairs
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Giving
+                            </div>
+                        </div>
+                        <div class="fd-tw">
+                            <div class="fd-t"></div>
+                            <div class="fd-w">
+                                Jobs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fd-box">
+                    <div class="fd-tw-shang">Follow us</div>
+                    <div class="fd-tw-di" style="gap: 10px;" id="three">
+                        <div class="it">
+                            <img src="yw/facebook.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/tuite.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/instagram.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/ins.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/bilibili.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/douyin.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/youtube.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/weibo.svg">
+                        </div>
+                        <div class="it">
+                            <img src="yw/weixin.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yedi">
+            <div class="yd">
+                Copyright © Peking University All rights reserved|No.5 Yiheyuan Road, Haidian District, Beijing 100871,
+                P.R.China
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>  //lo与ding及yuan-di
+    window.addEventListener('scroll', function () {
+     // 检查窗口宽度是否小于1000px
+     if (window.innerWidth < 1000) {
+         return; // 如果窗口宽度小于1000px，则直接返回，不执行下面的代码
+     }
+ 
+     var lo = document.getElementById('lo'); // 获取 id 为 'lo' 的元素
+     var ding = document.querySelector('.ding'); // 获取类名为 'ding' 的元素
+     var yuanDi = document.querySelector('.yuan-di'); // 获取类名为 'yuan-di' 的元素
+ 
+     // 处理 ding 元素和 yuan-di 元素
+     var elementsToProcess = [ding, yuanDi];
+     elementsToProcess.forEach(function(element) {
+         if (window.scrollY > 0) {
+             element.style.height = '0';
+             var children = element.children;
+             for (var i = 0; i < children.length; i++) {
+                 children[i].style.visibility = 'hidden';
+             }
+         } else {
+             element.style.height = '40px';
+             var children = element.children;
+             for (var i = 0; i < children.length; i++) {
+                 children[i].style.visibility = 'visible';
+             }
+         }
+     });
+ 
+     if (window.scrollY > 0) {
+         lo.style.position = 'relative';
+         lo.style.top = '0px';
+         lo.style.transition = 'top 0.5s';
+     } else {
+         lo.style.position = 'relative';
+         lo.style.top = '100vh';
+     }
+ });
+ 
+ </script>
+
+<script>   // 更改高度和背景颜色（圆）
+    const circleO = document.getElementById('cir-o1');
+    const circleT = document.getElementById('cir-t2');
+    const circleH = document.getElementById('cir-h3');
+
+    // 添加鼠标悬停事件监听器
+    document.querySelector('.xlc-i2').addEventListener('mouseenter', function () {
+        // 更改高度和背景颜色
+        circleO.style.height = '24px';
+        circleO.style.backgroundColor = 'rgb(26, 69, 147)';
+        // 向左移动0.5px
+        circleO.style.left = '9px';
+    });
+
+    document.querySelector('.xlc-i2').addEventListener('mouseleave', function () {
+        // 鼠标移开时恢复原样式
+        circleO.style.height = '22px';
+        circleO.style.backgroundColor = 'rgb(255, 255, 255)';
+        // 恢复原位置
+        circleO.style.left = '9.5px';
+    });
+
+    document.querySelector('.xlc-d3').addEventListener('mouseenter', function () {
+        // 更改高度和背景颜色
+        circleT.style.height = '24px';
+        circleT.style.backgroundColor = 'rgb(26, 69, 147)';
+        // 向左移动0.5px
+        circleT.style.left = '9px';
+    });
+
+    document.querySelector('.xlc-d3').addEventListener('mouseleave', function () {
+        // 鼠标移开时恢复原样式
+        circleT.style.height = '22px';
+        circleT.style.backgroundColor = 'rgb(255, 255, 255)';
+        // 恢复原位置
+        circleT.style.left = '9.5px';
+    });
+
+    document.querySelector('.xlc-k4').addEventListener('mouseenter', function () {
+        // 更改高度和背景颜色
+        circleH.style.height = '24px';
+        circleH.style.backgroundColor = 'rgb(26, 69, 147)';
+        // 向左移动0.5px
+        circleH.style.left = '9px';
+    });
+
+    document.querySelector('.xlc-k4').addEventListener('mouseleave', function () {
+        // 鼠标移开时恢复原样式
+        circleH.style.height = '22px';
+        circleH.style.backgroundColor = 'rgb(255, 255, 255)';
+        // 恢复原位置
+        circleH.style.left = '9.5px';
+    });
+
+</script>
+
+<script>  //myCarousel
+    window.addEventListener('resize', function () {
+        var myCarousel = document.getElementById('myCarousel');
+
+        if (window.innerWidth < 1000) {
+            myCarousel.style.position = 'relative';
+        } else {
+            myCarousel.style.position = 'fixed';
+        }
+    });
+
+    // 页面加载时先执行一次，确保初始状态正确
+    window.addEventListener('load', function () {
+        var myCarousel = document.getElementById('myCarousel');
+
+        if (window.innerWidth < 1000) {
+            myCarousel.style.position = 'relative';
+        } else {
+            myCarousel.style.position = 'fixed';
+        }
+    });
+</script>
+
+<script>  //汉堡菜单
+    function toggleMenu() {
+        var menuOverlay = document.querySelector(".menu-overlay");
+        var menuList = document.querySelector(".menu-list");
+
+        menuOverlay.style.display = menuOverlay.style.display === 'block' ? 'none' : 'block';
+        if (menuList) {
+            menuList.classList.toggle("show");
+        }
+
+        // 切换菜单时禁止或允许页面滚动
+        document.body.style.overflow = menuOverlay.style.display === 'block' ? 'hidden' : 'auto';
+    }
+
+    window.onresize = function () {
+        var menuOverlay = document.querySelector(".menu-overlay");
+        var menuList = document.querySelector(".menu-list");
+        var hamburgerBars = document.querySelectorAll(".hamburger-icon .bar");
+
+        if (window.innerWidth > 1000 && menuOverlay.style.display === 'block') {
+            menuOverlay.style.display = 'none';
+            if (menuList) {
+                menuList.classList.remove("show");
+            }
+
+            // 菜单关闭时允许页面滚动
+            document.body.style.overflow = 'auto';
+        }
+
+        if (window.innerWidth > 1000) {
+            hamburgerBars.forEach(function (bar) {
+                bar.style.display = 'none';
+            });
+        } else {
+            hamburgerBars.forEach(function (bar) {
+                bar.style.display = 'block';
+            });
+        }
+    };
+</script>
+
+<script>  //弹窗
+           function toggleSearchPopup() {
+            var searchOverlay = document.querySelector(".tanchuang-overlay");
+            var body = document.body;
+
+            searchOverlay.classList.toggle("show");
+
+            // Toggle the no-scroll class on the body
+            if (searchOverlay.classList.contains("show")) {
+                body.classList.add("no-scroll");
+            } else {
+                body.classList.remove("no-scroll");
+            }
+        }
+
+        function closeSearchPopup() {
+            var searchOverlay = document.querySelector(".tanchuang-overlay");
+            var body = document.body;
+
+            searchOverlay.classList.remove("show");
+
+            // Remove the no-scroll class from the body
+            body.classList.remove("no-scroll");
+        }
+</script>
+
+<script>  //head滚动效果
+   window.addEventListener('scroll', function () {
+    var scrollDistance = window.scrollY;
+    var head = document.querySelector('.head');
+
+    if (scrollDistance > 0) {
+        head.classList.add('scroll');
+    } else {
+        head.classList.remove('scroll');
+    }
+});
+
+</script>
+
+</html>
