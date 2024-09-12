@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="30" viewBox="0 0 32 30">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9983fe"/>
+      <stop offset="1" stop-color="#7c66f6"/>
+    </linearGradient>
+  </defs>
+  <g id="application_default_-_13" data-name="application default - 13" transform="translate(-182 -128)">
+    <rect id="矩形_153" data-name="矩形 153" width="32" height="30" transform="translate(182 128)" fill="#fff"/>
+    <path id="数据6" d="M107.158,41.159l-12.1,6.986,12.181,7.032,12.1-6.986ZM93.884,64.149l12.142,7.01V57.093l-12.142-7.01Zm14.406-6.965V71.159l12.142-7.01V50.175Z" transform="translate(90.842 86.841)" fill="url(#linear-gradient)"/>
+    <rect id="矩形_188" data-name="矩形 188" width="32" height="30" transform="translate(182 128)" fill="none" opacity="0.58"/>
+  </g>
+</svg>
