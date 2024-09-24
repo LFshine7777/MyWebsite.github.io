@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助学金简介</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(245, 245, 245);
+            font-family: '微软雅黑';
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+        .yingh {
+            position: relative;
+            width: 100%;
+            height: 26px;
+            background-color: rgba(26, 69, 147, 1)
+        }
+        .yh {
+            font-size: 14px;
+            color: rgb(180, 180, 180);
+            margin-top: 2px;
+        }
+        .yh:hover {
+            color: #fff;
+        }
+        .one-yh {
+            position: absolute;
+            width: 170px;
+            height: 100%;
+            right: calc(5% + 130px);
+            background-color: '';
+        }
+        .two-yh {
+            position: absolute;
+            width: 130px;
+            height: 100%;
+            right: 5%;
+            background-color: '';
+        }
+        #h {
+            position: sticky;
+            top: 0;
+        }
+        header {
+            position: sticky;
+            top: 0px;
+            background-color: rgb(222, 234, 255);
+            height: 80px;
+            z-index: 9;
+        }
+        #left {
+            position: absolute;
+            width: 350px;
+            height: 60px;
+            background-color: '';
+        }
+        .logo {
+            margin-top: 10px;
+            margin-left: 40px;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .right-si {
+            position: absolute;
+            top: 24px;
+            right: 30px;
+            width: 500px;
+            height: 40px;
+            background-color: '';
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            font-size: 20px;
+        }
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            float: right;
+            right: 0;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        nav ul li a:hover {
+            color: rgba(26, 69, 147, 1);
+            text-decoration: none;
+        }
+        #han-h {
+            position: absolute;
+            right: 40px;
+            top: 24px;
+        }
+        .hamburger {
+            display: none;
+        }
+        .hamburger .bar {
+            width: 35px;
+            height: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 1000px) {
+            nav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: skyblue;
+            background-image: url("学生资助/x4.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .xiazai {
+            position: relative;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            border-bottom: 1px solid rgb(230, 230, 230);
+        }
+        .xiawenzi {
+            position: absolute;
+            width: 160px;
+            height: 80%;
+            top: 10%;
+            left: 60px;
+            background-color: '';
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            .x {
+                margin-top: 10px;
+            }
+        }
+        .xiayw {
+            position: absolute;
+            width: 270px;
+            height: 30%;
+            top: 42%;
+            left: 226px;
+            background-color: '';
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            color: rgb(180, 180, 180);
+            .x {
+                margin-top: 10px;
+            }
+        }
+        .da {
+            margin-top: 30px;
+            width: 100%;
+                background-color: rgb(245, 245, 245);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+        }
+        .da-box {
+                max-width: 1300px;
+                top: 20px;
+                background-color: #fff;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            @media (min-width: 1001px) and (max-width: 1400px) {
+            .da-box {
+                width: 86%;
+                margin: 10px 0;
+            }
+            }
+            @media (max-width: 1000px) {
+            .da-box {
+                width: 86%;
+                margin: 10px 0;
+            }
+            }
+            .db-1 {
+                position: relative;
+                width: 90px;
+                height: 34px;
+                font-size: 26px;
+                background-color: '';
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .db-2 {
+                position: relative;
+                width: 100%;
+                height: 1px;
+                top: 12px;
+                background-color: rgb(230, 230, 230);
+            }
+            .db-3 {
+                margin-top: 40px;
+                width: 100%;
+                background-color: '';
+            }
+            .db-4 {
+                position: relative;
+                width: 135px;
+                height: 22px;
+                margin-top: 30px;
+                font-size: 18px;
+                background-color: '';
+            }
+            .db-5 {
+                margin-top: 40px;
+                width: 100%;
+                background-color: '';
+            }
+            .db-6 {
+                position: relative;
+                width: 162px;
+                height: 22px;
+                margin-top: 30px;
+                font-size: 18px;
+                background-color: '';
+            }
+            .db-7 {
+                margin-top: 40px;
+                width: 100%;
+                background-color: '';
+            }
+            .db-8 {
+                position: relative;
+                width: 162px;
+                height: 22px;
+                margin-top: 30px;
+                font-size: 18px;
+                background-color: '';
+            }
+            .db-9 {
+                margin-top: 40px;
+                width: 100%;
+                background-color: '';
+            }
+            .db-10 {
+                position: relative;
+                width: 162px;
+                height: 22px;
+                margin-top: 30px;
+                font-size: 18px;
+                background-color: '';
+            }
+            .db-11 {
+                margin-top: 40px;
+                width: 100%;
+                background-color: '';
+            }
+            #sj {
+                text-indent: 32px;
+                font-size: 16px;
+                color: rgb(100, 100, 100);
+            }
+
+       .footer {
+            position: relative;
+            top: 60px;
+            width: 100%;
+            height: 270px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-center {
+            position: absolute;
+            width: 97%;
+            height: 75%;
+            background-color: '';
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .footer-box {
+            margin: 1%;
+            padding: 20px;
+            background-color: '';
+            box-sizing: border-box;
+        }
+        .footer-box:nth-child(1),
+        .footer-box:nth-child(2) {
+            width: 26%;
+        }
+        .footer-box:nth-child(3) {
+            width: 38%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        @media screen and (max-width: 999px) {
+            .footer {
+                height: 700px;
+            }
+
+            .footer-center {
+                height: 85%;
+            }
+
+            .footer-box:nth-child(1),
+            .footer-box:nth-child(2),
+            .footer-box:nth-child(3) {
+                width: 92%;
+                margin: 10px;
+            }
+        }
+        .f1 {
+            position: relative;
+            top: 0;
+            width: 79%;
+            height: 22px;
+            background-color: '';
+            font-size: 18px;
+        }
+        .f2 {
+            position: relative;
+            top: 4px;
+            width: 100%;
+            height: 1.5px;
+            background-color: rgb(180, 180, 180);
+        }
+        .f2-1 {
+            position: absolute;
+            width: 16%;
+            height: 200%;
+            background-color: rgba(26, 69, 147, 1);
+            left: 0;
+        }
+        .f3 {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            height: 70%;
+            background-color: '';
+        }
+        .f3-1 {
+            position: absolute;
+            top: 0%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-1:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-2 {
+            position: absolute;
+            top: 25%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-2:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-3 {
+            position: absolute;
+            top: 50%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-3:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-4 {
+            position: absolute;
+            top: 75%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-4:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f4 {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            height: 70%;
+            background-color: '';
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .f4-1 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-1-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/we.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-1-2 {
+            position: relative;
+            left: -12%;
+            width: 124%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .f4-2 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-2-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/me.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-2-2 {
+            position: relative;
+            left: -10%;
+            width: 120%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .f4-3 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-3-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/f.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-3-2 {
+            position: relative;
+            left: -10%;
+            width: 120%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .yedi {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            top: 60px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .yedi-c {
+            position: absolute;
+            width: 250px;
+            height: 20px;
+            background-color: '';
+            font-size: 15px;
+            color: rgb(180, 180, 180);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yingh">
+        <div class="one-yh">
+            <p class="yh">
+                <a href="http://xszz.chsi.com.cn/" target="_blank">全国高校资助信息系统</a>
+            </p>
+        </div>
+        <div class="two-yh">
+            <p class="yh">
+                <a href="https://sls.cdb.com.cn/" target="_blank">国开行在线服务系统</a>
+            </p>
+        </div>
+    </div>
+    <header>
+        <a href="#" class="logo" id="left">
+            <img src="学生资助/学生logo.png">
+        </a>
+        <nav class="right-si">
+            <ul>
+                <li><a href="xszzzx.html">首页</a></li>
+                <li><a href="qgjxjj.html">勤工俭学</a></li>
+                <li><a href="zxjjj.html">助学金</a></li>
+                <li><a href="zxdkjj.html">助学贷款</a></li>
+                <li><a href="qgjx.html">下载专区</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="han-h">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <div class="tp"></div>
+    <div class="xiazai">
+        <div class="xiawenzi">
+            <p class="x">助学金简介</p>
+        </div>
+        <div class="xiayw">
+            <p>INTRODUCTION  TO  FINANCIAL  AID</p>
+        </div>
+    </div>
+    <div class="da">
+        <div class="da-box">
+            <div class="db-1">
+                <p>助学金</p>
+            </div>
+            <div class="db-2"></div>
+            <div class="db-3">
+                    <p id="sj"> 某高校大学不断拓宽社会捐赠渠道和各方资源设立几十项助学金，
+                        及时发放给家庭经济困难学生，基本解决其在校的学宿费和基本生活费用。
+                        助学金的资金来源分别来自中央财政、地方财政、学校投入、校基金会筹集等。
+                        经过多年发展，某高校大学助学金的种类也逐渐从需求型资助延伸到发展型资助，在
+                        奖励科研成果、攻读双学位、鼓励公益服务等方面同时设置多项助学金，资助模式取得重大突破，
+                        确保每一个家庭经济困难学生的学习、生活和发展。</p>
+            </div>
+            <div class="db-4">
+                <p>一、国家助学金</p>
+            </div>
+            <div class="db-5">
+                <p id="sj">国家助学金是为了体现党和政府对普通本科高校、高等职业学校和高等专科学校家庭经济困难学生的关怀，
+                    由中央与地方政府共同出资设立的，用于资助家庭经济困难的全日制普通本专科（含高职、第二学士学位）在校学生的助学金。
+                    每人每年3300元，分十个月发放。</p>
+            </div>
+            <div class="db-6">
+                <p>二、国家励志奖学金</p>
+            </div>
+            <div class="db-7">
+                <p id="sj">国家励志奖学金是为了激励普通本科高校、高等职业学校和高等专科学校的家庭经济困难学生勤奋学习、努力进取，
+                    在德、智、体、美等方面全面发展，由中央和地方政府共同出资设立的，奖励资助品学兼优的家庭经济困难学生的奖学金。
+                    每人每年5000元。</p>
+            </div>
+            <div class="db-8">
+                <p>三、五四助学金</p>
+            </div>
+            <div class="db-9">
+                <p id="sj">某高校大学为帮助家庭经济困难学生更好地完成学业，出资设立五四助学金。</p>
+            </div>
+            <div class="db-10">
+                <p>四、社会捐赠助学金</p>
+            </div>
+            <div class="db-11">
+                <p id="sj">社会各界爱心人士一直以来关心和支持北京大学的发展，纷纷捐资设立助学金，
+                    额度从4000元到1万元不等，支持帮助经济困难学生顺利完成学业，多项助学金配套各类助学类奖学金、
+                    攻读双学位奖学金、境内外交流奖学金等成才项目，以“自助、他助、助人”的价值理念扶助其成长成才。</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-center">
+            <div class="footer-box">
+                <div class="f1">
+                    <p>友情链接</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1"></div>
+                </div>
+                <div class="f3">
+                    <div class="f3-1">
+                        <a href="http://www.moe.gov.cn/">
+                            <p>>&nbsp;教育部</p>
+                        </a>
+                    </div>
+                    <div class="f3-2">
+                        <a href="http://www.csa.cee.edu.cn/">
+                            <p>>&nbsp;全国学生资助管理中心</p>
+                        </a>
+                    </div>
+                    <div class="f3-3">
+                        <a href="https://sls.cdb.com.cn/">
+                            <p>>&nbsp;国家开发银行生源地助学贷款</p>
+                        </a>
+                    </div>
+                    <div class="f3-4">
+                        <a href="http://sso.pkusz.edu.cn/">
+                            <p>>&nbsp;深圳研究生院学生资助中心</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="f1">
+                    <p>联系我们</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1">
+                    </div>
+                </div>
+                <div class="f3">
+                    <div class="f3-1">
+                        <p>爱名路学生中心777号、778号</p>
+                    </div>
+                    <div class="f3-2">
+                        <p>电话：000-0000-000</p>
+                    </div>
+                    <div class="f3-3">
+                        <p>邮箱：mgx@mgx.edu.cn</p>
+                    </div>
+                    <div class="f3-4">
+                        <p>监督邮箱：jdmgx@mgx.edu.cn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="f1" style="left: -10%;">
+                    <p>关注我们</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1"></div>
+                </div>
+                <div class="f4">
+                    <div class="f4-1">
+                        <div class="f4-1-1"></div>
+                        <div class="f4-1-2">
+                            <p>某高校大学资助中心</p>
+                        </div>
+                    </div>
+                    <div class="f4-2">
+                        <div class="f4-2-1"></div>
+                        <div class="f4-2-2">
+                            <p>学生发展支持协会</p>
+                        </div>
+                    </div>
+                    <div class="f4-3">
+                        <div class="f4-3-1"></div>
+                        <div class="f4-3-2">
+                            <p>学生服务总队</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="yedi">
+        <div class="yedi-c">
+            <p>版权所有©某高校大学学生资助中心</p>
+        </div>
+    </div>
+</body>
+<script>
+    function adjustBoxHeight() {
+        var box = document.querySelector('.db-3, .db-5, .db-7, .db-9, .db-11');
+
+        box.style.height = 'auto'; // 先将高度设为自动，以获取自然内容高度
+        var contentHeight = box.scrollHeight; // 获取内容的自然高度
+
+        box.style.height = contentHeight + 'px'; // 设置.box的高度为内容高度
+        }
+
+        window.addEventListener('resize', adjustBoxHeight);
+        window.onload = adjustBoxHeight;
+
+</script>
+<script>
+    function adjustBoxHeight() {
+        var box = document.querySelector('.da-box');
+
+        box.style.height = 'auto'; // 先将高度设为自动，以获取自然内容高度
+        var contentHeight = box.scrollHeight; // 获取内容的自然高度
+
+        box.style.height = contentHeight + 'px'; // 设置.box的高度为内容高度
+        }
+
+        window.addEventListener('resize', adjustBoxHeight);
+        window.onload = adjustBoxHeight;
+
+</script>
+<script>
+        document.addEventListener('contextmenu', function (e) {
+            // 禁止右键菜单
+            e.preventDefault();
+            
+            // 弹出自定义的提示信息，替代查看源代码
+            alert('对不起，禁止查看源代码！');
+        });
+
+        document.addEventListener('keydown', function (e) {
+            // 判断操作系统
+            var isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+
+            if (isMac) {
+                // 如果是苹果电脑，禁止Cmd+Option+U和Fn+F12
+                if ((e.metaKey && e.altKey && e.keyCode === 85) || (e.key === 'F12' && e.code === 'F12')) {
+                    e.preventDefault();
+                    alert('对不起，禁止查看源代码！');
+                }
+            } else {
+                // 如果是Windows电脑，禁止右键、Ctrl+U和Fn+F12
+                if ((e.ctrlKey && e.keyCode === 85) || (e.key === 'F12' && e.code === 'F12')) {
+                    e.preventDefault();
+                    alert('对不起，禁止查看源代码！');
+                }
+            }
+        });
+    </script>
+</html>

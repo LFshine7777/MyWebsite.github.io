@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育出版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+        a:hover {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        body,
+        html {
+            overscroll-behavior-x: none;
+            overscroll-behavior-y: none;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .ding {
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            height: 126px;
+            background-color: '';
+            transition: 0.3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            z-index: 9999;
+        }
+
+        .zuoyou {
+            position: fixed;
+            width: 100%;
+            height: 40px;
+            background-color: rgb(26, 69, 147);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /*左边*/
+        .sleft {
+            position: relative;
+            width: 380px;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            color: rgb(200, 200, 200);
+            left: 4%;
+        }
+
+        .sleft-1,
+        .sleft-3,
+        .sleft-4,
+        .sleft-5,
+        .sleft-6 {
+            width: 50px;
+            height: 100%;
+            background-color: '';
+            font-size: 14px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sleft-2 {
+            width: 66px;
+            height: 100%;
+            background-color: '';
+            font-size: 14px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nn-nei-1,
+        .nn-nei-3,
+        .nn-nei-4,
+        .nn-nei-5,
+        .nn-nei-6 {
+            position: relative;
+            top: 0%;
+            width: 60%;
+            height: 64%;
+            background-color: '';
+        }
+
+        .nn-nei-2 {
+            position: relative;
+            top: 0%;
+            width: 70%;
+            height: 64%;
+            background-color: '';
+        }
+
+        .nn-n-1-1,
+        .nn-n-2-2,
+        .nn-n-3-3,
+        .nn-n-4-4,
+        .nn-n-5-5,
+        .nn-n-6-6 {
+            position: absolute;
+            top: 0%;
+            width: 100%;
+            height: 10%;
+            background-color: '';
+        }
+
+        .nn-nei-1:hover .nn-n-1-1,
+        .nn-nei-2:hover .nn-n-2-2,
+        .nn-nei-3:hover .nn-n-3-3,
+        .nn-nei-4:hover .nn-n-4-4,
+        .nn-nei-5:hover .nn-n-5-5,
+        .nn-nei-6:hover .nn-n-6-6 {
+            background-color: #fff;
+        }
+
+        .nnn-1-1,
+        .nnn-2-2,
+        .nnn-3-3,
+        .nnn-4-4,
+        .nnn-5-5,
+        .nnn-6-6 {
+            position: absolute;
+            width: 100%;
+            height: 90%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: '';
+        }
+
+        .nnn-1-1:hover,
+        .nnn-2-2:hover,
+        .nnn-3-3:hover,
+        .nnn-4-4:hover,
+        .nnn-5-5:hover,
+        .nnn-6-6:hover {
+            cursor: pointer;
+        }
+
+        .I {
+            position: relative;
+            top: 14px;
+            width: 1px;
+            height: 40%;
+            background-color: rgb(200, 200, 200);
+        }
+
+        /*右边*/
+        .sright {
+            position: relative;
+            width: 440px;
+            height: 100%;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            color: rgb(200, 200, 200);
+            right: 4%;
+        }
+
+        .sright-1,
+        .sright-3,
+        .sright-4 {
+            width: 50px;
+            height: 100%;
+            background-color: '';
+            font-size: 14px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sright-2 {
+            width: 66px;
+            height: 100%;
+            background-color: '';
+            font-size: 14px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sright-5,
+        .sright-6 {
+            width: 76px;
+            height: 100%;
+            background-color: '';
+            font-size: 14px;
+            font-family: '微软雅黑';
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-nn-nei-1,
+        .right-nn-nei-3,
+        .right-nn-nei-4 {
+            position: relative;
+            top: 0%;
+            width: 60%;
+            height: 64%;
+            background-color: '';
+        }
+
+        .right-nn-nei-2 {
+            position: relative;
+            top: 0%;
+            width: 70%;
+            height: 64%;
+            background-color: '';
+        }
+
+        .right-nn-nei-5,
+        .right-nn-nei-6 {
+            position: relative;
+            top: 0%;
+            width: 80%;
+            height: 64%;
+            background-color: '';
+        }
+
+        .right-nn-n-1-1,
+        .right-nn-n-2-2,
+        .right-nn-n-3-3,
+        .right-nn-n-4-4,
+        .right-nn-n-5-5,
+        .right-nn-n-6-6 {
+            position: absolute;
+            top: 0%;
+            width: 100%;
+            height: 10%;
+            background-color: '';
+        }
+
+        .right-nn-nei-1:hover .right-nn-n-1-1,
+        .right-nn-nei-2:hover .right-nn-n-2-2,
+        .right-nn-nei-3:hover .right-nn-n-3-3,
+        .right-nn-nei-4:hover .right-nn-n-4-4,
+        .right-nn-nei-5:hover .right-nn-n-5-5,
+        .right-nn-nei-6:hover .right-nn-n-6-6 {
+            background-color: #fff;
+        }
+
+        .right-nnn-1-1,
+        .right-nnn-2-2,
+        .right-nnn-3-3,
+        .right-nnn-4-4,
+        .right-nnn-5-5,
+        .right-nnn-6-6 {
+            position: absolute;
+            width: 100%;
+            height: 90%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .ding {
+                height: 70px;
+                transition: 0s ease-in-out;
+            }
+
+            .zuoyou {
+                display: none;
+            }
+        }
+
+        .head {
+            position: fixed;
+            top: 40px;
+            width: 100%;
+            height: 86px;
+            background-color: rgba(26, 69, 147, 1);
+            z-index: 999;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            position: relative;
+            width: 220px;
+            height: 70px;
+            background-color: transparent;
+            z-index: 12;
+        }
+
+        .logo img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .head {
+                top: 0;
+                height: 70px;
+                display: block;
+                justify-content: normal;
+                align-items: normal;
+            }
+
+            .logo {
+                margin-top: 10px;
+                margin-right: 10px;
+                margin-left: 20px;
+                width: 150px;
+                height: 50px;
+            }
+
+            .head.sticky {
+                background: #fff;
+            }
+        }
+
+        /*导航栏*/
+        nav {
+            position: relative;
+            top: -4px;
+            width: 644px;
+            height: 40px;
+            background-color: '';
+            font-family: "微软雅黑";
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu {
+            position: relative;
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+        }
+
+        .menu-item {
+            position: relative;
+            display: inline-block;
+            margin-right: 0px;
+            font-size: 16px;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            color: black;
+        }
+
+        .menu-item:hover::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .submenu {
+            /*二级菜单*/
+            list-style-type: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 68px;
+            display: none;
+            padding: 0;
+            margin: 0;
+            background-color: rgb(250, 250, 250);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+        }
+
+        #md-submenu {
+            /*二级菜单*/
+            width: 800px;
+            left: 176px;
+        }
+
+        #nav-zs-submenu {
+            /*二级菜单*/
+            width: 890px;
+        }
+
+        #jiaoyu {
+            width: 890px;
+        }
+
+        #xbyx-submenu {
+            /*二级菜单*/
+            width: 890px;
+            margin-top: -1px;
+        }
+
+        #xingxi {
+            width: 890px;
+        }
+
+        #xiaoyuanfu {
+            width: 890px;
+        }
+
+        .submenu li {
+            width: 100%;
+        }
+
+        .submenu li a {
+            padding: 10px;
+            display: block;
+            color: black;
+            text-align: center;
+            font-weight: normal;
+            font-size: 14px;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        .submenu li a:hover {
+            cursor: pointer;
+            color: rgb(26, 69, 147);
+            background-color: unset;
+        }
+
+        .menu-item:hover .submenu {
+            display: block;
+        }
+
+        @media (max-width: 1000px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        .menu-item:nth-child(1):hover .submenu {
+            display: block;
+            transform: translateX(-62%);
+        }
+
+        @media (max-width: 1000px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            nav {
+                width: 680px;
+            }
+
+            .menu-item {
+                font-size: 18px;
+            }
+        }
+
+
+
+        /*某大概况*/
+        .md {
+            position: absolute;
+            top: -24px;
+            left: 31.5%;
+            transform: translateX(-31.5%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .md {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .md-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .md-s {
+            position: absolute;
+            top: 0px;
+            width: 800px;
+            height: 2px;
+            z-index: 9;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*二级菜单内部样式--底*/
+        .md-wi {
+            position: absolute;
+            top: -1px;
+            height: 216px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .md-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .md-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 36%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .md-ll-left {
+            width: 36%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/biaoshi.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .md-ll-right {
+            width: 50%;
+            height: 60%;
+            top: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        /*二级菜单右侧文字*/
+        .md-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 54%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .mds {
+            position: relative;
+            width: 140px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            line-height: 10px;
+            cursor: pointer;
+        }
+
+        .mds:hover {
+            color: rgba(26, 69, 147, 1);
+        }
+
+        /*院系部门*/
+        .xuebuyuanxi {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .xuebuyuanxi {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .xbyx-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .xbyx-s {
+            position: absolute;
+            width: 890px;
+            height: 2px;
+            bottom: -1px;
+            background-color: rgb(26, 69, 147);
+        }
+
+
+        /*二级菜单内部样式*/
+        .xbyx-wi {
+            position: relative;
+            height: 216px;
+            top: 1px;
+            background-color: rgb(250, 250, 250);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .xbyx-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .xbyx-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 30%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .xbyx-ll-left {
+            width: 50%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/yuanxibumen.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .xbyx-ll-right {
+            width: 40%;
+            height: 80%;
+            top: 10%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        /*二级菜单右侧文字*/
+        .xbyx-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 60%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .xbyx {
+            position: relative;
+            width: 150px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+
+        .xbyx:hover {
+            color: rgba(26, 69, 147, 1);
+        }
+
+        /*招生*/
+        .nav-zs {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .nav-zs {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .nav-zs-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .nav-zs-s {
+            position: absolute;
+            width: 890px;
+            height: 2px;
+            top: -1px;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*二级菜单内部样式*/
+        .nav-zs-wi {
+            position: relative;
+            height: 216px;
+            background-color: '';
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .nav-zs-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .nav-zs-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 36%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-zs-ll-left {
+            width: 36%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/zhaosheng.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .nav-zs-ll-right {
+            width: 50%;
+            height: 90%;
+            top: 5%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        /*二级菜单右侧文字*/
+        .nav-zs-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 54%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .navzs {
+            position: relative;
+            width: 140px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .navzs:hover {
+            color: rgba(26, 69, 147, 1);
+        }
+
+        /*教育教学*/
+        .jiaoyujiaoxue {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .jiaoyujiaoxue {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .jyjx-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .jyjx-s {
+            position: absolute;
+            width: 890px;
+            height: 2px;
+            top: -1px;
+            background-color: rgb(26, 69, 147);
+        }
+
+
+        /*二级菜单内部样式*/
+        .jyjx-wi {
+            position: relative;
+            height: 216px;
+            background-color: '';
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .jyjx-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .jyjx-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 36%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .jyjx-ll-left {
+            width: 36%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/jiaoyujiaoxue.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .jyjx-ll-right {
+            width: 50%;
+            height: 90%;
+            top: 5%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        /*二级菜单右侧文字*/
+        .jiaoyujiaoxue-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 54%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .jyjx {
+            position: relative;
+            width: 140px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .jyjx:hover {
+            color: rgba(26, 69, 147, 1) !important;
+        }
+
+        /*信息公开*/
+        .xingxigongkai {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .xingxigongkai {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .xxgk-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .xxgk-s {
+            position: absolute;
+            width: 890px;
+            height: 2px;
+            top: -1px;
+            background-color: rgb(26, 69, 147);
+        }
+
+
+        /*二级菜单内部样式*/
+        .xxgk-wi {
+            position: relative;
+            height: 216px;
+            background-color: '';
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .xxgk-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .xxgk-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 36%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .xxgk-ll-left {
+            width: 36%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/xingxigongkai.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .xxgk-ll-right {
+            width: 50%;
+            height: 90%;
+            top: 5%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        /*二级菜单右侧文字*/
+        .xingxigongkai-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 54%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .xxgk {
+            position: relative;
+            width: 150px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .xxgk:hover {
+            color: rgba(26, 69, 147, 1);
+        }
+
+        /*校园服务*/
+        .xiaoyuanfuwu {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 106px;
+            height: 24px;
+            background-color: '';
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 1131px) and (max-width: 11099px) {
+            .xiaoyuanfuwu {
+                margin-top: 3px;
+                height: 22px;
+            }
+        }
+
+        /*竖横线*/
+        .xyfw-h {
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        /*大横线*/
+        .xyfw-s {
+            position: absolute;
+            width: 890px;
+            height: 2px;
+            top: -1px;
+            background-color: rgb(26, 69, 147);
+        }
+
+
+        /*二级菜单内部样式*/
+        .xyfw-wi {
+            position: relative;
+            height: 216px;
+            background-color: '';
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /*二级菜单底部图片*/
+        .xyfw-di-img {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            background-color: '';
+            background-image: url("daohanglan/png96.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /*二级菜单左侧图片*/
+        .xyfw-erji_li-left {
+            position: relative;
+            height: 70%;
+            width: 36%;
+            margin: 10% 2.5% 10% 2.5%;
+            background-color: '';
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .xyfw-ll-left {
+            width: 36%;
+            height: 80%;
+            background-color: '';
+            background-image: url("daohanglan/xiaoyuanfuwu.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .xyfw-ll-right {
+            width: 50%;
+            height: 90%;
+            top: 5%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 34px;
+        }
+
+        /*二级菜单右侧文字*/
+        .xiaoyuanfuwu-erji_li-right {
+            position: relative;
+            height: 70%;
+            width: 54%;
+            margin: 10% 2.5% 10% 0%;
+            background-color: '';
+            display: grid;
+            grid-template-rows: repeat(1, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .xyfw {
+            position: relative;
+            width: 150px;
+            height: 30px;
+            background-color: '';
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .xyfw:hover {
+            color: rgba(26, 69, 147, 1);
+        }
+
+        @media (min-width: 1000px) and (max-width: 10000px) {
+            #nav-zs-submenu {
+                left: 120px;
+            }
+
+            .nav-zs {
+                left: 355px;
+            }
+
+            #jiaoyu {
+                left: -60px;
+            }
+
+            .jiaoyujiaoxue {
+                left: 552px;
+            }
+
+            #xingxi {
+                left: -160px;
+            }
+
+            .xingxigongkai {
+                left: 652px;
+            }
+
+            #xiaoyuanfu {
+                left: -260px;
+            }
+
+            .xiaoyuanfuwu {
+                left: 752px;
+            }
+        }
+
+
+        /*右侧搜索框*/
+        .left-ssk {
+            position: relative;
+            width: 110px;
+            height: 36px;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item {
+            position: relative;
+            top: -14%;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background-color: '';
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+
+        .item img {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+        }
+
+        /* 显示搜索框 */
+        .email input,
+        .item {
+            display: block;
+        }
+
+        .tanchuang-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+
+
+        /*弹窗样式*/
+        .popup {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .close-btn {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 50px;
+            right: 50px;
+            cursor: pointer;
+            background-image: url("close.png");
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            z-index: 999;
+        }
+
+        .close-btn:hover {
+            background-image: url("b-close.png");
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .show {
+            display: flex;
+        }
+
+        .ei-di {
+            position: relative;
+            width: 600px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 6px;
+            margin-top: -24vh;
+            transition: width ease 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 920px) {
+            .ei-di {
+                width: 96%;
+                margin-left: 2%;
+                margin-right: 2%;
+            }
+        }
+
+        /*输入框*/
+        input {
+            position: relative;
+            width: 80%;
+            height: 98%;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: bolder;
+            font-family: '微软雅黑';
+            padding-left: 12px;
+        }
+
+        .ssk {
+            position: relative;
+            width: 20%;
+            height: 100%;
+            background-color: rgb(26, 47, 169);
+            color: #fff;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: "微软雅黑";
+            cursor: pointer;
+            z-index: 999999999;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+         /* 弹窗样式 */
+         .chakan-modal {
+            display: none;
+            position: fixed;
+            top: -800px;
+            margin-left: calc((100% - 450px) / 2);
+            width: 450px;
+            height: 86vh;
+            background-color: rgb(250, 250, 250);
+            border-radius: 10px;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+            z-index: 999999;
+            animation: slideDown 1s forwards;
+        }
+
+        /* 关闭按钮样式 */
+        .c-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            cursor: pointer;
+        }
+
+        /* 自定义动画 */
+        @keyframes slideDown {
+            from {
+                top: -800px;
+            }
+
+            to {
+                top: 50px;
+            }
+        }
+
+        .clos-xian {
+            position: absolute;
+            width: 100%;
+            top: 40px;
+            height: 1.5px;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .clos-neirong {
+            position: absolute;
+            width: 330px;
+            height: fit-content;
+            margin-left: calc((100% - 330px) / 2);
+            top: 100px;
+            text-align: center;
+            background-color: '';
+            font-size: 18px;
+            font-family: 'Noto+Sans', sans-serif;
+            /* 使用谷歌字体 */
+        }
+
+        #searchInput {
+            position: relative;
+            outline: none;
+            left: 8px;
+            width: calc(100% - 130px);
+            height: 60px;
+            padding-left: 4px;
+            background-color: '';
+        }
+
+        /*提示*/
+        .tisi {
+            position: absolute;
+            width: 100%;
+            top: -40px;
+            font-size: 14px;
+            height: 30px;
+            background-color: rgb(255, 255, 255);
+            line-height: 30px;
+            border-radius: 3px;
+        }
+
+        /*EN*/
+        .English {
+            position: relative;
+            top: -14%;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #fff;
+            font-family: "微软雅黑";
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .left-ssk {
+                float: right;
+                top: 2px;
+                right: 44px;
+                transform: translate(-2px, -44px);
+            }
+
+            nav,
+            .English {
+                display: none;
+            }
+        }
+
+
+
+
+        /* 汉堡菜单样式 */
+        .hamburger-icon {
+            display: none;
+            position: absolute;
+            top: 18px;
+            right: 40px;
+            cursor: pointer;
+            background-color: '';
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .hamburger-icon .bar {
+            /*三条线*/
+            width: 44px;
+            height: 5px;
+            margin: 8px 0;
+            background-color: #fff;
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-image: url("index/a/a.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 10;
+            height: 100vh;
+        }
+
+        .menu-overlay img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 显示菜单 */
+        .menu-overlay.show,
+        .menu-list.show {
+            display: block;
+        }
+
+        @media (max-width: 1000px) {
+            .hamburger-icon .bar {
+                margin-top: 2px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .menu-overlay {
+                display: none;
+            }
+        }
+
+        @media (max-width: 999px) {
+            .hamburger-icon {
+                display: block;
+                position: absolute;
+            }
+        }
+
+        .nei-di {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+        }
+
+        .nei-er-di {
+            position: absolute;
+            top: 10%;
+            width: 90vw;
+            height: 80vh;
+            background-color: '';
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .nei-er-di ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nei-er-di li {
+            flex: 1;
+        }
+
+        .o1 {
+            background-color: '';
+        }
+
+        .zhiyuanshu {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background-color: '';
+            font-size: 1em;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(250, 250, 250);
+        }
+
+        .xia-zhiyuanshu {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background-color: '';
+            font-size: 0.8em;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(200, 200, 200);
+        }
+
+        .xia-zhiyuanshu:hover {
+            color: #fff;
+        }
+
+        .zizhuzx {
+            position: relative;
+            width: 110%;
+            left: 5%;
+            height: 30px;
+            background-color: '';
+            top: 200px;
+            font-size: 0.9em;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(180, 180, 180);
+        }
+
+        .zizhuzx:hover {
+            color: #fff;
+        }
+
+        .zizhuzx-te {
+            position: relative;
+            width: 120%;
+            left: 5%;
+            height: 30px;
+            background-color: '';
+            top: 200px;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(180, 180, 180);
+        }
+
+        .zizhuzx-te:hover {
+            color: #fff;
+        }
+
+        @media (min-width: 0px) and (max-width: 700px) {
+            .zhiyuanshu {
+                font-size: 0.9em;
+            }
+
+            .xia-zhiyuanshu {
+                font-size: 0.55em;
+            }
+
+            .zizhuzx {
+                font-size: 0.55em;
+            }
+        }
+
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url("banq7.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cont-di {
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0;
+            width: 1200px;
+            height: 100%;
+            background-color: '';
+        }
+
+
+        .box {
+            box-sizing: border-box;
+        }
+
+        .box:nth-child(1) {
+            position: relative;
+            top: -80px;
+            width: 285px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .box:nth-child(2) {
+            position: relative;
+            width: 875px;
+            margin-left: 40px;
+            height: 600px;
+            background-color: #fff;
+        }
+
+        @media (min-width: 0px) and (max-width: 1250px) {
+            .cont {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .box:nth-child(1) {
+                display: none;
+            }
+
+            .box:nth-child(2) {
+                width: 96%;
+                margin-left: unset;
+            }
+        }
+
+        @media (min-width: 1400px) and (max-width: 1500px) {
+            .cont {
+                width: 1300px;
+            }
+
+            .box:nth-child(1) {
+                width: 325px;
+            }
+
+            .box:nth-child(2) {
+                width: 925px;
+            }
+        }
+
+        @media (min-width: 1500px) and (max-width: 15000px) {
+            .cont {
+                width: 1400px;
+            }
+
+            .box:nth-child(1) {
+                width: 360px;
+            }
+
+            .box:nth-child(2) {
+                width: 980px;
+            }
+        }
+
+        .bn1-o1 {
+            width: 100%;
+            height: 20%;
+            background-color: rgb(26, 69, 147);
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            color: #fff;
+            font-weight: bolder;
+            font-family: '微软雅黑';
+        }
+
+        .bn1-y2 {
+            position: relative;
+            margin-left: 6%;
+            width: 94%;
+            height: 80%;
+            background-color: #fff;
+        }
+
+        .bn1-y2-item {
+            position: relative;
+            width: 100%;
+            height: calc(20% - 1px);
+            background-color: #fff;
+            border-bottom: 1px solid rgb(210, 210, 210);
+        }
+
+        .bnyt {
+            position: relative;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: 100%;
+            font-family: '微软雅黑';
+            font-size: 18px;
+            background-color: '';
+            transition: left 0.4s, font-size 0.4s, font-weight 0.4s;
+        }
+
+        .bn1-y2-item:hover {
+            background-color: rgb(230, 230, 230);
+        }
+
+        .bn1-y2-item:hover .bnyt {
+            left: 40px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .bynt-o1 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            font-family: '微软雅黑';
+            font-weight: bolder;
+            font-size: 20px;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .bn2-o1 {
+            position: relative;
+            width: 100%;
+            height: 70px;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgb(210, 210, 210);
+        }
+
+        .bn2-item-1 {
+            width: fit-content;
+            height: 100%;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: '';
+
+            font-size: 24px;
+            font-weight: bolder;
+            border-bottom: 2px solid rgb(26, 69, 147);
+        }
+
+        .bn2-item-2 {
+            width: fit-content;
+            height: 100%;
+            font-family: '微软雅黑';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: '';
+            font-size: 18px;
+            color: rgb(180, 180, 180);
+        }
+
+        .bn2-y2 {
+            position: relative;
+            width: 100%;
+            top: 20px;
+            height: 700px;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .bn2-y2-title {
+            position: absolute;
+            top: 30px;
+            left: calc((100% - 100px) / 2);
+            width: 100px;
+            height: 30px;
+            font-size: 24px;
+            font-family: '微软雅黑';
+            font-weight: bolder;
+            background-color: '';
+            color: #fff;
+        }
+
+        .bn2-y2-content {
+            position: absolute;
+            box-sizing: border-box;
+            width: 90%;
+            height: auto;
+            top: 90px;
+            left: calc((100% - 90%) / 2);
+            font-size: 16px;
+            font-family: '微软雅黑';
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.4);
+        }
+
+        #fyzhe {
+            position: relative;
+            margin-top: 50px;
+            left: calc((100% - 100px) / 2);
+            width: 100px;
+            height: 26px;
+            color: rgb(26, 69, 147);
+            font-family: '微软雅黑';
+            font-size: 20px;
+        }
+
+        .di-table {
+            position: relative;
+            top: 20px;
+            width: 90%;
+            height: 90%;
+            left: calc((100% - 90%) / 2);
+            background-color: '';
+
+        }
+
+        table {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+
+        .di-table th,
+        .di-table td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #san {
+            position: relative;
+            font-family: '微软雅黑';
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /*footer*/
+        .footer {
+            position: relative;
+            top: 120px;
+            width: 100%;
+            height: 170px;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+        }
+        @media screen and (max-width: 699px) {
+            .footer {
+                height: 220px;
+            }
+        }
+        @media (min-width: 700px) and (max-width: 1027px) {
+            .footer {
+                height: 190px;
+            }
+        }
+        @media (min-width: 1028px) {
+            .footer {
+                height: 160px;
+            }
+        }
+
+        .footer-tp {
+            position: absolute;
+            top: 30px;
+            width: 230px;
+            height: 76px;
+            background-color: '';
+        }
+
+        .footer-di {
+            position: absolute;
+            width: 98%;
+            margin-left: 1%;
+            bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            background-color: '';
+        }
+
+        .footer-di-box {
+            font-family: '微软雅黑';
+            width: fit-content;
+            height: fit-content;
+            box-sizing: border-box;
+            background-color: '';
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            margin: 0px 10px 0px 10px;
+        }
+
+        @media screen and (max-width: 699px) {
+            .footer-tp {
+                width: 170px;
+                height: 55px;
+            }
+            .footer-di {
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+            }
+            .footer-di-box {
+                width: 40%;
+                margin: 5px;
+            }
+        }
+        @media (min-width: 700px) and (max-width: 1027px) {
+            .footer-tp {
+                width: 180px;
+                height: 60px;
+            }
+            .footer-di {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            .footer-di-box {
+                width: 30%;
+                margin: 5px;
+            }
+        }
+        @media (min-width: 1028px) {
+            .footer-tp {
+                width: 200px;
+                height: 65px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ding">
+        <div class="zuoyou">
+            <div class="sleft">
+                <div class="sleft-1">
+                    <div class="nn-nei-1">
+                        <div class="nn-n-1-1"></div>
+                        <div class="nnn-1-1">学生</div>
+                    </div>
+                </div>
+                <div class="I"></div>
+                <div class="sleft-2">
+                    <div class="nn-nei-2">
+                        <div class="nn-n-2-2"></div>
+                        <div class="nnn-2-2">教职工</div>
+                    </div>
+                </div>
+                <div class="I"></div>
+                <div class="sleft-3">
+                    <div class="nn-nei-3">
+                        <div class="nn-n-3-3"></div>
+                        <div class="nnn-3-3">校友</div>
+                    </div>
+                </div>
+                <div class="I"></div>
+                <div class="sleft-4">
+                    <div class="nn-nei-4">
+                        <div class="nn-n-4-4"></div>
+                        <div class="nnn-4-4">访客</div>
+                    </div>
+                </div>
+                <div class="I"></div>
+                <div class="sleft-5">
+                    <div class="nn-nei-5">
+                        <div class="nn-n-5-5"></div>
+                        <div class="nnn-5-5">招聘</div>
+                    </div>
+                </div>
+                <div class="I"></div>
+                <div class="sleft-6">
+                    <div class="nn-nei-6">
+                        <div class="nn-n-6-6"></div>
+                        <div class="nnn-6-6">捐赠</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sright">
+                <div class="sright-1">
+                    <div class="right-nn-nei-1">
+                        <div class="right-nn-n-1-1"></div>
+                        <div class="right-nnn-1-1">门户</div>
+                    </div>
+                </div>
+                <div class="sright-2">
+                    <div class="right-nn-nei-2">
+                        <div class="right-nn-n-2-2"></div>
+                        <div class="right-nnn-2-2">医学部</div>
+                    </div>
+                </div>
+                <div class="sright-3">
+                    <div class="right-nn-nei-3">
+                        <div class="right-nn-n-3-3"></div>
+                        <div class="right-nnn-3-3">网络</div>
+                    </div>
+                </div>
+                <div class="sright-4">
+                    <div class="right-nn-nei-4">
+                        <div class="right-nn-n-4-4"></div>
+                        <div class="right-nnn-4-4">邮箱</div>
+                    </div>
+                </div>
+                <div class="sright-5">
+                    <div class="right-nn-nei-5">
+                        <div class="right-nn-n-5-5"></div>
+                        <div class="right-nnn-5-5">某大直播</div>
+                    </div>
+                </div>
+                <div class="sright-6">
+                    <div class="right-nn-nei-6">
+                        <div class="right-nn-n-6-6"></div>
+                        <div class="right-nnn-6-6">领导信箱</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="head">
+            <div class="logo">
+                <img src="logo.png" id="logoImage" title="某高校大学" alt="某高校大学">
+            </div>
+
+            <!--导航栏-->
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="index.html" style="color: #fff;" target="_blank">首页</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" style="color: #fff;" target="_blank">某大概况</a>
+                        <ul class="submenu" id="md-submenu">
+                            <div class="md">
+                                <div class="md-h"></div>
+                            </div>
+                            <li class="md-wi">
+                                <div class="md-s"></div>
+                                <div class="md-di-img"></div>
+                                <div class="md-erji_li-left">
+                                    <div class="md-ll-left"></div>
+                                    <div class="md-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            志于道，据于德，<br>
+                                            依于仁，游于艺。<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="md-erji_li-right">
+                                    <div class="mds">
+                                        <a href="jianjie.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">某大简介</p>
+                                        </a>
+                                    </div>
+                                    <div class="mds">
+                                        <a href="biaoshi.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">学校标识</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="zhaosheng.html" style="color: #fff;" target="_blank">招生</a>
+                        <ul class="submenu" id="nav-zs-submenu">
+                            <div class="nav-zs">
+                                <div class="nav-zs-h"></div>
+                            </div>
+                            <li class="nav-zs-wi">
+                                <div class="nav-zs-s"></div>
+                                <div class="nav-zs-di-img"></div>
+                                <div class="nav-zs-erji_li-left">
+                                    <div class="nav-zs-ll-left"></div>
+                                    <div class="nav-zs-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            校园画卷美不胜收，<br>
+                                            恰似你将要留在这里的<br>
+                                            青春年华。<br>
+                                            某高校大学欢迎你！<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="nav-zs-erji_li-right">
+                                    <div class="navzs">
+                                        <a href="benkesheng.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">本科生</p>
+                                        </a>
+                                    </div>
+                                    <div class="navzs">
+                                        <a href="yanjiusheng.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">研究生</p>
+                                        </a>
+                                    </div>
+                                    <div class="navzs">
+                                        <a href="zhaosheng.html#lxs" target="_blank">
+                                            <p style="font-size: 18px; color: black;">留学生</p>
+                                        </a>
+                                    </div>
+                                    <div class="navzs">
+                                        <a href="jixujiaoyu.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">继续教育</p>
+                                        </a>
+                                    </div>
+                                    <div class="navzs">
+                                        <a href="zhaosheng.html#xueshengjiangzhu" target="_blank">
+                                            <p style="font-size: 18px; color: black;">学生奖助信息</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="yuanxi.html" style="color: #fff;">院系部门</a>
+                        <ul class="submenu" id="xbyx-submenu">
+                            <div class="xuebuyuanxi">
+                                <div class="xbyx-h"></div>
+                                <div class="xbyx-s"></div>
+                            </div>
+                            <li class="xbyx-wi">
+                                <div class="xbyx-di-img"></div>
+                                <div class="xbyx-erji_li-left">
+                                    <div class="xbyx-ll-left"></div>
+                                    <div class="xbyx-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            勤奋、严谨、<br>
+                                            求实、创新。<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="xbyx-erji_li-right">
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yuanxi.html#one" target="_blank">
+                                            <p style="font-size: 18px; color: black;">理学部</p>
+                                        </a>
+                                    </div>
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yuanxi.html#two">
+                                            <p style="font-size: 18px; color: black;">信息工程科学部</p>
+                                        </a>
+                                    </div>
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yuanxi.html#three" target="_blank">
+                                            <p style="font-size: 18px; color: black;">人文学部</p>
+                                        </a>
+                                    </div>
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yuanxi.html#four">
+                                            <p style="font-size: 18px; color: black;">社会科学学部</p>
+                                        </a>
+                                    </div>
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yuanxi.html#five">
+                                            <p style="font-size: 18px; color: black;">经济与管理学部</p>
+                                        </a>
+                                    </div>
+                                    <div class="xbyx" target="_blank">
+                                        <a href="yixuebu.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">医学部</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="jiaoyujiaoxue.html" style="color: #fff;">教育教学</a>
+                        <ul class="submenu" id="jiaoyu">
+                            <div class="jiaoyujiaoxue">
+                                <div class="jyjx-h"></div>
+                            </div>
+                            <li class="jyjx-wi">
+                                <div class="jyjx-s"></div>
+                                <div class="jyjx-di-img"></div>
+                                <div class="jyjx-erji_li-left">
+                                    <div class="jyjx-ll-left"></div>
+                                    <div class="jyjx-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            思想自由、兼容并包<br>
+                                            体爱学生、学术严谨<br>
+                                            教育应指导社会，<br>
+                                            而非追逐社会<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="jiaoyujiaoxue-erji_li-right">
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#/szdw-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">师资队伍</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#glbm-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">管理部门</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#kcsz-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">课程设置</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">海外学习</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">课表查询</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">华文慕课</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">教学网</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoshijiaoyu.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">教师教育</p>
+                                        </a>
+                                    </div>
+                                    <div class="jyjx">
+                                        <a href="jiaoyujiaoxue.html#zsyz-1" target="_blank">
+                                            <p style="font-size: 18px; color: black;">证书验证</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" style="color: #fff;">合作交流</a>
+                        <ul class="submenu" id="xingxi">
+                            <div class="xingxigongkai">
+                                <div class="xxgk-h"></div>
+                            </div>
+                            <li class="xxgk-wi">
+                                <div class="xxgk-s"></div>
+                                <div class="xxgk-di-img"></div>
+                                <div class="xxgk-erji_li-left">
+                                    <div class="xxgk-ll-left"></div>
+                                    <div class="xxgk-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            汇聚信息<br>
+                                            透明公正<br>
+                                            校园动态一目了然<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="xingxigongkai-erji_li-right">
+                                    <div class="xxgk">
+                                        <a href="wenjianguali.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">信息公开</p>
+                                        </a>
+                                    </div>
+                                    <div class="xxgk">
+                                        <a href="cgzh.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">社会服务</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" style="color: #fff;">校园服务</a>
+                        <ul class="submenu" id="xiaoyuanfu">
+                            <div class="xiaoyuanfuwu">
+                                <div class="xyfw-h"></div>
+                            </div>
+                            <li class="xyfw-wi">
+                                <div class="xyfw-s"></div>
+                                <div class="xyfw-di-img"></div>
+                                <div class="xyfw-erji_li-left">
+                                    <div class="xyfw-ll-left"></div>
+                                    <div class="xyfw-ll-right">
+                                        <p style="color: rgb(26, 69, 147);">
+                                            全方位关怀<br>
+                                            提供多元服务<br>
+                                            让你安心学习<br>
+                                            让学习生活更加便利<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="xiaoyuanfuwu-erji_li-right">
+                                    <div class="xyfw">
+                                        <a href="tushuguan.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">图书馆</p>
+                                        </a>
+                                    </div>
+                                    <div class="xyfw">
+                                        <a href="xszzzx.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">学生资助中心</p>
+                                        </a>
+                                    </div>
+                                    <div class="xyfw">
+                                        <a href="ruanjian.html" target="_blank">
+                                            <p style="font-size: 18px; color: black;">正版软件</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!--搜索框-->
+            <div class="left-ssk">
+                <div class="item" onclick="toggleSearchPopup()" id="ssContainer">
+                    <img id="ssImage" src="sousuo-c.png">
+                </div>
+                <div class="English">
+                    <a href="yw.html" target="_blank">
+                        <span>EN</span>
+                    </a>
+                </div>
+            </div>
+
+            <!--弹窗-->
+            <div class="tanchuang-overlay" onclick="closePopup()">
+                <div class="popup" onclick="event.stopPropagation()">
+                    <div class="ei-di">
+                        <input type="text" id="searchInput" placeholder="Search.......">
+                        <div class="ssk">搜索</div>
+                        <div class="tisi">
+                            <p style="padding-left: 14px;">需搜索时，直接在电脑上按回车键（手机上是前往）,暂不支持点击搜索。</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="close-btn" onclick="event.stopPropagation(); closeSearchPopup()"></span>
+            </div>
+
+            <!--汉堡菜单三条杠-->
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+            <!--汉堡菜单内部菜单-->
+            <div class="menu-overlay">
+                <div class="nei-di">
+                    <div class="nei-er-di">
+                        <ul>
+                            <li class="o1">
+                                <div class="zhiyuanshu">
+                                    <a href="index.html">首页</a>
+                                </div>
+                                <!--资助中心-->
+                                <div class="zizhuzx-te">
+                                    <div class="zhiyuanshu">
+                                        <a href="xszzzx.html" target="_blank">
+                                            <p>资助中心栏目</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="zizhuzx">
+                                    <a href="qgjxjj.html">勤工俭学</a>
+                                </div>
+                                <div class="zizhuzx">
+                                    <a href="zxjjj.html">助学金</a>
+                                </div>
+                                <div class="zizhuzx">
+                                    <a href="zxdkjj.html">助学贷款</a>
+                                </div>
+                                <div class="zizhuzx">
+                                    <a href="qgjx.html">下载专区</a>
+                                </div>
+                            </li>
+                            <li class="o1">
+                                <div class="zhiyuanshu">
+                                    <a href="#">某大概况</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jianjie.html" target="_blank">某大简介</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="biaoshi.html" target="_blank">某大标识</a>
+                                </div>
+                            </li>
+                            <li class="o1">
+                                <div class="zhiyuanshu">
+                                    <a href="zhaosheng.html">招生</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="benkesheng.html" target="_blank">本科生</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yanjiusheng.html" target="_blank">研究生</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jixujiaoyu.html" target="_blank">继续教育</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="zhaosheng.html#lxs" target="_blank">留学生</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="zhaosheng.html#xueshengjiangzhu" target="_blank">学生奖助信息</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zhiyuanshu">
+                                    <a href="yuanxi.html" target="_blank">院系部门</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yuanxi.html#one" target="_blank">理学部</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yuanxi.html#two" target="_blank">信息工程科学部</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yuanxi.html#three" target="_blank">人文学部</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yuanxi.html#four" target="_blank">社会科学学部</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yuanxi.html#five" target="_blank">经济与管理学部</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="yixuebu.html" target="_blank">医学部</a>
+                                </div>
+                            </li>
+                            <li class="o1">
+                                <div class="zhiyuanshu">
+                                    <a href="">教育教学</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#/szdw-1" target="_blank">师资队伍</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#glbm-1" target="_blank">管理部门</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#kcsz-1" target="_blank">课程设置</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">海外学习</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">课表查询</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">华文慕课</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#hhkjgj-1" target="_blank">教学网</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoshijiaoyu.html" target="_blank">教师教育</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="jiaoyujiaoxue.html#zsyz-1" target="_blank">证书验证</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="zhiyuanshu">
+                                    <a href="xinxigongkai.html">合作交流</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="xinxigongkai.html" target="_blank">信息公开</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="xinxigongkai.html" target="_blank">社会服务</a>
+                                </div>
+                            </li>
+                            <li class="o1">
+                                <div class="zhiyuanshu">
+                                    <a href="">校园服务</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="xszzzx.html" target="_blank">资助中心</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="tushuguan.html" target="_blank">图书馆</a>
+                                </div>
+                                <div class="xia-zhiyuanshu">
+                                    <a href="ruanjian.html" target="_blank">正版软件</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tp"></div>
+
+    <div class="cont-di">
+        <div class="cont">
+            <div class="box">
+                <div class="bn1-o1">
+                    <span style="padding-left: 50px;">社会服务</span>
+                </div>
+                <div class="bn1-y2">
+                    <div class="bn1-y2-item">
+                        <div class="bnyt">
+                            <a href="cgzh.html" target="_blank">
+                                <span>成果转化</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bn1-y2-item">
+                        <div class="bnyt">
+                            <a href="hzbx.html" target="_blank">
+                                <span>合作办学</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bn1-y2-item">
+                        <div class="bnyt">
+                            <a href="zjxzzjc.html" target="_blank">
+                                <span>专家学者走基层</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bn1-y2-item">
+                        <div class="bnyt">
+                            <a href="dxzyzfw.html" target="_blank">
+                                <span>大学志愿者服务</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bn1-y2-item">
+                        <div class="bynt-o1">
+                            <a href="jycb.html" target="_blank">
+                                <span style="margin-left: 40px;">教育出版</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="bn2-o1">
+                    <div class="bn2-item-1">
+                        <span>教育出版</span>
+                    </div>
+                    <div class="bn2-item-2">
+                        <span>当前位置&nbsp;>&nbsp;社会服务&nbsp;>&nbsp;</span><span style="color: rgb(26, 69, 147);">教育出版</span>
+                    </div>
+                </div>
+                <div class="bn2-y2">
+                    <div class="bn2-y2-title">
+                        <span>教育出版</span>
+                    </div>
+                    <div class="bn2-y2-content">
+                        <p style="text-indent: 32px;">
+                            某高校教育出版，作为一家集图书、期刊、电子音像、数字出版、教育文化服务于一体的综合出版传媒机构，是中国教育出版领域的翘楚。其积淀的近50年办刊历史，以及中学教学参考系列期刊，构成了其在教育出版领域独树一帜的地位。
+                        </p><br>
+                        <p style="text-indent: 32px;">
+                            某高校教育出版成立至今，始终秉承着服务教育、传播文化的宗旨，致力于为广大师生提供优质的教育资源。其发展历程可以追溯至近50年前，当时该机构创办了最早的中学教学参考系列期刊，奠定了其在教育出版领域的基础。随着时代的发展，该机构不断创新，逐步形成了多领域、多层次、多媒体、多语种的出版格局。图书、期刊、电子音像、数字出版等多元化的出版形式，使得教育资源得以更广泛地传播和利用，从而推动了教育事业的发展。
+                        </p><br>
+                        <p style="text-indent: 32px;">
+                            多年来，某高校教育出版凭借其卓越的质量和积极的创新精神，屡获殊荣。其图书、期刊不仅在国内屡次斩获各类奖项，更是在国际间赢得了声誉。这些荣誉不仅是对该机构的认可，更是对其持续努力、勇攀科研高峰的肯定。这些奖项的获得激励着某高校教育出版不断前行，奋力谱写着教育出版领域的新篇章。
+                        </p><br>
+                        <p style="text-indent: 32px;">
+                            某高校教育出版的中学教学参考系列期刊，是其历史积淀和创新探索的结晶。这个系列期刊由语文、政治、数学、物理、化学、历史、地理、生物等8学科组成，每一期的发行都代表了该领域最新的研究成果和教育观念。这些期刊不仅仅是教师备课的得力工具，更是学生学习的指南。它们搭建了教育传播的桥梁，让知识得以传播，让学术得以交流，推动了教育事业的繁荣。
+                        </p><br>
+                        <p style="text-indent: 32px;">
+                            在教育事业蓬勃发展的当下，某高校教育出版将继续发扬优良传统，秉持“创新、求实、奉献、共赢”的企业精神，推动教育出版事业持续健康发展。未来，该机构将不断深化数字化出版，拓展多媒体、跨平台的教育资源，构建全方位、多元化的知识传播网络。在面向未来的征程中，某高校教育出版将紧紧依托高校优势，汇聚全社会的智慧和力量，为推进我国教育事业的繁荣发展做出新的更大的贡献。
+                        </p><br>
+                        <p style="text-indent: 32px;">
+                            综合出版传媒机构的光辉历程，获奖情况的荣耀见证，中学教学参考系列期刊的传播，都是该机构不断前行的力量源泉。期待着某高校教育出版在创新不止、奋进向前的征程中，书写新的辉煌篇章，成就更加卓越的未来！
+                        </p><br>
+                        <p id="fyzhe">主要工作</p>
+                        <div class="di-table">
+                            <table>
+                                <tr>
+                                    <th>类别</th>
+                                    <th>主要工作内容</th>
+                                </tr>
+                                <tr>
+                                    <td>高等教育出版社</td>
+                                    <td>编辑出版高等教育教授教学科研成果，出版高等教育教材、学校课本、培训教材</td>
+                                </tr>
+                                <tr>
+                                    <td>基础教育出版社</td>
+                                    <td>中小学教材、课外读物出版；编辑出版中小学参考系列杂刊；开展基础教育教师培训、合作学校建设等</td>
+                                </tr>
+                                <tr>
+                                    <td>大众文化出版社</td>
+                                    <td>大众文学、历史文化读物出版</td>
+                                </tr>
+                                <tr>
+                                    <td>数字融媒体出版社</td>
+                                    <td>数字图书馆、电子刊物等</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p id="fyzhe" style="margin-top: 70px;">负责单位</p>
+                        <p id="san" style="margin-top: 40px;">某高校大学出版社有限公司</p>
+                        <p id="san">联系电话：777-1234567</p>
+                        <p id="san">联系网站: http://mgx.edu.cn/jycb.html</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-tp">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <div class="footer-di">
+            <div class="footer-di-box">
+                <span>版权所有©某高校大学</span>
+            </div>
+            <div class="footer-di-box">
+                <span>邮编：XXXXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>地址：某某省某某市民安路XX号</span>
+            </div>
+            <div class="footer-di-box">
+                <span>意见反馈：zg@mgx.edu.cn</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中ICP备XXXX-XXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中公网安备XXXXXXX号</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>  //弹窗
+    function toggleSearchPopup() {
+        var searchOverlay = document.querySelector(".tanchuang-overlay");
+        var body = document.body;
+
+        searchOverlay.classList.toggle("show");
+
+        // Toggle the no-scroll class on the body
+        if (searchOverlay.classList.contains("show")) {
+            body.classList.add("no-scroll");
+        } else {
+            body.classList.remove("no-scroll");
+        }
+    }
+
+    function closeSearchPopup() {
+        var searchOverlay = document.querySelector(".tanchuang-overlay");
+        var body = document.body;
+
+        searchOverlay.classList.remove("show");
+
+        // Remove the no-scroll class from the body
+        body.classList.remove("no-scroll");
+    }
+</script>
+
+<script>  //head滚动时改变图片和导航栏文字颜色
+    window.addEventListener("scroll", () => {
+        // 获取头部元素
+        let header = document.querySelector(".head");
+        // 根据滚动位置切换 sticky 类
+        header.classList.toggle("sticky", window.scrollY > 0);
+
+        // 获取 logo 图片元素
+        let logoImage = document.getElementById("logoImage");
+
+        // 获取搜索图片元素
+        let ssImage = document.getElementById("ssImage");
+
+        // 获取 .ss 元素容器
+        let ssContainer = document.getElementById("ssContainer");
+
+        // 获取 .English 元素
+        let englishElement = document.querySelector(".English");
+
+        // 如果页面向下滚动
+        if (window.scrollY > 0) {
+            // 更改 logo 图片源
+            logoImage.src = "logo-c.png";
+
+            // 更改搜索图片源
+            ssImage.src = "sousuo-x.png";
+
+            // 更改 .ss 元素边框颜色
+            ssContainer.style.borderColor = "black"; // 用实际的边框颜色替换 yourBorderColor
+
+            // 更改导航栏文字颜色
+            let navItems = document.querySelectorAll(".menu-item a");
+            navItems.forEach((item) => {
+                item.style.color = "black";
+            });
+
+            // 更改搜索框文字颜色
+            englishElement.style.color = "black";
+
+            // 在滚动时为头部添加阴影
+            header.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+
+            // 滚动时改变汉堡菜单颜色
+            let hamburgerBars = document.querySelectorAll(".hamburger-icon .bar");
+            hamburgerBars.forEach((bar) => {
+                bar.style.backgroundColor = "rgb(26, 69, 147)";
+            });
+            // 更改边框颜色
+            englishElement.style.borderColor = "black"; // 用实际的边框颜色替换 yourBorderColor
+        } else {
+            // 恢复 logo 图片原始源
+            logoImage.src = "logo.png";
+
+            // 恢复搜索图片原始源
+            ssImage.src = "sousuo-c.png";
+
+            // 恢复 .ss 元素边框颜色
+            ssContainer.style.borderColor = "#fff";
+
+            // 恢复导航栏文字颜色
+            let navItems = document.querySelectorAll(".menu-item a");
+            navItems.forEach((item) => {
+                item.style.color = "#fff";
+            });
+
+            // 恢复搜索框文字颜色
+            englishElement.style.color = "#fff";
+
+            // 在页面顶部时移除头部阴影
+            header.style.boxShadow = "none";
+
+            // 恢复汉堡菜单颜色
+            let hamburgerBars = document.querySelectorAll(".hamburger-icon .bar");
+            hamburgerBars.forEach((bar) => {
+                bar.style.backgroundColor = "#fff";
+            });
+            // 恢复边框颜色
+            englishElement.style.borderColor = "#fff"; // 用实际的边框颜色替换 yourBorderColor
+        }
+    });
+
+
+</script>
+
+<script>   //head滚动效果
+    let scrolled = false;
+
+    window.addEventListener("scroll", () => {
+        let ding = document.querySelector(".ding");
+
+        if (window.innerWidth > 1000) {
+            // 只有在窗口宽度大于1000px时执行滚动效果
+            if (window.scrollY > 1 && !scrolled) {
+                scrolled = true;
+
+                setTimeout(() => {
+                    ding.style.transform = "translateY(-20px)";
+                    ding.style.opacity = "0";
+
+                }, 0);
+
+                setTimeout(() => {
+                    ding.style.transform = "translateY(0px)";
+                    ding.style.opacity = "1";
+                }, 750);
+            } else if (window.scrollY <= 1) {
+                scrolled = false;
+
+                ding.style.transform = "translateY(0)";
+                ding.style.opacity = "1";
+            }
+        }
+    });
+
+    // 添加一个事件监听窗口宽度变化的事件
+    window.addEventListener("resize", () => {
+        // 在窗口宽度小于等于1000px时，移除 sticky 类
+        let header = document.querySelector(".head");
+        if (window.innerWidth <= 1000) {
+            header.classList.remove("sticky");
+        }
+    });
+
+</script>
+
+<script>   // 改变宽度下滑的时候head的背景颜色变成白色
+    let isScrolled = false;
+
+    // 更新头部样式的函数，根据滚动位置确定样式
+    function updateHeaderStyle() {
+        let header = document.querySelector(".head");
+
+        if (window.scrollY > 1) {
+            // 如果已滚动，将背景颜色设为白色
+            header.style.background = "#fff";
+        } else {
+            // 如果未滚动，根据滚动位置设定背景颜色
+            header.style.background = window.scrollY > 0 ? "#fff" : "linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))";
+        }
+    }
+
+    // 监听滚动事件
+    window.addEventListener("scroll", () => {
+        let header = document.querySelector(".head");
+        header.classList.toggle("sticky", window.scrollY > 0);
+
+        updateHeaderStyle();
+    });
+
+    // 监听调整窗口大小事件
+    window.addEventListener("resize", () => {
+        if (!isScrolled) {
+            // 如果未滚动，根据滚动位置更新头部样式
+            updateHeaderStyle();
+        }
+    });
+
+    // 监听页面加载完成事件
+    window.addEventListener("load", () => {
+        // 页面加载完成后更新头部样式
+        updateHeaderStyle();
+    });
+
+    // 设置isScrolled为true的函数，用于滚动时调用
+    function setScrolledTrue() {
+        isScrolled = true;
+    }
+
+    // 监听滚动事件，设置isScrolled为true
+    window.addEventListener("scroll", setScrolledTrue);
+</script>
+
+<script>  //汉堡菜单
+    function toggleMenu() {
+        var menuOverlay = document.querySelector(".menu-overlay");
+        var menuList = document.querySelector(".menu-list");
+
+        if (window.innerWidth < 1000) {
+            menuOverlay.style.display = menuOverlay.style.display === 'block' ? 'none' : 'block';
+            if (menuList) {
+                menuList.classList.toggle("show");
+            }
+
+            // 切换菜单时禁止或允许页面滚动
+            document.body.style.overflow = menuOverlay.style.display === 'block' ? 'hidden' : 'auto';
+        }
+    }
+
+    window.onresize = function () {
+        var menuOverlay = document.querySelector(".menu-overlay");
+        var menuList = document.querySelector(".menu-list");
+        var hamburgerBars = document.querySelectorAll(".hamburger-icon .bar");
+
+        if (window.innerWidth > 1000 && menuOverlay.style.display === 'block') {
+            menuOverlay.style.display = 'none';
+            if (menuList) {
+                menuList.classList.remove("show");
+            }
+
+            // 菜单关闭时允许页面滚动
+            document.body.style.overflow = 'auto';
+        }
+
+        if (window.innerWidth > 1000) {
+            hamburgerBars.forEach(function (bar) {
+                bar.style.display = 'none';
+            });
+        } else {
+            hamburgerBars.forEach(function (bar) {
+                bar.style.display = 'block';
+            });
+        }
+    };
+</script>
+
+<script>   //自动高度
+    function adjustBoxHeight() {
+        var box = document.querySelector('.cont-di');
+
+        box.style.height = 'auto'; // 先将高度设为自动，以获取自然内容高度
+        var contentHeight = box.scrollHeight; // 获取内容的自然高度
+
+        box.style.height = contentHeight + 'px'; // 设置.box的高度为内容高度
+    }
+
+    window.addEventListener('resize', adjustBoxHeight);
+    window.onload = adjustBoxHeight;
+</script>
+
+<script>  // edge搜索引擎
+    var searchHistory = [];
+
+    document.getElementById('searchInput').addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            search();
+        }
+    });
+
+    function search() {
+        var searchTerm = document.getElementById('searchInput').value.trim();
+        // 使用 Bing 搜索在新标签页中打开搜索结果页面
+        window.open('https://www.bing.com/search?q=' + searchTerm, '_blank');
+        addToSearchHistory(searchTerm);
+        displaySearchHistory();
+    }
+</script>
+
+
+</html>

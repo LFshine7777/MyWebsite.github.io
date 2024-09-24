@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>信息公开-文件管理</title>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        body {
+            min-width: 1200px;
+            font-family: '微软雅黑';
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background-color: rgb(26, 69, 147);
+            background-image: url("信息公开/a.jpg");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            width: 550px;
+            height: 140px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bounceOut {
+            animation: bounceOut 1s forwards;
+        }
+
+        .bounceIn {
+            animation: bounceIn 1s forwards;
+        }
+
+        @keyframes bounceOut {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+
+            100% {
+                top: -90px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                top: -90px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        nav {
+            position: relative;
+            z-index: 999;
+            display: block;
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu>li {
+            flex: 1;
+            position: relative;
+        }
+
+        .menu>li>a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.2s;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu>li>a:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgb(59, 178, 233);
+            transition: height 0.2s ease, opacity 0.2s ease, visibility 0.2s;
+            list-style: none;
+            z-index: 99999;
+        }
+
+        .sub-menu li {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sub-menu li:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 鼠标悬停时激活子菜单 */
+        .menu>li:hover>.sub-menu {
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu>li:nth-child(2):hover>.sub-menu {
+            width: 100%;
+        }
+
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            background-color: #fff;
+            background-image: url("信息公开/b.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tabs {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            height: 60px;
+            width: 80%;
+            left: 10%;
+            margin-top: -3%;
+            background-color: skyblue;
+            z-index: 9999;
+        }
+
+        .tab-buttonimg {
+            cursor: pointer;
+            width: 6%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            position: absolute;
+            background-color: rgb(26, 69, 147);
+            text-align: center;
+            line-height: 45px;
+            background-image: url("信息公开/c.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tab-buttonimg img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tab-button1 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 6%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button2 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 18%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button3 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 30%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button4 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 42%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button5 {
+            cursor: pointer;
+            width: 22%;
+            height: 100%;
+            top: 0%;
+            left: 55%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button6 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 77%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button7 {
+            cursor: pointer;
+            width: 10%;
+            height: 100%;
+            top: 0%;
+            left: 90%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(26, 68, 147, 0.296);
+        }
+
+        .tab-content1 {
+            position: relative;
+            height: 900px;
+            width: 90%;
+            top: 20px;
+            left: 5%;
+            position: relative;
+            background-color: '';
+        }
+
+        .co1-top {
+            position: absolute;
+            width: 120px;
+            height: 4.5%;
+            left: 2%;
+            top: 3%;
+            background-color: '';
+            overflow: hidden;
+        }
+
+        .con-2-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 8%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .con-3-left {
+            position: absolute;
+            width: 40px;
+            height: 6%;
+            top: 18%;
+            left: 4%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-4-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 17%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-4-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-5-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 21%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-5-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-6-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 25%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-6-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-8-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 30%;
+            background-color: rgb(200, 200, 200);
+        }
+
+        .con-0-left {
+            position: absolute;
+            width: 40px;
+            height: 6%;
+            top: 42%;
+            left: 4%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .con-9-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 35%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-9-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-10-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 39%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-10-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-11-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 43%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-11-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-12-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 47%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-12-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-13-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 51%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-13-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-14-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 56%;
+            background-color: rgb(200, 200, 200);
+        }
+
+        .con-15-left {
+            position: absolute;
+            width: 40px;
+            height: 6%;
+            top: 65%;
+            left: 4%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .con-16-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 62%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-16-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-17-right {
+            position: absolute;
+            width: 75%;
+            height: 3.5%;
+            left: 15%;
+            top: 66%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-17-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-18-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 70%;
+            background-color: '';
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-18-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-19-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 74%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-19-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-20-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 79%;
+            background-color: rgb(200, 200, 200);
+        }
+
+        .con-21-left {
+            position: absolute;
+            width: 40px;
+            height: 6%;
+            top: 86%;
+            left: 4%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .con-22-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 84%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-22-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-23-right {
+            position: absolute;
+            width: 75%;
+            height: 3.5%;
+            left: 15%;
+            top: 88%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-23-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-24-right {
+            position: absolute;
+            width: 70%;
+            height: 3.5%;
+            left: 15%;
+            top: 92%;
+            background-color: '';
+            overflow: hidden;
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .con-24-right:hover {
+            color: rgb(26, 69, 147);
+        }
+
+        .con-25-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 98%;
+            background-color: rgb(200, 200, 200);
+        }
+
+        /*footer*/
+        .footer {
+            position: relative;
+            top: 100px;
+            width: 100%;
+            min-width: 1200px;
+            height: 170px;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+        }
+
+        .footer-tp {
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            height: 65px;
+            background-color: '';
+        }
+        
+        .footer-di {
+            position: absolute;
+            width: 98%;
+            min-width: 1200px;
+            bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1%;
+            justify-content: space-around;
+            background-color: '';
+        }
+
+        .footer-di-box {
+            font-family: '微软雅黑';
+            width: fit-content;
+            height: fit-content;
+            box-sizing: border-box;
+            background-color: '';
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .style {
+            line-height: 40px;
+            font-style: 20px;
+            color: #fff;
+        }
+
+        p1 {
+            color: rgb(26, 69, 147);
+            font-size: 30px;
+        }
+
+        p2 {
+            font-size: 18px;
+        }
+
+        p3 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="信息公开/logo.png" width="100%" height="100%">
+        </div>
+    </div>
+
+    <nav id="nav">
+        <ul class="menu">
+            <li><a href="index.html">首页</a>
+            </li>
+            <li><a href="#">部门概况</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教务工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教学工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教研工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教材建设</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">导师工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">国际交流</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">奖助管理</a>
+                <ul class="sub-menu"></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tp"></div>
+
+    <div class="tabs">
+        <div class="tab-buttonimg"></div>
+        <div class="tab-button1">
+            <a href="wenjianguali.html" target="_blank">文件管理</a>
+        </div>
+        <div class="tab-button2">
+            <a href="peiyangfangan.html" target="_blank">培养方案</a>
+        </div>
+        <div class="tab-button3">
+            <a href="xuanjiangcailiao.html" target="_blank">宣讲材料</a>
+        </div>
+        <div class="tab-button4">
+            <a href="zhidaoxingwenjian.html" target="_blank">指导性文件</a>
+        </div>
+        <div class="tab-button5">
+            <a href="sixiangtaolun.html" target="_blank">某高校教育思想讨论</a>
+        </div>
+        <div class="tab-button6">
+            <a href="xueshengsouce.html" target="_blank">学生手册</a>
+        </div>
+        <div class="tab-button7">
+            <a href="FQA.html" target="_blank">FAQ</a>
+        </div>
+    </div>
+
+    <div class="tab-content1">
+        <div class="co1-top">
+            <p1>文件管理</p1>
+        </div>
+        <div class="con-2-hengxian"></div>
+        <div class="con-3-left">
+            <p2>招生<br>工作</p2>
+        </div>
+        <div class="con-4-right">
+            <p3>《某高校大学招生领导小组工作职责与议事规则》（某高校大学本〔2022〕27号）</p3>
+        </div>
+        <div class="con-5-right">
+            <p3>《某高校大学“苗圃计划”工作管理办法》（某高校大学本〔2019〕6号）</p3>
+        </div>
+        <div class="con-6-right">
+            <p3>《某高校大学本科招生学院工作队伍管理细则》（修订中）</p3>
+        </div>
+        <div class="con-8-hengxian"></div>
+        <div class="con-0-left">
+            <p2>学籍<br>管理</p2>
+        </div>
+        <div class="con-9-right">
+            <p3>《某高校大学规范和加强学籍学历管理工作实施细则》（某高校本〔2021〕9号）</p3>
+        </div>
+        <div class="con-10-right">
+            <p3>《某高校大学本科生学籍管理规定》（某高校本〔2020〕7号）</p3>
+        </div>
+        <div class="con-11-right">
+            <p3>《关于国（境）外本科学生培养要求的补充规定》（某高校本〔2019〕37号）</p3>
+        </div>
+        <div class="con-12-right">
+            <p3>《某高校大学学生不及格课程累计达到 20个学分及以上的管理办法 》</p3>
+        </div>
+        <div class="con-13-right">
+            <p3>《某高校大学关于学籍变动本科生培养的补充规定（试行）》</p3>
+        </div>
+        <div class="con-14-hengxian"></div>
+        <div class="con-15-left">
+            <p2>继续<br>教育</p2>
+        </div>
+        <div class="con-16-right">
+            <p3>《某高校大学多种形式办学管理委员会章程》（某高校本〔2023〕27号）</p3>
+        </div>
+        <div class="con-17-right">
+            <p3>《某高校大学非学历教育合同管理实施细则（2022年5月修正）》（某高校本〔2020〕18号）</p3>
+        </div>
+        <div class="con-18-right">
+            <p3>《某高校大学非学历教育办学项目财务管理办法（2022年5月修正）》（某高校财〔2019〕7号）</p3>
+        </div>
+        <div class="con-19-right">
+            <p3>《某高校大学非学历教育管理规定（试行）》（某高校本〔2022〕6号）</p3>
+        </div>
+        <div class="con-20-hengxian"></div>
+        <div class="con-21-left">
+            <p2>教师<br>教学</p2>
+        </div>
+        <div class="con-22-right">
+            <p3>《某高校大学本科生教师教学工作管理办法》（修订中）</p3>
+        </div>
+        <div class="con-23-right">
+            <p3>《某高校大学研究生教师教学工作管理办法》（修订中）</p3>
+        </div>
+        <div class="con-24-right">
+            <p3>《某高校大学继续教育教师教学工作管理办法》（修订中）</p3>
+        </div>
+        <div class="con-25-hengxian"></div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-tp">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <div class="footer-di">
+            <div class="footer-di-box">
+                <span>版权所有©某高校大学</span>
+            </div>
+            <div class="footer-di-box">
+                <span>邮编：XXXXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>地址：某某省某某市民安路XX号</span>
+            </div>
+            <div class="footer-di-box">
+                <span>意见反馈：zg@mgx.edu.cn</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中ICP备XXXX-XXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中公网安备XXXXXXX号</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

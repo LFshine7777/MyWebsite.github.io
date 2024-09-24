@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><!--主页轮播图-->
+    <title>学生资助中心首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: '微软雅黑';
+            min-width: 1300px;
+            background-color: rgb(245, 245, 245);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .yingh {
+            position: relative;
+            width: 100%;
+            height: 26px;
+            background-color: rgba(26, 69, 147, 1)
+        }
+
+        .yh {
+            font-size: 14px;
+            color: rgb(180, 180, 180);
+            margin-top: 2px;
+        }
+
+        .yh:hover {
+            color: #fff;
+        }
+
+        .one-yh {
+            position: absolute;
+            width: 170px;
+            height: 100%;
+            right: calc(5% + 130px);
+            background-color: '';
+        }
+
+        .two-yh {
+            position: absolute;
+            width: 130px;
+            height: 100%;
+            right: 5%;
+            background-color: '';
+        }
+
+        #h {
+            position: sticky;
+            top: 0;
+        }
+
+        header {
+            position: sticky;
+            top: 0px;
+            background-color: rgb(222, 234, 255);
+            height: 80px;
+            z-index: 9;
+        }
+
+        #left {
+            position: absolute;
+            width: 350px;
+            height: 60px;
+            background-color: '';
+        }
+
+        .logo {
+            margin-top: 10px;
+            margin-left: 40px;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .right-si {
+            position: absolute;
+            top: 24px;
+            right: 30px;
+            width: 500px;
+            height: 40px;
+            background-color: '';
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            float: right;
+            right: 0;
+            padding: 5px 15px;
+        }
+
+        nav ul li a:hover {
+            color: rgba(26, 69, 147, 1);
+            text-decoration: none;
+        }
+
+        #han-h {
+            position: absolute;
+            right: 40px;
+            top: 24px;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .hamburger .bar {
+            width: 35px;
+            height: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            margin: 5px 0;
+        }
+
+        @media screen and (max-width: 1000px) {
+            nav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        /*轮播图样式开始*/
+        .carousel-control-prev-icon, 
+        .carousel-control-next-icon {
+            width: 55px;
+            height: 55px;
+        }
+
+
+        .carousel-control-prev, 
+        .carousel-control-next {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #myCarousel:hover .carousel-control-prev,
+        #myCarousel:hover .carousel-control-next {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .carousel-control-prev-icon {
+            background-image: url("image/index/sp.png");
+        }
+
+        .carousel-control-next-icon {
+            background-image: url("image/index/sn.png");
+        }
+
+        @media (min-width: 1051px) {
+            #myCarousel {
+                height: 87vh;
+            }
+
+            #myCarousel .carousel-inner {
+                height: 100%;
+            }
+
+            #myCarousel .carousel-item {
+                height: 100%;
+            }
+
+            #myCarousel .carousel-item img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        /*轮播图样式结束*/
+
+        .cdadi {
+            position: relative;
+            width: 100%;
+            height: 560px;
+            background-color: rgb(245, 245, 245);
+            display: flex;
+            justify-content: center;
+        }
+        .rdi {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: '';
+            width: 94%;
+            height: 90%;
+            margin-top: 40px;
+        }
+        .cr-box {
+            height: 96%;
+            width: 48%;
+            margin: 1%;
+            padding: 14px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        @media (min-width: 1161px) {
+            .rdi {
+                max-width: 1300px;
+            }
+        }
+        @media (min-width: 751px) and (max-width: 1050px) {
+            .cdadi {
+                height: 1100px;
+            }
+            .rdi {
+                height: 92%;
+            }
+            .cr-box:nth-child(1) {
+                height: 46%;
+                width: 100%;
+                margin: 10px;
+            }
+            .cr-box:nth-child(2) {
+                height: 46%;
+                width: 100%;
+                margin: 10px;
+            }
+        }
+        .h1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+        }
+        .l1 {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            background-color: '';
+            padding: 10px;
+        }
+        .l1-l {
+            position: relative;
+            top: 10%;
+            width: 200px;
+            height: 40px;
+            font-size: 26px;
+            background-color: '';
+        }
+        .l1-r {
+            position: absolute;
+            right: 0;
+            top: 36%;
+            width: 100px;
+            height: 20px;
+            font-size: 14px;
+            background-color: '';
+            cursor: pointer;
+        }
+        .l1-r:hover {
+            text-decoration: underline;
+            color: rgba(26, 69, 147, 1);
+        }
+        .l2 {
+            position: relative;
+            width: 100%;
+            height: 36%;
+            background-color: '';
+            padding: 10px;
+        }
+        .l2-c {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 69, 147, 1);
+        }
+        .l2-c:hover {
+            cursor: pointer;
+        }
+        .l2-l {
+            position: absolute;
+            left: 0;
+            width: calc(100% - 200px);
+            height: 100%;
+            background-color: '';
+        }
+        .l2-l-s {
+            position: absolute;
+            width: 100px;
+            height: 12%;
+            background-color: '';
+            top: 20%;
+            left: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .l2-l-x {
+            position: absolute;
+            width: 90%;
+            height: 40%;
+            background-color: '';
+            top: 40%;
+            left: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .l2-r {
+            position:absolute;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            background-color: '';
+            padding: 10px;
+        }
+        .l2-r-tp {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+            background-image: url("学生资助/s1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        @media screen and (max-width: 750px) {
+            .cdadi {
+                height: 1220px;
+            }
+            .cr-box:nth-child(1) {
+                height: 760px;
+                width: 100%;
+            }
+            .cr-box:nth-child(2) {
+                height: 340px;
+                width: 100%;
+            }
+            .l1 {
+                height: 9%;
+            }
+            .l2 {
+                height: 73%;
+            }
+            .l2-l-s {
+                top: 6px;
+                height: 18px;
+            }
+            .l2-l-x {
+                top: 30px;
+                height: 40px;
+                width: 151%;
+            }
+            .l2-r {
+                top: 14%;
+                width: 100%;
+                height: 86%;
+            }
+        }
+        .l3 {
+            position: relative;
+            width: 100%;
+            height: 22%;
+            background-color: '';
+            padding: 10px;
+        }
+        .l3-c {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+        }
+        .l3-c:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .l3-s {
+            position: absolute;
+            width: 100px;
+            height: 20%;
+            background-color: '';
+            top: 10%;
+            font-size: 13px;
+            left: 10px;
+            color: rgb(120, 120, 120);
+        }
+        .l3-x-left {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background-color: '';
+            top: 10%;
+            left: 10px;
+            font-size: 16px;
+        }
+        .l3-x-right {
+            position: absolute;
+            width: 16px;
+            height: 50%;
+            background-color: '';
+            top: -10%;
+            right: 10px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        .l3-x-right img {
+            position: relative;
+            width: 150%;
+            left: -20%;
+            height: 100%;
+        }
+        .l3-x {
+            position: absolute;
+            width: 100%;
+            height: 65%;
+            background-color: '';
+            top: 40%;
+        }
+        .l4 {
+            position: relative;
+            width: 100%;
+            height: 22%;
+            background-color: '';
+            padding: 10px;
+        }
+        .l4-c {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: '';
+        }
+        .l4-c:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .l4-s {
+            position: absolute;
+            width: 100px;
+            height: 20%;
+            background-color: '';
+            top: 10%;
+            font-size: 13px;
+            left: 10px;
+            color: rgb(120, 120, 120);
+        }
+        .l4-x-left {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background-color: '';
+            top: 10%;
+            left: 10px;
+            font-size: 16px;
+        }
+        .l4-x-right {
+            position: absolute;
+            width: 16px;
+            height: 50%;
+            background-color: '';
+            top: -10%;
+            right: 10px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+        .l4-x-right img {
+            position: relative;
+            width: 150%;
+            left: -20%;
+            height: 100%;
+        }
+        .l4-x {
+            position: absolute;
+            width: 100%;
+            height: 65%;
+            background-color: '';
+            top: 40%;
+        }
+        @media screen and (max-width: 750px) {
+            .l3 {
+                height: 9%;
+            }
+            .l3-x-right {
+                height: 70%;
+            }
+            .l4 {
+                height: 9%;
+            }
+            .l4-x-right {
+                height: 70%;
+            }
+        }
+
+        .r1 {
+            position: relative;
+            width: 100%;
+            height: 20%;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .r1-c {
+            position: absolute;
+            width: 140px;
+            height: 50%;
+            background-color: '';
+            font-size: 28px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            line-height: 1.5;
+        }
+        .r1-l {
+            position: absolute;
+            width: 80px;
+            height: 23%;
+            background-color: '';
+            font-size: 14px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            line-height: 1.5;
+            right: 10px;
+        }
+        .r2 {
+            position: relative;
+            width: 100%;
+            height: 16%;
+            background-color: '';
+            border-bottom: 2px dotted rgb(200, 200, 200);
+        }
+        .r2-l {
+            position: absolute;
+            top: calc((100% - 30px)/2);
+            left: 0;
+            width: 26px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        .r2-center {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            left: 36px;
+            width: 70%;
+            height: 18px;
+            background-color: '';
+        }
+        #r2-c-text {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .r2-right {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            width: 84px;
+            height: 18px;
+            background-color: '';
+            right: 0;
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+        }
+        .r2:hover  .r2-center, 
+        .r2:hover  .r2-right {
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+        .r3 {
+            position: relative;
+            width: 100%;
+            height: 16%;
+            background-color: '';
+            border-bottom: 2px dotted rgb(200, 200, 200);
+        }
+        .r3-l {
+            position: absolute;
+            top: calc((100% - 30px)/2);
+            left: 0;
+            width: 26px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        .r3-c {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            left: 36px;
+            width: 70%;
+            height: 18px;
+            background-color: '';
+        }
+        .r3-c-text {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .r3-r {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            width: 84px;
+            height: 18px;
+            background-color: '';
+            right: 0;
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+        }
+        .r3:hover  .r3-c, 
+        .r3:hover  .r3-r {
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+        .r4 {
+            position: relative;
+            width: 100%;
+            height: 16%;
+            background-color: '';
+            border-bottom: 2px dotted rgb(200, 200, 200);
+        }
+        .r4-l {
+            position: absolute;
+            top: calc((100% - 30px)/2);
+            left: 0;
+            width: 26px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        .r4-c {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            left: 36px;
+            width: 70%;
+            height: 18px;
+            background-color: '';
+        }
+        .r4-c-text {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .r4-r {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            width: 84px;
+            height: 18px;
+            background-color: '';
+            right: 0;
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+        }
+        .r4:hover  .r4-c, 
+        .r4:hover  .r4-r {
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+        .r5 {
+            position: relative;
+            width: 100%;
+            height: 16%;
+            background-color: '';
+            border-bottom: 2px dotted rgb(200, 200, 200);
+        }
+        .r5-l {
+            position: absolute;
+            top: calc((100% - 30px)/2);
+            left: 0;
+            width: 26px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        .r5-c {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            left: 36px;
+            width: 70%;
+            height: 18px;
+            background-color: '';
+        }
+        .r5-c-text {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .r5-r {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            width: 84px;
+            height: 18px;
+            background-color: '';
+            right: 0;
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+        }
+        .r5:hover  .r5-c, 
+        .r5:hover  .r5-r {
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+        .r6 {
+            position: relative;
+            width: 100%;
+            height: 16%;
+            background-color: '';
+            border-bottom: 2px dotted rgb(200, 200, 200);
+        }
+        .r6-l {
+            position: absolute;
+            top: calc((100% - 30px)/2);
+            left: 0;
+            width: 26px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        .r6-c {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            left: 36px;
+            width: 70%;
+            height: 18px;
+            background-color: '';
+        }
+        .r6-c-text {
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .r6-r {
+            position: absolute;
+            top: calc((100% - 18px)/2);
+            width: 84px;
+            height: 18px;
+            background-color: '';
+            right: 0;
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+        }
+        .r6:hover  .r6-c, 
+        .r6:hover  .r6-r {
+            color: rgb(26, 69, 147);
+            cursor: pointer;
+        }
+        @media screen and (max-width: 750px) {
+            .r1 {
+                height: 15%;
+            }
+            .r1-c {
+                height: 70%;
+                line-height: 1.7;
+                font-size: 20px;
+            }
+            .r2 {
+                height: 17%;
+            }
+            .r3 {
+                height: 17%;
+            }
+            .r4 {
+                height: 17%;
+            }
+            .r5 {
+                height: 17%;
+            }
+            .r6 {
+                height: 17%;
+            }
+        }
+
+
+        .footer {
+            position: relative;
+            top: 60px;
+            width: 100%;
+            height: 270px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-center {
+            position: absolute;
+            width: 97%;
+            height: 75%;
+            background-color: '';
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .footer-box {
+            margin: 1%;
+            padding: 20px;
+            background-color: '';
+            box-sizing: border-box;
+        }
+        .footer-box:nth-child(1),
+        .footer-box:nth-child(2) {
+            width: 26%;
+        }
+        .footer-box:nth-child(3) {
+            width: 38%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        @media screen and (max-width: 999px) {
+            .footer {
+                height: 700px;
+            }
+
+            .footer-center {
+                height: 85%;
+            }
+
+            .footer-box:nth-child(1),
+            .footer-box:nth-child(2),
+            .footer-box:nth-child(3) {
+                width: 92%;
+                margin: 10px;
+            }
+        }
+        .f1 {
+            position: relative;
+            top: 0;
+            width: 79%;
+            height: 22px;
+            background-color: '';
+            font-size: 18px;
+        }
+        .f2 {
+            position: relative;
+            top: 4px;
+            width: 100%;
+            height: 1.5px;
+            background-color: rgb(180, 180, 180);
+        }
+        .f2-1 {
+            position: absolute;
+            width: 16%;
+            height: 200%;
+            background-color: rgba(26, 69, 147, 1);
+            left: 0;
+        }
+        .f3 {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            height: 70%;
+            background-color: '';
+        }
+        .f3-1 {
+            position: absolute;
+            top: 0%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-1:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-2 {
+            position: absolute;
+            top: 25%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-2:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-3 {
+            position: absolute;
+            top: 50%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-3:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f3-4 {
+            position: absolute;
+            top: 75%;
+            width: 200px;
+            height: 20%;
+            background-color: '';
+            font-size: 14px;
+            color: rgb(120, 120, 120);
+            overflow: hidden;
+        }
+        .f3-4:hover {
+            color: rgba(26, 69, 147, 1);
+            cursor: pointer;
+        }
+        .f4 {
+            position: relative;
+            top: 20px;
+            width: 100%;
+            height: 70%;
+            background-color: '';
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .f4-1 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-1-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/we.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-1-2 {
+            position: relative;
+            left: -12%;
+            width: 124%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .f4-2 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-2-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/me.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-2-2 {
+            position: relative;
+            left: -10%;
+            width: 120%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .f4-3 {
+            width: 90px;
+            height: 100%;
+            background-color: '';
+        }
+        .f4-3-1 {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: '';
+            background-image: url("学生资助/f.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .f4-3-2 {
+            position: relative;
+            left: -10%;
+            width: 120%;
+            height: 20%;
+            background-color: '';
+            display: flex;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .yedi {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            top: 60px;
+            background-color: rgba(26, 69, 147, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .yedi-c {
+            position: absolute;
+            width: 250px;
+            height: 20px;
+            background-color: '';
+            font-size: 15px;
+            color: rgb(180, 180, 180);
+        }
+    </style>
+</head>
+
+<body style="min-width: set">
+    <div class="yingh">
+        <div class="one-yh">
+            <p class="yh">
+                <a href="http://xszz.chsi.com.cn/" target="_blank">全国高校资助信息系统</a>
+            </p>
+        </div>
+        <div class="two-yh">
+            <p class="yh">
+                <a href="https://sls.cdb.com.cn/" target="_blank">国开行在线服务系统</a>
+            </p>
+        </div>
+    </div>
+    <header>
+        <a href="#" class="logo" id="left">
+            <img src="学生资助/学生logo.png">
+        </a>
+        <nav class="right-si">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="qgjxjj.html">勤工俭学</a></li>
+                <li><a href="zxjjj.html">助学金</a></li>
+                <li><a href="zxdkjj.html">助学贷款</a></li>
+                <li><a href="qgjx.html">下载专区</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="han-h">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+    <!--轮播图-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="学生资助/t11.jpg" alt="Image 1" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="学生资助/t22.jpg" alt="Image 2" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="学生资助/t33.jpg" alt="Image 3" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="学生资助/t44.jpg" alt="Image 4" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="学生资助/t55.jpg" alt="Image 5" width="100%">
+                <div class="carousel-caption">
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <div class="cdadi">
+        <div class="rdi">
+            <div class="cr-box">
+                <div class="h1">
+                    <div class="l1">
+                        <div class="l1-l">
+                            <p>新闻动态</p>
+                        </div>
+                        <div class="l1-r">
+                            <p>查看更多&nbsp;></p>
+                        </div>
+                    </div>
+                    <div class="l2">
+                        <div class="l2-c">
+                            <div class="l2-l">
+                                <div class="l2-l-s">
+                                    <p>2023-11-25</p>
+                                </div>
+                                <div class="l2-l-x">
+                                    <p>感恩有你，梦想接力：学生资助中心联合某高校大学附属小学顺利举办主题教育活动</p>
+                                </div>
+                            </div>
+                            <div class="l2-r">
+                                <div class="l2-r-tp"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l3">
+                        <div class="l3-c">
+                            <div class="l3-s">
+                                <p>2023-12-15</p>
+                            </div>
+                            <div class="l3-x">
+                                <div class="l3-x-left">
+                                    <p>2023年度某高校大学三项助学金学生见面会顺利举办</p>
+                                </div>
+                                <div class="l3-x-right">
+                                    <img src="学生资助/dayuhao.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l4">
+                        <div class="l4-c">
+                            <div class="l4-s">
+                                <p>2023-12-15</p>
+                            </div>
+                            <div class="l4-x">
+                                <div class="l4-x-left">
+                                    <p>2023年度某高校大学三项助学金学生见面会顺利举办</p>
+                                </div>
+                                <div class="l4-x-right">
+                                    <img src="学生资助/dayuhao.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cr-box">
+                <div class="h1">
+                    <div class="r1">
+                        <div class="r1-c">
+                            <p>通知公告</p>
+                        </div>
+                        <div class="r1-l">
+                            <p>查看更多&nbsp;></p>
+                        </div>
+                    </div>
+                    <div class="r2">
+                        <div class="r2-l">01</div>
+                        <div class="r2-center">
+                            <p id="r2-c-text">关于申请2023年毕业生基层就业学费补偿贷款代偿的通知</p>
+                        </div>
+                        <div class="r2-right">
+                            <p>2023-10-20</p>
+                        </div>
+                    </div>
+                    <div class="r3">
+                        <div class="r3-l">02</div>
+                        <div class="r3-c">
+                            <p class="r3-c-text">关于2022-2023学年某高校大学学生资助工作先进单位、先进个人、新人奖评选结果的公示</p>
+                        </div>
+                        <div class="r3-r">
+                            <p>2023-10-20</p>
+                        </div>
+                    </div>
+                    <div class="r4">
+                        <div class="r4-l">03</div>
+                        <div class="r4-c">
+                            <p class="r4-c-text">学生资助中心2023年中秋国庆带值班安排</p>
+                        </div>
+                        <div class="r4-r">
+                            <p>2023-10-20</p>
+                        </div>
+                    </div>
+                    <div class="r5">
+                        <div class="r5-l">04</div>
+                        <div class="r5-c">
+                            <p class="r5-c-text">2023—2024学年某高校大学学生资助中心院系学业辅导项目申报立项通知</p>
+                        </div>
+                        <div class="r5-r">
+                            <p>2023-10-20</p>
+                        </div>
+                    </div>
+                    <div class="r6">
+                        <div class="r6-l">05</div>
+                        <div class="r6-c">
+                            <p class="r6-c-text">教育部等四部门关于调整完善助学贷款有关政策的通知</p>
+                        </div>
+                        <div class="r6-r">
+                            <p>2023-10-20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-center">
+            <div class="footer-box">
+                <div class="f1">
+                    <p>友情链接</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1"></div>
+                </div>
+                <div class="f3">
+                    <div class="f3-1">
+                        <a href="http://www.moe.gov.cn/">
+                            <p>>&nbsp;教育部</p>
+                        </a>
+                    </div>
+                    <div class="f3-2">
+                        <a href="http://www.csa.cee.edu.cn/">
+                            <p>>&nbsp;全国学生资助管理中心</p>
+                        </a>
+                    </div>
+                    <div class="f3-3">
+                        <a href="https://sls.cdb.com.cn/">
+                            <p>>&nbsp;国家开发银行生源地助学贷款</p>
+                        </a>
+                    </div>
+                    <div class="f3-4">
+                        <a href="http://sso.pkusz.edu.cn/">
+                            <p>>&nbsp;深圳研究生院学生资助中心</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="f1">
+                    <p>联系我们</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1">
+                    </div>
+                </div>
+                <div class="f3">
+                    <div class="f3-1">
+                        <p>爱名路学生中心777号、778号</p>
+                    </div>
+                    <div class="f3-2">
+                        <p>电话：000-0000-000</p>
+                    </div>
+                    <div class="f3-3">
+                        <p>邮箱：mgx@mgx.edu.cn</p>
+                    </div>
+                    <div class="f3-4">
+                        <p>监督邮箱：jdmgx@mgx.edu.cn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-box">
+                <div class="f1" style="left: -10%;">
+                    <p>关注我们</p>
+                </div>
+                <div class="f2">
+                    <div class="f2-1"></div>
+                </div>
+                <div class="f4">
+                    <div class="f4-1">
+                        <div class="f4-1-1"></div>
+                        <div class="f4-1-2">
+                            <p>某高校大学资助中心</p>
+                        </div>
+                    </div>
+                    <div class="f4-2">
+                        <div class="f4-2-1"></div>
+                        <div class="f4-2-2">
+                            <p>学生发展支持协会</p>
+                        </div>
+                    </div>
+                    <div class="f4-3">
+                        <div class="f4-3-1"></div>
+                        <div class="f4-3-2">
+                            <p>学生服务总队</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="yedi">
+        <div class="yedi-c">
+            <p>版权所有©某高校大学学生资助中心</p>
+        </div>
+    </div>
+</body>
+<!-- Bootstrap JS, Popper.js, and jQuery （主页轮播图）-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function adjustBoxHeight() {
+        var box = document.querySelector('.db-1');
+
+        box.style.height = 'auto'; // 先将高度设为自动，以获取自然内容高度
+        var contentHeight = box.scrollHeight; // 获取内容的自然高度
+
+        box.style.height = contentHeight + 'px'; // 设置.box的高度为内容高度
+    }
+
+    window.addEventListener('resize', adjustBoxHeight);
+    window.onload = adjustBoxHeight;
+
+</script>
+
+<script>
+    // 判断设备宽度
+    if (window.innerWidth <= 750) {
+        document.querySelector('body').style.minWidth = '1300px';
+    } else {
+        document.querySelector('body').style.minWidth = 'unset';
+    }
+</script>
+
+</html>

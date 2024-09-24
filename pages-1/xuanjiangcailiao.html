@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>信息公开-宣讲材料</title>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            color: unset;
+            text-decoration: unset;
+        }
+
+        body {
+            min-width: 1200px;
+            font-family: '微软雅黑';
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background-color: rgb(26, 69, 147);
+            background-image: url("信息公开/a.jpg");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .logo {
+            position: absolute;
+            left: 20px;
+            width: 550px;
+            height: 140px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bounceOut {
+            animation: bounceOut 1s forwards;
+        }
+
+        .bounceIn {
+            animation: bounceIn 1s forwards;
+        }
+
+        @keyframes bounceOut {
+            0% {
+                top: 0;
+                opacity: 1;
+            }
+
+            100% {
+                top: -90px;
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                top: -90px;
+                opacity: 0;
+            }
+
+            100% {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+        nav {
+            position: relative;
+            z-index: 999;
+            display: block;
+            width: 100%;
+            background-color: #f2f2f2;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu>li {
+            flex: 1;
+            position: relative;
+        }
+
+        .menu>li>a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.2s;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .menu>li>a:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            background-color: rgb(59, 178, 233);
+            transition: height 0.2s ease, opacity 0.2s ease, visibility 0.2s;
+            list-style: none;
+            z-index: 99999;
+        }
+
+        .sub-menu li {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sub-menu li:hover {
+            background-color: #ddd;
+        }
+
+        .sub-menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 鼠标悬停时激活子菜单 */
+        .menu>li:hover>.sub-menu {
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu>li:nth-child(2):hover>.sub-menu {
+            width: 100%;
+        }
+
+        .tp {
+            position: relative;
+            width: 100%;
+            height: 210px;
+            background-color: #fff;
+            background-image: url("信息公开/b.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .tabs {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            height: 60px;
+            width: 80%;
+            left: 10%;
+            margin-top: -3%;
+            background-color: skyblue;
+            z-index: 9999;
+        }
+
+        .tab-buttonimg {
+            cursor: pointer;
+            width: 6%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            position: absolute;
+            background-color: rgb(26, 69, 147);
+            text-align: center;
+            line-height: 45px;
+            background-image: url("信息公开/c.png");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tab-buttonimg img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tab-button1 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 6%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button2 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 18%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button3 {
+            cursor: pointer;
+            width: 12%;
+            height: 100%;
+            top: 0%;
+            left: 30%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button4 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 42%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button5 {
+            cursor: pointer;
+            width: 22%;
+            height: 100%;
+            top: 0%;
+            left: 55%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button6 {
+            cursor: pointer;
+            width: 13%;
+            height: 100%;
+            top: 0%;
+            left: 77%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button7 {
+            cursor: pointer;
+            width: 10%;
+            height: 100%;
+            top: 0%;
+            left: 90%;
+            position: absolute;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 55px;
+            font-size: 20px;
+            overflow: hidden;
+        }
+
+        .tab-button:hover {
+            background-color: rgba(26, 68, 147, 0.296);
+        }
+
+        .tab-content {
+            position: absolute;
+            height: 1000px;
+            width: 90%;
+            top: 20px;
+            left: 5%;
+            position: relative;
+            background-color: '';
+        }
+
+        .equal-e11 {
+            position: absolute;
+            width: 150px;
+            height: 4.5%;
+            left: 2%;
+            top: 3%;
+            background-color: '';
+            overflow: hidden;
+        }
+
+        .equal-e22-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.3%;
+            top: 8%;
+            background-color: rgb(26, 69, 147);
+        }
+
+        .equal-e33 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 13.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e33-eleft,
+        .equal-e44-eleft44,
+        .equal-e55-eleft55,
+        .equal-e66-eleft66,
+        .equal-e77-eleft77,
+        .equal-e88-eleft88,
+        .equal-e99-eleft99,
+        .equal-e1010-eleft1010,
+        .equal-e1111-eleft1111,
+        .equal-e1212-eleft1212,
+        .equal-e1313-eleft1313,
+        .equal-e1414-eleft1414,
+        .equal-e1515-eleft1515,
+        .equal-e1616-eleft1616,
+        .equal-e1717-eleft1717,
+        .equal-e1818-eleft1818,
+        .equal-e1919-eleft1919 {
+            position: absolute;
+            width: 73%;
+            height: 100%;
+            top: 0%;
+            left: 0;
+            background-color: '';
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .equal-e33-eright,
+        .equal-e44-eright44,
+        .equal-e55-eright55,
+        .equal-e66-eright66,
+        .equal-e77-eright77,
+        .equal-e88-eright88,
+        .equal-e99-eright99,
+        .equal-e1010-eright1010,
+        .equal-e1111-eright1111,
+        .equal-e1212-eright1212,
+        .equal-e1313-eright1313,
+        .equal-e1414-eright1414,
+        .equal-e1515-eright1515,
+        .equal-e1616-eright1616,
+        .equal-e1717-eright1717,
+        .equal-e1818-eright1818,
+        .equal-e1919-eright1919 {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            width: 100px;
+            height: 100%;
+            background-color: '';
+            overflow: hidden;
+        }
+
+        .equal-e33:hover .equal-e33-eleft,
+        .equal-e33:hover .equal-e33-eright {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e33-hengxian {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 17%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e44 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 18.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e44:hover .equal-e44-eleft44,
+        .equal-e44:hover .equal-e44-eright44 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e44-hengxian44 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 22%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e55 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 23.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e55:hover .equal-e55-eleft55,
+        .equal-e55:hover .equal-e55-eright55 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e55-hengxian55 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 27%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e66 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 28.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e66:hover .equal-e66-eleft66,
+        .equal-e66:hover .equal-e66-eright66 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e66-hengxian66 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 32%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e77 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 33.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e77:hover .equal-e77-eleft77,
+        .equal-e77:hover .equal-e77-eright77 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e77-hengxian77 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 37%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e88 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 38.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e88:hover .equal-e88-eleft88,
+        .equal-e88:hover .equal-e88-eright88 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e88-hengxian88 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 42%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e99 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 43.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e99:hover .equal-e99-eleft99,
+        .equal-e99:hover .equal-e99-eright99 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e99-hengxian99 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 47%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1010 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 48.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1010:hover .equal-e1010-eleft1010,
+        .equal-e1010:hover .equal-e1010-eright1010 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1010-hengxian1010 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 52%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1111 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 53.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1111:hover .equal-e1111-eleft1111,
+        .equal-e1111:hover .equal-e1111-eright1111 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1111-hengxian1111 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 57%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1212 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 58.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1212:hover .equal-e1212-eleft1212,
+        .equal-e1212:hover .equal-e1212-eright1212 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1212-hengxian1212 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 62%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1313 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 63.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1313:hover .equal-e1313-eleft1313,
+        .equal-e1313:hover .equal-e1313-eright1313 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1313-hengxian1313 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 67%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1414 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 68.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1414:hover .equal-e1414-eleft1414,
+        .equal-e1414:hover .equal-e1414-eright1414 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1414-hengxian1414 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 72%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1515 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 73.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1515:hover .equal-e1515-eleft1515,
+        .equal-e1515:hover .equal-e1515-eright1515 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1515-hengxian1515 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 77%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1616 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 78.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1616:hover .equal-e1616-eleft1616,
+        .equal-e1616:hover .equal-e1616-eright1616 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1616-hengxian1616 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 82%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1717 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 83.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1717:hover .equal-e1717-eleft1717,
+        .equal-e1717:hover .equal-e1717-eleft1717 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1717-hengxian1717 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 87%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1818 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 88.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1818:hover .equal-e1818-eleft1818,
+        .equal-e1818:hover .equal-e1818-eleft1818 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1818-hengxian1818 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 92%;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .equal-e1919 {
+            position: absolute;
+            width: 100%;
+            height: 3.5%;
+            top: 93.5%;
+            left: 0;
+            background-color: '';
+            cursor: pointer;
+        }
+
+        .equal-e1919:hover .equal-e1919-eleft1919,
+        .equal-e1919:hover .equal-e1919-eleft1919 {
+            color: rgb(26, 69, 147);
+        }
+
+        .equal-e1919-hengxian1919 {
+            position: absolute;
+            width: 100%;
+            height: 0.1%;
+            top: 97%;
+            background-color: rgb(230, 230, 230);
+        }
+
+
+        /*footer*/
+        .footer {
+            position: relative;
+            top: 100px;
+            width: 100%;
+            min-width: 1200px;
+            height: 170px;
+            background-color: rgb(26, 69, 147);
+            display: grid;
+            place-items: center;
+        }
+
+        .footer-tp {
+            position: absolute;
+            top: 30px;
+            width: 200px;
+            height: 65px;
+            background-color: '';
+        }
+        
+        .footer-di {
+            position: absolute;
+            width: 98%;
+            min-width: 1200px;
+            bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1%;
+            justify-content: space-around;
+            background-color: '';
+        }
+
+        .footer-di-box {
+            font-family: '微软雅黑';
+            width: fit-content;
+            height: fit-content;
+            box-sizing: border-box;
+            background-color: '';
+            font-size: 0.9em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .style {
+            line-height: 40px;
+            font-style: 20px;
+            color: #fff;
+        }
+
+        p1 {
+            color: rgb(26, 69, 147);
+            font-size: 30px;
+        }
+
+        p2 {
+            font-size: 18px;
+        }
+
+        p3 {
+            font-size: 20px;
+        }
+
+        p4 {
+            font-size: 22px;
+            color: rgb(26, 69, 147);
+        }
+
+        p5 {
+            font-size: 16px;
+        }
+
+        .d {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: darkcyan;
+        }
+
+        .a {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            width: 100%;
+            height: 90px;
+            background-color: orangered;
+        }
+
+        .c {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: darkcyan;
+        }
+
+        .b {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            width: 100%;
+            height: 90px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="logo">
+            <img src="信息公开/logo.png" width="100%" height="100%">
+        </div>
+    </div>
+
+    <nav id="nav">
+        <ul class="menu">
+            <li><a href="index.html">首页</a>
+            </li>
+            <li><a href="#">部门概况</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教务工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教学工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教研工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">教材建设</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">导师工作</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">国际交流</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li><a href="#">奖助管理</a>
+                <ul class="sub-menu"></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="tp"></div>
+
+    <div class="tabs">
+        <div class="tab-buttonimg"></div>
+        <div class="tab-button1">
+            <a href="wenjianguali.html" target="_blank">文件管理</a>
+        </div>
+        <div class="tab-button2">
+            <a href="peiyangfangan.html" target="_blank">培养方案</a>
+        </div>
+        <div class="tab-button3">
+            <a href="xuanjiangcailiao.html" target="_blank">宣讲材料</a>
+        </div>
+        <div class="tab-button4">
+            <a href="zhidaoxingwenjian.html" target="_blank">指导性文件</a>
+        </div>
+        <div class="tab-button5">
+            <a href="sixiangtaolun.html" target="_blank">某高校教育思想讨论</a>
+        </div>
+        <div class="tab-button6">
+            <a href="xueshengsouce.html" target="_blank">学生手册</a>
+        </div>
+        <div class="tab-button7">
+            <a href="FQA.html" target="_blank">FAQ</a>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="equal-e11">
+            <p1>宣讲材料</p1>
+        </div>
+        <div class="equal-e22-hengxian"></div>
+        <div class="equal-e33">
+            <div class="equal-e33-eleft">
+                <p5>刘虎校长：数字赋能本科教学质量提升论坛</p5>
+            </div>
+            <div class="equal-e33-eright">
+                <p5>2023-10-03</p5>
+            </div>
+        </div>
+        <div class="equal-e33-hengxian"></div>
+        <div class="equal-e44">
+            <div class="equal-e44-eleft44">
+                <p5>刘虎虎副校长：介绍人才培养工作推进总体情况</p5>
+            </div>
+            <div class="equal-e44-eright44">
+                <p5>2023-09-27</p5>
+            </div>
+        </div>
+        <div class="equal-e44-hengxian44"></div>
+        <div class="equal-e55">
+            <div class="equal-e55-eleft55">
+                <p5>刘小虎副校长：某高校大学迎接新一轮本科教育教学审核评估工作方案</p5>
+            </div>
+            <div class="equal-e55-eright55">
+                <p5>2023-09-17</p5>
+            </div>
+        </div>
+        <div class="equal-e55-hengxian55"></div>
+        <div class="equal-e66">
+            <div class="equal-e66-eleft66">
+                <p5>某高校大学2023年教育思想大讨论阶段性成果会议--2022级本科培养计划修订初步方案（2022年7月1日）</p5>
+            </div>
+            <div class="equal-e66-eright66">
+                <p5>2023-09-02</p5>
+            </div>
+        </div>
+        <div class="equal-e66-hengxian66"></div>
+        <div class="equal-e77">
+            <div class="equal-e77-eleft77">
+                <p5>虎小刘主任：做好精准招宣，提升招生质量</p5>
+            </div>
+            <div class="equal-e77-eright77">
+                <p5>2023-08-19</p5>
+            </div>
+        </div>
+        <div class="equal-e77-hengxian77"></div>
+        <div class="equal-e88">
+            <div class="equal-e88-eleft88">
+                <p5>2023年进阶式培养工作专题交流会相关资料汇总</p5>
+            </div>
+            <div class="equal-e88-eright88">
+                <p5>2023-08-07</p5>
+            </div>
+        </div>
+        <div class="equal-e88-hengxian88"></div>
+        <div class="equal-e99">
+            <div class="equal-e99-eleft99">
+                <p5>《某高校大学关于全面提升人才培养质量的若干意见》文件及资料汇总</p5>
+            </div>
+            <div class="equal-e99-eright99">
+                <p5>2023-07-29</p5>
+            </div>
+        </div>
+        <div class="equal-e99-hengxian99"></div>
+        <div class="equal-e1010">
+            <div class="equal-e1010-eleft1010">
+                <p5>土木工程专业（国际班）本科培养方案制订工作交流</p5>
+            </div>
+            <div class="equal-e1010-eright1010">
+                <p5>2023-07-14</p5>
+            </div>
+        </div>
+        <div class="equal-e1010-hengxian1010"></div>
+        <div class="equal-e1111">
+            <div class="equal-e1111-eleft1111">
+                <p5>《某高校大学新时代体育美育劳育实施方案》工作汇报（视频资料）</p5>
+            </div>
+            <div class="equal-e1111-eright1111">
+                <p5>2023-07-03</p5>
+            </div>
+        </div>
+        <div class="equal-e1111-hengxian1111"></div>
+        <div class="equal-e1212">
+            <div class="equal-e1212-eleft1212">
+                <p5>《某高校大学人才培养质量保证体系2.0》工作汇报（视频资料）</p5>
+            </div>
+            <div class="equal-e1212-eright1212">
+                <p5>2023-06-26</p5>
+            </div>
+        </div>
+        <div class="equal-e1212-hengxian1212"></div>
+        <div class="equal-e1313">
+            <div class="equal-e1313-eleft1313">
+                <p5>某高校大学课程思政推进工作小组设立方案汇报（视频资料）</p5>
+            </div>
+            <div class="equal-e1313-eright1313">
+                <p5>2023-06-12</p5>
+            </div>
+        </div>
+        <div class="equal-e1313-hengxian1313"></div>
+        <div class="equal-e1414">
+            <div class="equal-e1414-eleft1414">
+                <p5>《某高校大学2023级本科人才培养方案修订原则意见》制订工作汇报（视频资料）</p5>
+            </div>
+            <div class="equal-e1414-eright1414">
+                <p5>2023-05-25</p5>
+            </div>
+        </div>
+        <div class="equal-e1414-hengxian1414"></div>
+        <div class="equal-e1515">
+            <div class="equal-e1515-eleft1515">
+                <p5>某高校大学本科专业增设与调整工作汇报（视频资料）</p5>
+            </div>
+            <div class="equal-e1515-eright1515">
+                <p5>2023-05-04</p5>
+            </div>
+        </div>
+        <div class="equal-e1515-hengxian1515"></div>
+        <div class="equal-e1616">
+            <div class="equal-e1616-eleft1616">
+                <p5>某高校大学本科专业建设与管理工作资料汇总</p5>
+            </div>
+            <div class="equal-e1616-eright1616">
+                <p5>2023-04-23</p5>
+            </div>
+        </div>
+        <div class="equal-e1616-hengxian1616"></div>
+        <div class="equal-e1717">
+            <div class="equal-e1717-eleft1717">
+                <p5>《某高校大学2023级本科人才培养方案修订原则意见》宣讲会（PPT及视频资料）</p5>
+            </div>
+            <div class="equal-e1717-eright1717">
+                <p5>2023-04-13</p5>
+            </div>
+        </div>
+        <div class="equal-e1717-hengxian1717"></div>
+        <div class="equal-e1818">
+            <div class="equal-e1818-eleft1818">
+                <p5>治国理政之学，善政良治之用——夏书章教授学术访谈</p5>
+            </div>
+            <div class="equal-e1818-eright1818">
+                <p5>2023-04-09</p5>
+            </div>
+        </div>
+        <div class="equal-e1818-hengxian1818"></div>
+        <div class="equal-e1919">
+            <div class="equal-e1919-eleft1919">
+                <p5>某高校大学继续教育表彰奖励暨经验交流会顺利举行</p5>
+            </div>
+            <div class="equal-e1919-eright1919">
+                <p5>2023-03-13</p5>
+            </div>
+        </div>
+        <div class="equal-e1919-hengxian1919"></div>
+
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-tp">
+            <img src="logo.png" width="100%" height="100%">
+        </div>
+        <div class="footer-di">
+            <div class="footer-di-box">
+                <span>版权所有©某高校大学</span>
+            </div>
+            <div class="footer-di-box">
+                <span>邮编：XXXXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>地址：某某省某某市民安路XX号</span>
+            </div>
+            <div class="footer-di-box">
+                <span>意见反馈：zg@mgx.edu.cn</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中ICP备XXXX-XXX</span>
+            </div>
+            <div class="footer-di-box">
+                <span>中公网安备XXXXXXX号</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
