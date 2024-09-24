@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="30" viewBox="0 0 32 30">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e8877f"/>
+      <stop offset="1" stop-color="#e3482b"/>
+    </linearGradient>
+  </defs>
+  <g id="application_default_-_6" data-name="application default - 6" transform="translate(-94 -86)">
+    <rect id="矩形_146" data-name="矩形 146" width="32" height="30" transform="translate(94 86)" fill="#fff"/>
+    <path id="资讯_2_" data-name="资讯 (2)" d="M210.453,185.6H190.747a5.211,5.211,0,0,0-5.147,5.147v17.5c0,2.794,2.353,7.206,5.147,7.206h18.382l6.471-6.471V190.747A5.21,5.21,0,0,0,210.453,185.6Zm-9.706,19.265h-8.971a2.229,2.229,0,0,1,0-4.412h8.971a2.121,2.121,0,0,1,1.912,2.206A1.87,1.87,0,0,1,200.747,204.865Zm0-8.529h-8.971a2.229,2.229,0,0,1,0-4.412h8.971a2.121,2.121,0,0,1,1.912,2.206A1.936,1.936,0,0,1,200.747,196.335Zm4.118,17.059v-4.265c0-2.353-.294-4.265,2.059-4.265h6.324Z" transform="translate(-90.6 -99.453)" fill="url(#linear-gradient)"/>
+    <rect id="矩形_188" data-name="矩形 188" width="32" height="30" transform="translate(94 86)" fill="none" opacity="0.58"/>
+  </g>
+</svg>
