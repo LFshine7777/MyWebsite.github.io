@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="30" viewBox="0 0 32 30">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8bc2ff"/>
+      <stop offset="1" stop-color="#398fff"/>
+    </linearGradient>
+  </defs>
+  <g id="application_default_-_15" data-name="application default - 15" transform="translate(-270 -128)">
+    <rect id="矩形_155" data-name="矩形 155" width="32" height="30" transform="translate(270 128)" fill="#fff"/>
+    <path id="导航" d="M99.6,135.2H80.4a1.51,1.51,0,0,0-1.6,1.6v1.6a1.51,1.51,0,0,0,1.6,1.6H99.6a1.51,1.51,0,0,0,1.6-1.6v-1.6a1.507,1.507,0,0,0-1.6-1.6Zm-27.207,0H70.8a1.719,1.719,0,0,0-1.6,1.6v1.6a1.719,1.719,0,0,0,1.6,1.6h1.6a1.719,1.719,0,0,0,1.6-1.6v-1.6a1.713,1.713,0,0,0-1.6-1.6Zm0,11.2H70.8a1.719,1.719,0,0,0-1.6,1.6v1.6a1.719,1.719,0,0,0,1.6,1.6h1.6a1.719,1.719,0,0,0,1.6-1.6V148A1.713,1.713,0,0,0,72.4,146.4Zm27.207,0H80.4a1.51,1.51,0,0,0-1.6,1.6v1.6a1.51,1.51,0,0,0,1.6,1.6H99.6a1.51,1.51,0,0,0,1.6-1.6V148A1.507,1.507,0,0,0,99.6,146.4ZM72.4,157.6H70.8a1.719,1.719,0,0,0-1.6,1.6v1.6a1.719,1.719,0,0,0,1.6,1.6h1.6a1.719,1.719,0,0,0,1.6-1.6v-1.6A1.713,1.713,0,0,0,72.4,157.6Zm27.207,0H80.4a1.51,1.51,0,0,0-1.6,1.6v1.6a1.51,1.51,0,0,0,1.6,1.6H99.6a1.51,1.51,0,0,0,1.6-1.6v-1.6A1.507,1.507,0,0,0,99.6,157.6Z" transform="translate(200.8 -5.8)" fill="url(#linear-gradient)"/>
+    <rect id="矩形_188" data-name="矩形 188" width="32" height="30" transform="translate(270 128)" fill="none" opacity="0.58"/>
+  </g>
+</svg>
