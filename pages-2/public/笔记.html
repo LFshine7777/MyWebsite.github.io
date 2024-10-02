@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&display=swap"
+        rel="stylesheet">
+        <!-- 图片滑动 -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <title>笔记</title>
+    <style type="text/css" data-style-id="主题色">
+        :root {
+            --span-color: rgb(180, 180, 180);
+            --span-item-color: rgb(255, 255, 255);
+            --information-inner: rgb(30, 30, 30);
+            /* 主体颜色 */
+            --body-color: rgb(0, 0, 0);
+            /* 鼠标悬停颜色 1*/
+            --body-item-color: rgb(30, 30, 30);
+            /* 鼠标悬停颜色 2*/
+            --body-item-color-2: rgb(240, 240, 240);
+            /* 标题颜色 */
+            --span-title-color: rgb(240, 240, 240);
+            /* 名字颜色 */
+            --span-name-color: rgb(180, 180, 180);
+            /* popup背景颜色 */
+            --body-popup-color: rgb(20, 20, 20);
+            /* popup取消按钮 */
+            --span-quxiao-color: rgb(50, 50, 50);
+            /* popup时间、地址、评论总数、作者名字 */
+            --span-popup-si-color: rgb(140, 140, 140);
+            /* popup #副标题、查看更多 */
+            --span-popup-disc-color: rgb(175, 209, 255);
+            /* popup分割线 */
+            --span-popup-divder-color: rgb(80, 80, 80);
+            /* popup评论 */
+            --span-popup-comment-color: rgb(230, 230, 230);
+            /* popup svg */
+            --popup-svg-color: rgb(255, 255, 255);
+
+            --iii1: rgb(120, 120, 120);
+            --iii2: rgb(50, 50, 50);
+            --iii4: rgb(40, 40, 40);
+            --iii46: rgb(50, 50, 50);
+
+            --shimmer-1: rgb(30, 30, 30);
+            --shimmer-2: rgb(54, 54, 54);
+
+            /* 暗模式按钮颜色 */
+            --switch-dark-button: rgb(50, 50, 50);
+            /* 亮模式按钮颜色 */
+            --switch-light-button: rgb(0, 0, 0);
+            /* 按钮背景颜色 */
+            --theme-switch-color: rgb(50, 50, 50);
+        }
+
+        /* 亮模式 */
+        .darkmode {
+            --span-color: rgb(100, 100, 100);
+            --span-item-color: rgb(40, 40, 40);
+            --information-inner: rgb(255, 255, 255);
+            /* 主体颜色 */
+            --body-color: rgb(250, 250, 250);
+            /* 鼠标悬停颜色 1*/
+            --body-item-color: rgb(240, 240, 240);
+            /* 鼠标悬停颜色 2*/
+            --body-item-color-2: rgb(40, 40, 40);
+            /* 标题颜色 */
+            --span-title-color: rgb(40, 40, 40);
+            /* 名字颜色 */
+            --span-name-color: rgb(100, 100, 100);
+            /* popup背景颜色 */
+            --body-popup-color: rgb(250, 250, 250);
+            /* popup取消按钮 */
+            --span-quxiao-color: rgb(220, 220, 220);
+            /* popup时间、地址、评论总数、作者名字 */
+            --span-popup-si-color: rgb(100, 100, 100);
+            /* popup #副标题、查看更多 */
+            --span-popup-disc-color: rgb(60, 60, 120);
+            /* popup分割线 */
+            --span-popup-divder-color: rgb(210, 210, 210);
+            /* popup评论 */
+            --span-popup-comment-color: rgb(40, 40, 40);
+            /* popup svg */
+            --popup-svg-color: rgb(40, 40, 40);
+
+            --iii1: rgb(140, 140, 140);
+            --iii2: rgb(240, 240, 240);
+            --iii4: rgb(200, 200, 200);
+            --iii46: rgb(240, 240, 240);
+
+            --shimmer-1: rgb(240, 240, 240);
+            --shimmer-2: rgb(216, 216, 216);
+
+            /* 暗模式按钮颜色 */
+            --switch-dark-button: rgb(255, 255, 255);
+            /* 亮模式按钮颜色 */
+            --switch-light-button: transparent;
+            /* 按钮背景颜色 */
+            --theme-switch-color: rgb(240, 240, 240);
+        }
+
+        /* 按钮元素 */
+        #theme-switch {
+            position: relative;
+            width: 70px;
+            height: 35px;
+            border-radius: 30px;
+            background-color: var(--theme-switch-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            cursor: pointer;
+        }
+
+        /* 暗模式样式 */
+        .dark-mode-button {
+            position: relative;
+            aspect-ratio: 1/1;
+            height: 80%;
+            border-radius: 50%;
+            background-color: var(--switch-dark-button);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 亮模式样式 */
+        .light-mode-button {
+            position: relative;
+            aspect-ratio: 1/1;
+            height: 80%;
+            border-radius: 50%;
+            background-color: var(--switch-light-button);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <style type="text/css" data-style-id="初始化">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '微软雅黑';
+        }
+
+        html {
+            font-size: 16px;
+            /* 全局字体大小设置为 16px */
+        }
+
+        body {
+            background-color: var(--body-color);
+        }
+
+        /* 取消超链接的下划线和默认文字颜色 */
+        a {
+            text-decoration: unset;
+            color: unset;
+        }
+
+        /* 弹窗内容样式开始 */
+        :root {
+            --fp-border-radius: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            :root {
+                --fp-border-radius: unset;
+            }
+        }
+
+        :root {
+            --video-background-color-1: transparent;
+            --video-color: white;
+            --video-background-color-3: rgba(60, 60, 60, 1);
+        }
+
+        [data-center] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        [data-space-evenly] {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        [data-space-between] {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        [data-space-around] {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        :root {
+            --white: rgb(255, 255, 255)
+        }
+    </style>
+    <style type="text/css" data-style-id="瀑布流">
+        /* 瀑布流布局开始 */
+        .pubuliu {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: var(--body-color);
+        }
+
+        /* 瀑布流布局的元素 */
+        .pubuliu-item {
+            background-color: var(--body-color);
+            margin-bottom: 10px;
+            position: relative;
+            padding: 10px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* 瀑布流布局子元素里面的第一个元素 */
+        .photo {
+            position: relative;
+            width: 100%;
+            padding-top: 140%;
+            background-color: rgb(180, 180, 180);
+            border-radius: 16px;
+            cursor: pointer;
+        }
+
+        picture {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--body-item-color);
+            border-radius: inherit;
+            overflow: hidden;
+            animation: shimmer 2s linear infinite;
+            background-size: 400%;
+            background-image: linear-gradient(to right, var(--shimmer-1) 0%, var(--shimmer-1) 30%, var(--shimmer-2) 45%, var(--shimmer-2) 50%, var(--shimmer-1) 60%, var(--shimmer-1) 100%);
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 100%;
+            }
+
+            100% {
+                background-position: 0%;
+            }
+        }
+
+        picture img {
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            border-radius: inherit;
+        }
+
+        /* 瀑布流布局子元素里面的第二个元素 */
+        .miaoshu {
+            position: relative;
+            margin-top: 10px;
+            width: 90%;
+            height: auto;
+            background-color: var(--body-color);
+            ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        /* 标题 */
+        .title {
+            position: relative;
+            width: 100%;
+            height: auto;
+            color: var(--span-title-color);
+            background-color: var(--body-color);
+            ;
+            font-size: 0.9rem;
+        }
+
+        /* 包含有关作者的内容 */
+        .author-wrapper {
+            position: relative;
+            margin-top: 5px;
+            width: 100%;
+            height: auto;
+            background-color: var(--body-color);
+            ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 作者的个人头像和名字 */
+        #data-image-name {
+            height: 100%;
+            width: fit-content;
+            background-color: var(--body-color);
+            ;
+            display: flex;
+            align-items: center;
+        }
+
+        [out-1-data-image-name] {
+            margin-left: 60px;
+        }
+
+        /* 个人头像 */
+        #data-image-name img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        #data-image-name-img-other {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        /* 名字 */
+        #data-image-name span {
+            font-size: 0.75rem;
+            margin-left: 6px;
+            color: var(--span-name-color);
+        }
+
+        #data-image-name-span-other {
+            font-size: 1rem !important;
+            margin-left: 10px !important;
+        }
+
+        #data-image-name span:hover {
+            color: rgb(40, 40, 40);
+        }
+
+        /* 关注 */
+        .follow-btn {
+            position: relative;
+            width: 90px;
+            height: 70%;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: deepskyblue;
+        }
+
+        /* 点赞 */
+        .like-wrapper {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* 点赞数字 */
+        .like-wrapper span:nth-child(2) {
+            font-size: 0.85rem;
+        }
+
+        [like-wrapper] {
+            color: var(--span-name-color);
+            background-color: var(--body-color);
+        }
+
+        /* 点赞数字 */
+        [like-wrapper] {
+            margin-top: -1px;
+            background-color: var(--body-color);
+        }
+
+        [like-wrapper-svg] {
+            color: var(--span-popup-si-color);
+            margin-left: 14px;
+            background-color: var(--body-color);
+        }
+
+        [like-wrapper-svg] svg {
+            margin-top: 3px;
+        }
+
+        [l-svg-1] {
+            display: block;
+        }
+
+        [l-svg-2] {
+            display: none;
+        }
+
+        .head {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background-color: var(--body-popup-color);
+            z-index: 9999999;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--span-popup-divder-color);
+        }
+
+        @media (max-width: 1000px) {
+            .head {
+                position: sticky;
+                top: 0px;
+                left: 0;
+            }
+        }
+
+        #data-image-name {
+            background-color: var(--body-popup-color);
+        }
+
+        [popup-head] {
+            margin-left: 60px;
+        }
+
+        .footer {
+            width: 100%;
+            height: 70px;
+            z-index: 99999999999;
+            padding: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            .footer {
+                position: sticky;
+                bottom: 0px;
+                left: 0;
+            }
+        }
+
+        /* 最大宽度为1000px时内嵌的.head和.footer消失 */
+        @media (max-width: 1000px) {
+            .footer {
+                background-color: var(--body-popup-color);
+                border-top: 1px solid var(--span-popup-divder-color);
+            }
+
+            [head-footer-maxwidth-none] {
+                display: none;
+            }
+        }
+
+        /* 最小宽度为1001px时外部的.head和.footer消失 */
+        @media (min-width: 1001px) {
+            .footer {
+                background-color: var(--body-popup-color);
+                border-top: 1px solid var(--span-popup-divder-color);
+            }
+
+            [head-footer-minwidth-none] {
+                display: none;
+            }
+        }
+    </style>
+    <style type="text/css" data-style-id="大体框架和 header ">
+        .app {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 500px) {
+            .app {
+                width: 100%;
+            }
+        }
+
+        /* 头部 */
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background-color: var(--body-color);
+        }
+
+        .data-header-img {
+            position: relative;
+            width: 80px;
+            height: 34px;
+            margin-left: 18px;
+            border-radius: 20px;
+            background-color: var(--body-color);
+        }
+
+        .logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: white;
+            border-radius: inherit;
+            background-color: deepskyblue;
+            font-family: "Zhi Mang Xing", cursive;
+            font-weight: bold;
+        }
+
+        .search-input-box {
+            position: relative;
+            width: 60%;
+            height: 34px;
+            background-color: var(--body-item-color);
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        @media (max-width: 701px) {
+            .search-input-box {
+                display: none;
+            }
+        }
+
+        .search-input-box input {
+            position: relative;
+            width: calc(100% - 96px);
+            height: 90%;
+            background-color: var(--body-item-color);
+            outline: unset;
+            border: unset;
+            font-size: 0.9rem;
+            margin-left: 12px;
+            color: var(--span-color);
+        }
+
+        .s-input-box {
+            position: relative;
+            width: 66px;
+            height: 30px;
+            margin-right: 12px;
+            background-color: var(--body-item-color);
+        }
+
+        .close-icon {
+            position: relative;
+            width: 30px;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            background-color: var(--body-item-color);
+        }
+
+        .close-icon svg {
+            visibility: hidden;  /* 初始时或没有内容时隐藏 */
+        }
+
+        .close-icon.show svg {
+            visibility: visible; /* 有内容时显示 */
+        }
+
+        .search-icon {
+            position: relative;
+            width: 30px;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            background-color: var(--body-item-color);
+        }
+
+        .advise-list {
+            position: absolute;
+            height: fit-content;
+            background-color: var(--information-inner);
+            border-radius: 14px;
+            display: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #advise-list {
+            width: 100%;
+            top: 120%;
+        }
+
+        .a-list-item {
+            position: relative;
+            list-style-type: none;
+            margin-top: 12px;
+            background-color: var(--information-inner);
+        }
+
+        [a-list-item-1] {
+            height: 20px;
+            width: fit-content;
+            margin-left: 10px;
+            font-size: 0.75rem;
+            padding-left: 6px;
+            color: var(--iii1);
+            display: flex;
+            align-items: center;
+        }
+
+        [a-list-item-2] {
+            border-radius: 10px;
+            height: 30px;
+            width: calc(100% - 8px);
+            margin-top: 10px;
+            font-size: 1rem;
+            margin-left: 4px;
+            padding-left: 8px;
+            display: flex;
+            align-items: center;
+            color: var(--span-color);
+        }
+
+        [a-list-item-2]:last-child {
+            margin-bottom: 4px;
+        }
+
+        [a-list-item-2]:hover {
+            cursor: pointer;
+            color: var(--body-item-color-2);
+            background-color: var(--iii46);
+        }
+
+        .menu {
+            position: relative;
+            right: 10px;
+            height: 34px;
+            width: 80px;
+            font-size: 1rem;
+            color: var(--span-color);
+            background-color: var(--body-color);
+        }
+
+        @media (max-width: 951px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        .caidan {
+            display: none;
+            width: auto;
+            height: auto;
+            margin-right: 18px;
+            background-color: var(--body-color);
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media(min-width: 702px) and (max-width: 951px) {
+            .caidan {
+                display: block;
+            }
+        }
+
+        @media (max-width: 701px) {
+            .caidan {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .m-search-icon {
+                display: none;
+                position: relative;
+                width: 30px;
+                height: 30px;
+                margin-right: 14px;
+                background-color: var(--body-color);
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+        }
+
+        @media (max-width: 701px) {
+            .m-search-icon {
+                display: block;
+            }
+        }
+
+        .more {
+            position: relative;
+            display: none;
+            background-color: var(--body-color);
+        }
+
+        @media (max-width: 951px) {
+            .more {
+                width: 34px;
+                aspect-ratio: 1/1;
+                display: block;
+            }
+        }
+
+        /* 主体 */
+        .main-container {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 60px);
+            background-color: var(--body-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 左边 */
+        .side-left-bar {
+            position: relative;
+            width: 25%;
+            height: 100%;
+            background-color: var(--body-color);
+        }
+
+        @media (max-width: 950px) {
+            .side-left-bar {
+                display: none;
+            }
+        }
+
+        @media (min-width: 951px) and (max-width: 1150px) {
+            .side-left-bar {
+                width: 24%;
+            }
+        }
+
+        @media (min-width: 1151px) and (max-width: 1399px) {
+            .side-left-bar {
+                width: 21%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .side-left-bar {
+                width: 20%;
+            }
+        }
+
+        /* 右边 */
+        .side-right-bar {
+            position: relative;
+            width: 75%;
+            height: 100%;
+            background-color: var(--body-color);
+            overflow: auto;
+        }
+
+        @media (max-width: 950px) {
+            .side-right-bar {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 951px) and (max-width: 1150px) {
+            .side-right-bar {
+                width: 76%;
+            }
+        }
+
+        @media (min-width: 1151px) and (max-width: 1399px) {
+            .side-right-bar {
+                width: 79%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .side-right-bar {
+                width: 80%;
+            }
+        }
+
+        /* 右边标题 */
+        .side-right-bar-title {
+            position: relative;
+            width: 100%;
+            padding-right: 10px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            background-color: var(--body-color);
+        }
+
+        /* 右边内容 */
+        .side-right-bar-content {
+            position: relative;
+            width: 100%;
+            height: calc(100% - 50px);
+            background-color: gold;
+        }
+    </style>
+    <style type="text/css" data-style-id="side-left-bar">
+        /* 左边 */
+        .channel-list {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: var(--body-color);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        .channel-list-item {
+            position: relative;
+            min-height: 50px;
+            border-radius: 30px;
+            background-color: var(--body-color);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            cursor: pointer;
+            width: 90%;
+            height: 50px;
+        }
+
+        .channel-list-item:hover {
+            background-color: var(--body-item-color);
+        }
+
+        .channel-list-item:nth-child(1) {
+            margin-top: 8px;
+        }
+
+        .channel-list-item:nth-child(2) {
+            margin: 10px;
+        }
+
+        .channel-list-item:nth-child(3) {
+            margin: 0 10px 10px 10px;
+        }
+
+        .channel-list-item:nth-child(4) span:first-child img {
+            position: relative;
+            width: 26px;
+            height: 26px;
+            background-color: '';
+            border-radius: 50%;
+        }
+
+        .channel-list-item:last-child {
+            position: absolute;
+            bottom: 10px;
+            cursor: pointer;
+        }
+
+        .channel-list-item span {
+            width: fit-content;
+            aspect-ratio: 1/1;
+            color: var(--span-item-color);
+            background-color: transparent;
+        }
+
+        .channel-list-item span:first-child {
+            margin-left: 20px;
+        }
+
+        /* 汉堡菜单 */
+        .hanburger {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: transparent;
+            flex-direction: column;
+        }
+
+        .hanburger-line {
+            width: 24px;
+            height: 2px;
+            background-color: var(--span-color);
+            border-radius: 10px;
+        }
+
+        .channel-list-item span:last-child {
+            margin-left: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        [data-sz] {
+            margin-left: 10px;
+        }
+    </style>
+    <style type="text/css" data-style-id="information-inner(设置)">
+        .information-inner {
+            position: absolute;
+            display: none;
+            border-radius: 12px;
+            background-color: var(--information-inner);
+            cursor: initial;
+            border: 1px solid var(--span-popup-divder-color);
+        }
+
+        #i-information-inner {
+            height: 135px;
+            width: 100%;
+            bottom: 110%;
+        }
+
+        #m-information-inner {
+            width: 220px;
+            top: 40px;
+            right: 0px;
+            z-index: 100;
+            height: 179px;
+            flex-direction: column;
+        }
+
+        .i-inner-item {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: var(--information-inner);
+            font-size: 0.75rem;
+        }
+
+        .i-inner-item:nth-child(3) span {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            color: var(--span-color);
+            background-color: var(--information-inner);
+        }
+
+        .i-inner-item:nth-child(3) span:first-child {
+            margin-left: 0px;
+        }
+
+        .i-inner-item:nth-child(3) span:last-child {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        [data-iii-1] {
+            margin-top: 12px;
+            width: calc(100% - 24px);
+            left: 12px;
+            color: var(--iii1);
+        }
+
+        [data-iii-2] {
+            height: 2px;
+            margin: 10px 0;
+            width: calc(100% - 24px);
+            left: 12px;
+            background-color: var(--iii2);
+        }
+
+        [data-iii-3] {
+            margin: 10px 0px 1px 0px;
+            width: calc(100% - 24px);
+            left: 12px;
+            font-size: 1rem;
+            height: 40px;
+            background-color: var(--information-inner);
+        }
+
+        [data-iii-4] {
+            width: calc(100% - 8px);
+            padding-left: 8px;
+            height: 34px;
+            left: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+            color: var(--span-color);
+        }
+
+        [data-iii-5] {
+            height: 2px;
+            margin: 4px 0px;
+            width: calc(100% - 24px);
+            left: 12px;
+            background-color: var(--iii2);
+        }
+
+        [data-iii-6] {
+            cursor: pointer;
+            width: calc(100% - 8px);
+            padding-left: 8px;
+            height: 34px;
+            left: 4px;
+            font-size: 1rem;
+            border-radius: 10px;
+            color: var(--span-color);
+        }
+
+        [data-iii-4]:hover,
+        [data-iii-6]:hover {
+            color: var(--body-item-color-2);
+            background-color: var(--iii46);
+        }
+    </style>
+    <style type="text/css" data-style-id="info">
+        .info-content {
+            position: relative;
+            width: 100%;
+            padding-top: 25%;
+            background-color: var(--body-color);
+        }
+
+        @media (max-width: 700px) {
+            .info-content {
+                padding-top: 30%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .info-content {
+                padding-top: 20%;
+            }
+        }
+
+        .info-part {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info {
+            position: relative;
+            max-width: 500px;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+
+        .info:nth-child(1) {
+            position: relative;
+            width: 18%;
+            max-width: 200px;
+            border-radius: 50%;
+            border: 1px solid rgb(240, 240, 240);
+            aspect-ratio: 1/1;
+            background-color: transparent;
+            margin-right: 30px;
+        }
+
+        .info:nth-child(1) img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .info:last-child {
+            position: relative;
+            width: 60%;
+            height: auto;
+            margin-left: 30px;
+            background-color: transparent;
+        }
+
+        @media (max-width: 700px) {
+            .info:nth-child(1) {
+                margin-top: -6%;
+                margin-right: 10px;
+            }
+            .info:nth-child(2) {
+                margin-top: 0%;
+                margin-left: 10px;
+            }
+        }
+
+        .user-name {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: var(--body-color);
+        }
+
+        .u-name {
+            position: relative;
+            width: auto;
+            height: auto;
+            font-size: 1.7rem;
+            color: var(--span-item-color);
+        }
+
+        .u-right {
+            position: relative;
+            width: 80px;
+            height: 40px;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            background-color: deepskyblue;
+        }
+
+        .user-id {
+            position: relative;
+            margin-top: 4px;
+            width: 100%;
+            height: auto;
+            font-size: 0.8rem;
+            color: var(--span-popup-si-color);
+            background-color: var(--body-color);
+        }
+
+        .user-desc {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: var(--body-color);
+            margin: 10px 0;
+            color: var(--span-item-color);
+            font-size: 0.9rem;
+        }
+
+        .user-data {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            background-color: var(--body-color);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .ud-item {
+            position: relative;
+            width: auto;
+            height: 100%;
+            font-size: 0.8rem;
+            background-color: var(--body-color);
+        }
+
+        .ud-item:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        .udi-count {
+            position: relative;
+            width: auto;
+            height: 100%;
+            color: var(--span-item-color);
+            background-color: var(--body-color);
+        }
+
+        .udi-shows {
+            position: relative;
+            width: auto;
+            height: 100%;
+            margin-left: 5px;
+            background-color: var(--body-color);
+            color: var(--span-popup-si-color);
+        }
+    </style>
+    <style type="text/css" data-style-id="tab">
+        .tab-container {
+            width: 100%;
+            height: 60px;
+            background-color: var(--body-color);
+        }
+
+        .tab-buttom {
+            position: relative;
+            width: 70px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: var(--body-item-color);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .tab-buttom:nth-child(1) {
+            margin-right: 10px;
+            color: var(--span-item-color);
+        }
+
+        .tab-buttom:nth-child(2) {
+            margin-right: 10px;
+            color: var(--span-popup-si-color);
+        }
+
+        .tab-buttom:last-child:hover {
+            color: var(--span-item-color);
+        }
+    </style>
+    <style type="text/css" data-style-id="mask-paper">
+        .mask-paper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100vw;
+            height: 60px;
+            background-color: var(--body-color);
+            z-index: 99;
+        }
+
+        @media (min-width: 702px) {
+            .mask-paper {
+                display: none !important;
+            }
+        }
+
+        .mp-input {
+            position: absolute;
+            width: calc(100% - 110px);
+            height: 40px;
+            top: 10px;
+            left: 18px;
+            border-radius: 50px;
+            background-color: var(--body-item-color);
+            color: var(--span-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mp-input input {
+            width: calc(100% - 76px);
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            height: 100%;
+            background-color: var(--body-item-color);
+            border-top-left-radius: inherit;
+            border-bottom-left-radius: inherit;
+            outline: unset;
+            border: unset;
+            padding-left: 16px;
+            font-size: 1rem;
+            color: var(--span-color);
+        }
+
+        .mp-close {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: var(--body-color);
+            top: 10px;
+            right: 18px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--span-color);
+            cursor: pointer;
+        }
+
+        .mp-close:hover {
+            color: var(--span-item-color);
+            background-color: var(--body-item-color);
+        }
+
+        #mask-advise-list {
+            position: absolute;
+            width: calc(100% - 112px);
+            margin-left: 18px;
+            bottom: -314px;
+        }
+    </style>
+    <style type="text/css" data-style-id="bottom-side-left-bar">
+        .bslb-content {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: var(--body-color);
+        }
+
+        @media (min-width: 950px) {
+            .bslb-content {
+                display: none;
+            }
+        }
+
+        .bslb-channel-list-item {
+            position: relative;
+            width: auto;
+            height: 40px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: var(--span-item-color);
+        }
+
+        .bslb-channel-list-item span:not(:first-child) {
+            margin-left: 10px;
+        }
+
+        .bslb-channel-list-item:last-child img {
+            position: relative;
+            width: 26px;
+            height: 26px;
+            background-color: '';
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="header-container" data-space-between>
+            <a href="登录后的页面.html" class="data-header-img">
+                <div class="logo" data-center>某软件</div>
+            </a>
+            <div class="search-input-box" data-space-between>
+                <input id="search-input" placeholder="搜索某软件">
+                <div class="s-input-box" data-space-between>
+                    <div class="close-icon" data-center>
+                        <svg id="close-icon-svg" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" fill="var(--span-color)" viewBox="0 0 24 24">
+                            <path d="M19.23 4.772a.92.92 0 010 1.301l-5.928 5.928 5.926 5.925a.92.92 0 01-1.302 1.302l-5.925-5.926-5.928 5.928a.92.92 0 01-1.214.077l-.087-.076a.92.92 0 010-1.302l5.928-5.928-5.93-5.93a.92.92 0 011.3-1.301l5.931 5.93 5.928-5.928a.92.92 0 011.215-.077l.087.077z"></path>
+                        </svg>
+                    </div>
+                    <div class="search-icon" data-center>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" fill="var(--span-color)"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M11.5 3a8.5 8.5 0 016.613 13.84l3.023 3.024a.9.9 0 11-1.272 1.272l-3.024-3.023A8.5 8.5 0 1111.5 3zm0 15.2a6.7 6.7 0 100-13.4 6.7 6.7 0 000 13.4z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <ul class="advise-list" id="advise-list">
+                    <li class="a-list-item" a-list-item-1>猜你想搜</li>
+                    <li class="a-list-item" a-list-item-2>国庆节</li>
+                    <li class="a-list-item" a-list-item-2>上海好玩的景点</li>
+                    <li class="a-list-item" a-list-item-2>刻进中国人的浪漫</li>
+                    <li class="a-list-item" a-list-item-2>音乐推荐</li>
+                    <li class="a-list-item" a-list-item-2>暑假工一定要避开的套路</li>
+                    <li class="a-list-item" a-list-item-2>vs code官网</li>
+                    <li class="a-list-item" a-list-item-2>国庆假期</li>
+                </ul>
+            </div>
+            <div class="menu" data-center>
+                <a href="发布.html" target="_blank">创作中心</a>
+            </div>
+            <div class="caidan">
+                <div class="m-search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" width="30px" fill="var(--span-color)"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M11.5 3a8.5 8.5 0 016.613 13.84l3.023 3.024a.9.9 0 11-1.272 1.272l-3.024-3.023A8.5 8.5 0 1111.5 3zm0 15.2a6.7 6.7 0 100-13.4 6.7 6.7 0 000 13.4z">
+                    </path>
+                </svg>
+                </div>
+                <div class="mask-paper">
+                    <div class="mp-input">
+                        <input id="mask-input" type="text" placeholder="搜索某软件">
+                        <div class="s-input-box" data-space-between>
+                            <div class="close-icon" data-center>
+                                <svg id="close-icon-svg" xmlns="http://www.w3.org/2000/svg" height="22px" width="22px"
+                                    fill="var(--span-color)" viewBox="0 0 24 24">
+                                    <path d="M19.23 4.772a.92.92 0 010 1.301l-5.928 5.928 5.926 5.925a.92.92 0 01-1.302 1.302l-5.925-5.926-5.928 5.928a.92.92 0 01-1.214.077l-.087-.076a.92.92 0 010-1.302l5.928-5.928-5.93-5.93a.92.92 0 011.3-1.301l5.931 5.93 5.928-5.928a.92.92 0 011.215-.077l.087.077z"></path>
+                                </svg>
+                            </div>
+                            <div class="search-icon" data-center>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="22px" width="22px" fill="var(--span-color)"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M11.5 3a8.5 8.5 0 016.613 13.84l3.023 3.024a.9.9 0 11-1.272 1.272l-3.024-3.023A8.5 8.5 0 1111.5 3zm0 15.2a6.7 6.7 0 100-13.4 6.7 6.7 0 000 13.4z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mp-close">取消</div>
+                    <ul class="advise-list" id="mask-advise-list">
+                        <li class="a-list-item" a-list-item-1>猜你想搜</li>
+                        <li class="a-list-item" a-list-item-2>国庆节</li>
+                        <li class="a-list-item" a-list-item-2>上海好玩的景点</li>
+                        <li class="a-list-item" a-list-item-2>刻进中国人的浪漫</li>
+                        <li class="a-list-item" a-list-item-2>音乐推荐</li>
+                        <li class="a-list-item" a-list-item-2>暑假工一定要避开的套路</li>
+                        <li class="a-list-item" a-list-item-2>vs code官网</li>
+                        <li class="a-list-item" a-list-item-2>国庆假期</li>
+                    </ul>
+                </div>
+                <div class="more">
+                    <div class="hanburger" id="m-hanburger" data-space-evenly>
+                        <div class="hanburger-line"></div>
+                        <div class="hanburger-line"></div>
+                        <div class="hanburger-line"></div>
+                    </div>
+                    <div class="information-inner" id="m-information-inner">
+                        <div class="i-inner-item" data-iii-1>设置</div>
+                        <div class="i-inner-item" data-iii-2></div>
+                        <div class="i-inner-item" data-iii-3>
+                            <span>深色模式</span>
+                            <span>
+                                <div id="theme-switch">
+                                    <div class="dark-mode-button" onclick="enableDarkmode()" data-center>
+                                        <!-- 黑色 -->
+                                        <svg id="dark-mode-black-1" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                            width="20px" viewBox="0 0 24 24">
+                                            <path
+                                                d="M19.904 14.202a8.2 8.2 0 11-9.695-10.203 9.835 9.835 0 00-.009.403c0 5.38 4.336 9.748 9.704 9.8zm.288-1.802a8 8 0 01-7.828-10.392 10.158 10.158 0 00-1.896.11c-4.795.74-8.466 4.883-8.466 9.884 0 5.523 4.477 10 10 10 4.825 0 8.852-3.417 9.792-7.964.127-.61.197-1.242.207-1.888-.58.15-1.186.235-1.809.25z"
+                                                fill="white"></path>
+                                        </svg>
+                                        <!-- 白色 -->
+                                        <svg id="dark-mode-white-1" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                            width="20px" viewBox="0 0 24 24">
+                                            <path
+                                                d="M19.904 14.202a8.2 8.2 0 11-9.695-10.203 9.835 9.835 0 00-.009.403c0 5.38 4.336 9.748 9.704 9.8zm.288-1.802a8 8 0 01-7.828-10.392 10.158 10.158 0 00-1.896.11c-4.795.74-8.466 4.883-8.466 9.884 0 5.523 4.477 10 10 10 4.825 0 8.852-3.417 9.792-7.964.127-.61.197-1.242.207-1.888-.58.15-1.186.235-1.809.25z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="light-mode-button" onclick="disableDarkmode()" data-center>
+                                        <!-- 黑色 -->
+                                        <svg id="light-mode-black-1" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                            width="20px" viewBox="0 0 24 24">
+                                            <g clip-path="url(#light_mode_clip0_7448_208043)">
+                                                <path
+                                                    d="M11.998 16.2a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zm0 1.8a6 6 0 100-12 6 6 0 000 12zM11.998.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0V1a.9.9 0 01.9-.9zM3.583 3.585a.9.9 0 011.273 0L6.27 4.999a.9.9 0 01-1.273 1.273L3.583 4.858a.9.9 0 010-1.273zm16.83 0a.9.9 0 010 1.273l-1.415 1.414A.9.9 0 0117.725 5l1.414-1.414a.9.9 0 011.273 0zM.097 12a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zm20 0a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zM6.27 17.727a.9.9 0 010 1.273l-1.414 1.414a.9.9 0 11-1.273-1.273l1.414-1.414a.9.9 0 011.273 0zm11.455 0a.9.9 0 011.273 0l1.414 1.414a.9.9 0 11-1.273 1.273L17.725 19a.9.9 0 010-1.273zM11.998 20.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0v-2a.9.9 0 01.9-.9z"
+                                                    fill="white"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- 白色 -->
+                                        <svg id="light-mode-white-1" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                            width="20px" viewBox="0 0 24 24">
+                                            <path
+                                                d="M11.998 16.2a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zm0 1.8a6 6 0 100-12 6 6 0 000 12zM11.998.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0V1a.9.9 0 01.9-.9zM3.583 3.585a.9.9 0 011.273 0L6.27 4.999a.9.9 0 01-1.273 1.273L3.583 4.858a.9.9 0 010-1.273zm16.83 0a.9.9 0 010 1.273l-1.415 1.414A.9.9 0 0117.725 5l1.414-1.414a.9.9 0 011.273 0zM.097 12a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zm20 0a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zM6.27 17.727a.9.9 0 010 1.273l-1.414 1.414a.9.9 0 11-1.273-1.273l1.414-1.414a.9.9 0 011.273 0zm11.455 0a.9.9 0 011.273 0l1.414 1.414a.9.9 0 11-1.273 1.273L17.725 19a.9.9 0 010-1.273zM11.998 20.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0v-2a.9.9 0 01.9-.9z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="i-inner-item channel-list-other-item backl-ogin" onclick="logout()" data-iii-4>退出登录</div>
+                        <div class="i-inner-item" data-iii-5></div>
+                        <div class="i-inner-item" data-iii-6>
+                            <a href="发布.html" target="_blank">创作中心</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="side-left-bar">
+                <div class="channel-list">
+                    <a class="channel-list-item" href="登录后的页面.html" target="_blank">
+                        <span data-center>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M20.768 7.934a4 4 0 00-1.825-2.153l-5-2.778a4 4 0 00-3.885 0l-5 2.778A4 4 0 003 9.278v7.646a4 4 0 004 4h10a4 4 0 004-4V9.278v-.035a3.995 3.995 0 00-.232-1.309zm-9.776-3.452a2 2 0 012.016 0l5.2 3.033a2 2 0 01.992 1.728v7.881a2 2 0 01-2 2H6.8a2 2 0 01-2-2V9.243a1.998 1.998 0 01.992-1.728l5.2-3.033z"
+                                    fill="currentColor"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.72 14.883h-.001l-.002-.003-.003-.003-.004-.006-.007-.008-.001-.002.001.002.016.02z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M9.703 14.863l-.001-.002.001.002.047.045a1.7 1.7 0 00.33.222c.33.176.934.394 1.92.394.986 0 1.59-.218 1.92-.394a1.698 1.698 0 00.377-.268.9.9 0 011.423 1.102l-.035.044a2.452 2.452 0 01-.24.245 3.495 3.495 0 01-.678.465c-.606.324-1.503.606-2.767.606s-2.16-.282-2.767-.606c-.301-.16-.523-.327-.679-.465a2.453 2.453 0 01-.24-.245l-.034-.044a.9.9 0 011.423-1.101zm.016.02l-.002-.003-.003-.003-.004-.006-.007-.008.016.02z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span data-center>发现</span>
+                    </a>
+                    <a class="channel-list-item" href="发布.html" target="_blank">
+                        <span data-center>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M16 4.8A4.2 4.2 0 0120.2 9v6a4.2 4.2 0 01-4.2 4.2H8A4.2 4.2 0 013.8 15V9A4.2 4.2 0 018 4.8h8zM8 3a6 6 0 00-6 6v6a6 6 0 006 6h8a6 6 0 006-6V9a6 6 0 00-6-6H8z"
+                                    fill="currentColor"></path>
+                                <path
+                                    d="M11.1 15a.9.9 0 101.8 0v-2.1H15a.9.9 0 100-1.8h-2.1V9a.9.9 0 10-1.8 0v2.1H9a.9.9 0 000 1.8h2.1V15z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span data-center>发布</span>
+                    </a>
+                    <a class="channel-list-item" href="通知.html" target="_blank">
+                        <span data-center>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M20.16 13.9v-2.7c0-3.18-1.99-6.07-4.98-7.3C14.58 2.75 13.35 2 12 2s-2.58.75-3.18 1.9c-3 1.23-4.98 4.12-4.98 7.3v2.69C2.77 14.26 2 15.26 2 16.42c0 1.48 1.24 2.68 2.76 2.68H8.5c.28 1.64 1.73 2.9 3.5 2.9s3.22-1.26 3.5-2.9h3.74c1.52 0 2.76-1.2 2.76-2.68 0-1.16-.77-2.15-1.84-2.52zM12 20.2c-.74 0-1.36-.46-1.6-1.1h3.19c-.23.64-.85 1.1-1.59 1.1zm7.24-2.9H4.76c-.5 0-.9-.39-.9-.88 0-.48.41-.88.91-.88.51 0 .93-.4.93-.9V11.2c0-2.56 1.67-4.88 4.14-5.76.26-.09.46-.29.56-.54.24-.66.89-1.1 1.61-1.1.72 0 1.37.44 1.61 1.1.09.25.3.45.56.54 2.48.88 4.14 3.19 4.14 5.76v3.44c0 .5.42.9.94.9.5 0 .9.39.9.88a.91.91 0 01-.92.88z"
+                                    fill="currentcolor"></path>
+                            </svg>
+                        </span>
+                        <span data-center>通知</span>
+                    </a>
+                    <a class="channel-list-item" href="笔记.html">
+                        <span data-center id="user-avator-other">
+                            <img src="avator/wo.webp" alt="">
+                        </span>
+                        <span data-center>我</span>
+                    </a>
+                    <a class="channel-list-item" id="channel-list-last-item">
+                        <span data-center>
+                            <div class="hanburger" data-space-evenly>
+                                <div class="hanburger-line"></div>
+                                <div class="hanburger-line"></div>
+                                <div class="hanburger-line"></div>
+                            </div>
+                        </span>
+                        <span data-space-evenly data-sz>更多</span>
+                        <div class="information-inner" id="i-information-inner">
+                            <div class="i-inner-item" data-iii-1="">设置</div>
+                            <div class="i-inner-item" data-iii-2></div>
+                            <div class="i-inner-item" data-iii-3>
+                                <span>深色模式</span>
+                                <span>
+                                    <div id="theme-switch">
+                                        <div class="dark-mode-button" onclick="enableDarkmode()" data-center>
+                                            <!-- 黑色 -->
+                                            <svg id="dark-mode-black-2" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                                width="20px" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.904 14.202a8.2 8.2 0 11-9.695-10.203 9.835 9.835 0 00-.009.403c0 5.38 4.336 9.748 9.704 9.8zm.288-1.802a8 8 0 01-7.828-10.392 10.158 10.158 0 00-1.896.11c-4.795.74-8.466 4.883-8.466 9.884 0 5.523 4.477 10 10 10 4.825 0 8.852-3.417 9.792-7.964.127-.61.197-1.242.207-1.888-.58.15-1.186.235-1.809.25z"
+                                                    fill="white"></path>
+                                            </svg>
+                                            <!-- 白色 -->
+                                            <svg id="dark-mode-white-2" xmlns="http://www.w3.org/2000/svg" height="20px"
+                                                width="20px" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19.904 14.202a8.2 8.2 0 11-9.695-10.203 9.835 9.835 0 00-.009.403c0 5.38 4.336 9.748 9.704 9.8zm.288-1.802a8 8 0 01-7.828-10.392 10.158 10.158 0 00-1.896.11c-4.795.74-8.466 4.883-8.466 9.884 0 5.523 4.477 10 10 10 4.825 0 8.852-3.417 9.792-7.964.127-.61.197-1.242.207-1.888-.58.15-1.186.235-1.809.25z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                        <div class="light-mode-button" onclick="disableDarkmode()" data-center>
+                                            <!-- 黑色 -->
+                                            <svg id="light-mode-black-2" xmlns="http://www.w3.org/2000/svg"
+                                                height="20px" width="20px" viewBox="0 0 24 24">
+                                                <g clip-path="url(#light_mode_clip0_7448_208043)">
+                                                    <path
+                                                        d="M11.998 16.2a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zm0 1.8a6 6 0 100-12 6 6 0 000 12zM11.998.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0V1a.9.9 0 01.9-.9zM3.583 3.585a.9.9 0 011.273 0L6.27 4.999a.9.9 0 01-1.273 1.273L3.583 4.858a.9.9 0 010-1.273zm16.83 0a.9.9 0 010 1.273l-1.415 1.414A.9.9 0 0117.725 5l1.414-1.414a.9.9 0 011.273 0zM.097 12a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zm20 0a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zM6.27 17.727a.9.9 0 010 1.273l-1.414 1.414a.9.9 0 11-1.273-1.273l1.414-1.414a.9.9 0 011.273 0zm11.455 0a.9.9 0 011.273 0l1.414 1.414a.9.9 0 11-1.273 1.273L17.725 19a.9.9 0 010-1.273zM11.998 20.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0v-2a.9.9 0 01.9-.9z"
+                                                        fill="white"></path>
+                                                </g>
+                                            </svg>
+                                            <!-- 白色 -->
+                                            <svg id="light-mode-white-2" xmlns="http://www.w3.org/2000/svg"
+                                                height="20px" width="20px" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M11.998 16.2a4.2 4.2 0 110-8.4 4.2 4.2 0 010 8.4zm0 1.8a6 6 0 100-12 6 6 0 000 12zM11.998.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0V1a.9.9 0 01.9-.9zM3.583 3.585a.9.9 0 011.273 0L6.27 4.999a.9.9 0 01-1.273 1.273L3.583 4.858a.9.9 0 010-1.273zm16.83 0a.9.9 0 010 1.273l-1.415 1.414A.9.9 0 0117.725 5l1.414-1.414a.9.9 0 011.273 0zM.097 12a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zm20 0a.9.9 0 01.9-.9h2a.9.9 0 010 1.8h-2a.9.9 0 01-.9-.9zM6.27 17.727a.9.9 0 010 1.273l-1.414 1.414a.9.9 0 11-1.273-1.273l1.414-1.414a.9.9 0 011.273 0zm11.455 0a.9.9 0 011.273 0l1.414 1.414a.9.9 0 11-1.273 1.273L17.725 19a.9.9 0 010-1.273zM11.998 20.1a.9.9 0 01.9.9v2a.9.9 0 01-1.8 0v-2a.9.9 0 01.9-.9z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="i-inner-item" data-iii-4>退出登录</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="side-right-bar">
+                <div class="info-content">
+                    <ul class="info-part">
+                        <li class="info" onclick="selectImage()" data-center>
+                            <img src="avator/wo.webp" alt="">
+                        </li>
+                        <li class="info">
+                            <div class="user-name" data-space-between>
+                                <div class="u-name">明天会更好</div>
+                                <div class="u-right" data-center>关注</div>
+                            </div>
+                            <div class="user-id">某软件编号：123456789</div>
+                            <div class="user-desc" ud-block>喜欢就关注我吧！</div>
+                            <div class="user-data" ud-block>
+                                <div class="ud-item" data-space-between>
+                                    <div class="udi-count" data-center>10</div>
+                                    <div class="udi-shows" data-center>关注</div>
+                                </div>
+                                <div class="ud-item" data-space-between>
+                                    <div class="udi-count" data-center>200</div>
+                                    <div class="udi-shows" data-center>获赞</div>
+                                </div>
+                                <div class="ud-item" data-space-between>
+                                    <div class="udi-count" data-center>300</div>
+                                    <div class="udi-shows" data-center>收藏</div>
+                                </div>
+                                <div class="ud-item" data-space-between>
+                                    <div class="udi-count" data-center>400</div>
+                                    <div class="udi-shows" data-center>粉丝</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-container" data-center>
+                    <a class="tab-buttom" href="笔记.html" data-center>笔记</a>
+                    <a class="tab-buttom" href="收藏.html" data-center>收藏</a>
+                    <!-- <div class="tab-buttom" data-center>笔记</div>
+                    <div class="tab-buttom" data-center>收藏</div> -->
+                </div>
+            </div>
+            <!-- 底部导航栏 -->
+            <div class="bslb-content">
+                <a class="bslb-channel-list-item" href="登录后的页面.html" target="_blank">
+                    <span data-center>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M20.768 7.934a4 4 0 00-1.825-2.153l-5-2.778a4 4 0 00-3.885 0l-5 2.778A4 4 0 003 9.278v7.646a4 4 0 004 4h10a4 4 0 004-4V9.278v-.035a3.995 3.995 0 00-.232-1.309zm-9.776-3.452a2 2 0 012.016 0l5.2 3.033a2 2 0 01.992 1.728v7.881a2 2 0 01-2 2H6.8a2 2 0 01-2-2V9.243a1.998 1.998 0 01.992-1.728l5.2-3.033z"
+                                fill="currentColor"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.72 14.883h-.001l-.002-.003-.003-.003-.004-.006-.007-.008-.001-.002.001.002.016.02z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M9.703 14.863l-.001-.002.001.002.047.045a1.7 1.7 0 00.33.222c.33.176.934.394 1.92.394.986 0 1.59-.218 1.92-.394a1.698 1.698 0 00.377-.268.9.9 0 011.423 1.102l-.035.044a2.452 2.452 0 01-.24.245 3.495 3.495 0 01-.678.465c-.606.324-1.503.606-2.767.606s-2.16-.282-2.767-.606c-.301-.16-.523-.327-.679-.465a2.453 2.453 0 01-.24-.245l-.034-.044a.9.9 0 011.423-1.101zm.016.02l-.002-.003-.003-.003-.004-.006-.007-.008.016.02z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    <span data-center>发现</span>
+                </a>
+                <a class="bslb-channel-list-item" href="发布.html" target="_blank">
+                    <span data-center>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M16 4.8A4.2 4.2 0 0120.2 9v6a4.2 4.2 0 01-4.2 4.2H8A4.2 4.2 0 013.8 15V9A4.2 4.2 0 018 4.8h8zM8 3a6 6 0 00-6 6v6a6 6 0 006 6h8a6 6 0 006-6V9a6 6 0 00-6-6H8z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M11.1 15a.9.9 0 101.8 0v-2.1H15a.9.9 0 100-1.8h-2.1V9a.9.9 0 10-1.8 0v2.1H9a.9.9 0 000 1.8h2.1V15z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    <span data-center>发布</span>
+                </a>
+                <a class="bslb-channel-list-item" href="通知.html" target="_blank">
+                    <span data-center>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" fill="none"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M20.16 13.9v-2.7c0-3.18-1.99-6.07-4.98-7.3C14.58 2.75 13.35 2 12 2s-2.58.75-3.18 1.9c-3 1.23-4.98 4.12-4.98 7.3v2.69C2.77 14.26 2 15.26 2 16.42c0 1.48 1.24 2.68 2.76 2.68H8.5c.28 1.64 1.73 2.9 3.5 2.9s3.22-1.26 3.5-2.9h3.74c1.52 0 2.76-1.2 2.76-2.68 0-1.16-.77-2.15-1.84-2.52zM12 20.2c-.74 0-1.36-.46-1.6-1.1h3.19c-.23.64-.85 1.1-1.59 1.1zm7.24-2.9H4.76c-.5 0-.9-.39-.9-.88 0-.48.41-.88.91-.88.51 0 .93-.4.93-.9V11.2c0-2.56 1.67-4.88 4.14-5.76.26-.09.46-.29.56-.54.24-.66.89-1.1 1.61-1.1.72 0 1.37.44 1.61 1.1.09.25.3.45.56.54 2.48.88 4.14 3.19 4.14 5.76v3.44c0 .5.42.9.94.9.5 0 .9.39.9.88a.91.91 0 01-.92.88z"
+                                fill="currentcolor"></path>
+                        </svg>
+                    </span>
+                    <span data-center>通知</span>
+                </a>
+                <a class="bslb-channel-list-item" id="channel-list-last-item" href="笔记.html">
+                    <span data-center id="user-avator-other">
+                        <img src="avator/wo.webp" alt="">
+                    </span>
+                    <span data-center>我</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 控制advise-list、、close-icon-svg的显示和隐藏 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('search-input');
+            const closeIconSvg = document.getElementById('close-icon-svg');
+            const adviseList = document.querySelector('.advise-list'); // 获取advise-list元素
+
+            // 显示advise-list
+            searchInput.addEventListener('focus', function () {
+                adviseList.style.display = 'block'; // 显示advise-list
+            });
+
+            // 隐藏advise-list当输入框失去焦点时
+            searchInput.addEventListener('blur', function () {
+                setTimeout(() => {
+                    adviseList.style.display = 'none'; // 隐藏advise-list
+                }, 200); // 延迟隐藏，确保点击建议列表时不被立刻隐藏
+            });
+
+            // 控制close-icon-svg的显示和隐藏
+            searchInput.addEventListener('input', function () {
+                if (this.value.length > 0) {
+                    closeIconSvg.style.visibility = 'visible'; // 显示close-icon-svg
+                } else {
+                    closeIconSvg.style.visibility = 'hidden'; // 隐藏close-icon-svg
+                }
+            });
+
+            closeIconSvg.addEventListener('click', function () {
+                searchInput.value = '';
+                closeIconSvg.style.visibility = 'hidden'; // 隐藏close-icon-svg
+                searchInput.focus();
+            });
+        });
+    </script>
+    <!-- 瀑布流 -->
+    <script>
+        window.addEventListener('load', function () {
+            var container = document.getElementById('pubuliu');
+            var items = container.getElementsByClassName('pubuliu-item');
+
+            function updateLayout() {
+                var containerWidth = container.offsetWidth;
+                var columns = Math.max(Math.floor(containerWidth / 240), 2); // 计算列数，每列宽度为 200px，加上 10px 的间隙
+                columns = Math.min(columns, 5); // 最多5列
+
+                var itemWidth = (containerWidth - 10 * (columns + 1)) / columns; // 计算每个元素的宽度，包括间隙
+
+                container.style.setProperty('--columns', columns);
+
+                var columnHeights = Array.from({ length: columns }, () => 0);
+
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var columnIndex = 0;
+                    var minHeight = columnHeights[0];
+
+                    for (var j = 1; j < columns; j++) {
+                        if (columnHeights[j] < minHeight) {
+                            columnIndex = j;
+                            minHeight = columnHeights[j];
+                        }
+                    }
+
+                    item.style.position = 'absolute';
+                    item.style.width = itemWidth + 'px';
+                    item.style.left = columnIndex * (itemWidth + 10) + 10 + 'px'; // 调整左偏移量以实现水平居中
+                    item.style.top = columnHeights[columnIndex] + 'px';
+
+                    columnHeights[columnIndex] += item.offsetHeight + 10; // 10px 是项目之间的垂直间隙
+                }
+
+                var maxHeight = Math.max(...columnHeights);
+                container.style.height = maxHeight + 'px';
+            }
+
+            window.addEventListener('resize', updateLayout);
+            updateLayout();
+        });
+    </script>
+    <!-- 点击channel-list-last-item显示infromatin-inner -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const lastItem = document.getElementById('channel-list-last-item');
+            const informationInner = lastItem.querySelector('.information-inner');
+
+            lastItem.addEventListener('click', (event) => {
+                event.stopPropagation(); // 阻止事件冒泡到 document
+                if (informationInner.style.display === 'block') {
+                    informationInner.style.display = 'none';
+                } else {
+                    informationInner.style.display = 'block';
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!informationInner.contains(event.target) && event.target !== lastItem) {
+                    informationInner.style.display = 'none';
+                }
+            });
+
+            informationInner.addEventListener('click', (event) => {
+                event.stopPropagation(); // 阻止事件冒泡到 document
+            });
+        });
+    </script>
+    <!-- 主题色 -->
+    <script>
+        let darkmode = localStorage.getItem('darkmode');
+
+        const darkModeBtns = document.querySelectorAll('.dark-mode-button');
+        const lightModeBtns = document.querySelectorAll('.light-mode-button');
+
+        const darkModeBlackIcons = document.querySelectorAll('[id^="dark-mode-black"]');
+        const lightModeBlackIcons = document.querySelectorAll('[id^="light-mode-black"]');
+        const darkModeWhiteIcons = document.querySelectorAll('[id^="dark-mode-white"]');
+        const lightModeWhiteIcons = document.querySelectorAll('[id^="light-mode-white"]');
+
+        // 初始化页面模式
+        if (darkmode === "active") {
+            enableDarkmode();
+        } else {
+            disableDarkmode();
+        }
+
+        // 启用暗模式
+        function enableDarkmode() {
+            document.body.classList.add('darkmode');
+            localStorage.setItem('darkmode', 'active');
+
+            darkModeBtns.forEach(btn => btn.style.backgroundColor = 'transparent');
+            lightModeBtns.forEach(btn => btn.style.backgroundColor = 'var(--switch-dark-button)');
+
+            darkModeBlackIcons.forEach(icon => icon.style.display = 'none');
+            lightModeBlackIcons.forEach(icon => icon.style.display = 'none');
+            darkModeWhiteIcons.forEach(icon => icon.style.display = 'block');
+            lightModeWhiteIcons.forEach(icon => icon.style.display = 'block');
+        }
+
+        // 禁用暗模式
+        function disableDarkmode() {
+            document.body.classList.remove('darkmode');
+            localStorage.setItem('darkmode', null);
+
+            lightModeBtns.forEach(btn => btn.style.backgroundColor = 'transparent');
+            darkModeBtns.forEach(btn => btn.style.backgroundColor = 'var(--switch-light-button)');
+
+            darkModeBlackIcons.forEach(icon => icon.style.display = 'block');
+            lightModeBlackIcons.forEach(icon => icon.style.display = 'block');
+            darkModeWhiteIcons.forEach(icon => icon.style.display = 'none');
+            lightModeWhiteIcons.forEach(icon => icon.style.display = 'none');
+        }
+
+        // 主题切换按钮点击事件
+        document.querySelectorAll('#theme-switch').forEach(switchElement => {
+            switchElement.addEventListener("click", () => {
+                darkmode = localStorage.getItem('darkmode');
+                darkmode !== 'active' ? enableDarkmode() : disableDarkmode();
+            });
+        });
+    </script>
+    <!-- channel-list-one-item 刷新页面 -->
+    <script>
+        document.querySelectorAll('.bslb-channel-list-item, .channel-list-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // 根据 class 选择跳转链接
+                if (item.classList.contains('channel-list-one-item')) {
+                    // 向下移动元素并显示刷新图标
+                    const pubuliu = document.getElementById('pubuliu');
+                    const shuaxin = document.querySelector('.shuaxin');
+
+                    // 向下移动
+                    pubuliu.style.transition = 'transform 2s';
+                    pubuliu.style.transform = 'translateY(70px)'; // 向下移动
+                    shuaxin.style.display = 'block'; // 显示刷新图标
+
+                    // 2秒后恢复位置并刷新页面
+                    setTimeout(() => {
+                        pubuliu.style.transform = 'translateY(0)';
+                        // 刷新页面
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    // 如果点击的不是 channel-list-one-item，可以选择不执行任何操作
+                    // 或者你可以在这里添加其他逻辑，例如显示一个消息
+                    console.log('点击了其他项目，但没有指定的操作。');
+                }
+            });
+        });
+    </script>
+    <!-- m-information-inner显示 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hanburger = document.getElementById('m-hanburger');
+            const informationInner = document.getElementById('m-information-inner');
+
+            hanburger.addEventListener('click', (event) => {
+                event.stopPropagation();
+                informationInner.style.display = informationInner.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!informationInner.contains(event.target) && !hanburger.contains(event.target)) {
+                    informationInner.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <!-- 点击 m-search-icon 出现 mask-paper -->
+    <script>
+        const searchIcon = document.querySelector('.m-search-icon');
+        const maskPaper = document.querySelector('.mask-paper');
+        const closeButton = document.querySelector('.mp-close');
+
+        // Toggle mask-paper on search icon click
+        searchIcon.addEventListener('click', function() {
+            maskPaper.style.display = maskPaper.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close mask-paper only when the close button is clicked
+        closeButton.addEventListener('click', function() {
+            maskPaper.style.display = 'none';
+        });
+    </script>
+    <!-- 控制 mask-paper、 advise-list 的显示和隐藏 -->
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const maskInput = document.getElementById('mask-input');
+        const adviseList = document.getElementById('advise-list');
+        const maskAdviseList = document.getElementById('mask-advise-list');
+        const closeIcons = document.querySelectorAll('.close-icon');
+    
+        function showAdviseList() {
+            adviseList.style.display = 'block';
+            maskAdviseList.style.display = 'block';
+        }
+    
+        function hideAdviseList() {
+            adviseList.style.display = 'none';
+            maskAdviseList.style.display = 'none';
+        }
+    
+        function toggleCloseIcon() {
+            if (searchInput.value || maskInput.value) {
+                closeIcons.forEach(icon => icon.classList.add('show'));
+            } else {
+                closeIcons.forEach(icon => icon.classList.remove('show'));
+            }
+        }
+    
+        searchInput.addEventListener('focus', showAdviseList);
+        searchInput.addEventListener('blur', hideAdviseList);
+        searchInput.addEventListener('input', toggleCloseIcon);
+    
+        maskInput.addEventListener('focus', showAdviseList);
+        maskInput.addEventListener('blur', hideAdviseList);
+        maskInput.addEventListener('input', toggleCloseIcon);
+    
+        closeIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                searchInput.value = ''; // 清除搜索输入框的内容
+                maskInput.value = '';   // 清除掩码输入框的内容
+                toggleCloseIcon();     // 更新清除图标的显示状态
+            });
+        });
+    
+        document.querySelector('.mp-close').addEventListener('click', () => {
+            maskInput.value = ''; // 清除掩码输入框的内容
+            toggleCloseIcon();   // 更新清除图标的显示状态
+        });
+    </script>
+</body>
+
+</html>
